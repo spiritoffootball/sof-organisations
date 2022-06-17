@@ -1,0 +1,150 @@
+# Copyright (C) 2022 Christian Wach
+# This file is distributed under the same license as the SOF Organisations CPT plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: SOF Organisations CPT 1.0a\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sof-organisations\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-06-15T16:16:37+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: sof-organisations\n"
+
+#. Plugin Name of the plugin
+msgid "SOF Organisations CPT"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://haystack.co.uk"
+msgstr ""
+
+#. Description of the plugin
+msgid "Provides an \"Organisations\" Custom Post Type for Spirit of Football."
+msgstr ""
+
+#. Author of the plugin
+msgid "Christian Wach"
+msgstr ""
+
+msgid "Organisations"
+msgstr ""
+
+msgid "Organisation"
+msgstr ""
+
+msgid "Add New"
+msgstr ""
+
+msgid "Add New Organisation"
+msgstr ""
+
+msgid "Edit Organisation"
+msgstr ""
+
+msgid "New Organisation"
+msgstr ""
+
+msgid "All Organisations"
+msgstr ""
+
+msgid "View Organisation"
+msgstr ""
+
+msgid "Search Organisations"
+msgstr ""
+
+msgid "No matching Organisation found"
+msgstr ""
+
+msgid "No Organisations found in Trash"
+msgstr ""
+
+msgid "An organisation post type"
+msgstr ""
+
+#. translators: %s: The permalink.
+msgid "Organisation updated. <a href=\"%s\">View Organisation</a>"
+msgstr ""
+
+msgid "Custom field updated."
+msgstr ""
+
+msgid "Custom field deleted."
+msgstr ""
+
+msgid "Organisation updated."
+msgstr ""
+
+#. translators: %s: The date and time of the revision.
+msgid "Organisation restored to revision from %s"
+msgstr ""
+
+#. translators: %s: The permalink.
+msgid "Organisation published. <a href=\"%s\">View Organisation</a>"
+msgstr ""
+
+msgid "Organisation saved."
+msgstr ""
+
+#. translators: %s: The permalink.
+msgid "Organisation submitted. <a target=\"_blank\" href=\"%s\">Preview Organisation</a>"
+msgstr ""
+
+#. translators: 1: The date, 2: The permalink.
+msgid "Organisation scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Organisation</a>"
+msgstr ""
+
+#. translators: Publish box date format - see https://php.net/date
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#. translators: %s: The permalink.
+msgid "Organisation draft updated. <a target=\"_blank\" href=\"%s\">Preview Organisation</a>"
+msgstr ""
+
+msgid "Add the name of the Organisation"
+msgstr ""
+
+msgctxt "taxonomy general name"
+msgid "Organisation Types"
+msgstr ""
+
+msgctxt "taxonomy singular name"
+msgid "Organisation Type"
+msgstr ""
+
+msgid "Search Organisation Types"
+msgstr ""
+
+msgid "All Organisation Types"
+msgstr ""
+
+msgid "Parent Organisation Type"
+msgstr ""
+
+msgid "Parent Organisation Type:"
+msgstr ""
+
+msgid "Edit Organisation Type"
+msgstr ""
+
+msgid "Update Organisation Type"
+msgstr ""
+
+msgid "Add New Organisation Type"
+msgstr ""
+
+msgid "New Organisation Type Name"
+msgstr ""
+
+msgid "Organisation Types"
+msgstr ""
+
+#. translators: %s: The plural name of the taxonomy terms.
+msgid "Show All %s"
+msgstr ""
