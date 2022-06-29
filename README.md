@@ -36,4 +36,4 @@ If you have cloned the code from GitHub, it is assumed that you know what you're
 
 ## Setup
 
-This plugin provides a bare-bones "Organisations" Custom Post Type and Custom Taxonomy. You will need to add any necessary ACF Custom Fields to a Field Group attached to the "Organisations" Custom Post Type. Each Field should be linked to the corresponding CiviCRM Custom Field attached to the Contact Type that is synced to the "Organisations" Custom Post Type.
+This plugin provides three bare-bones Custom Post Types and Custom Taxonomies. You will need to add any necessary ACF Custom Fields to a Field Group attached to the Custom Post Types. Each Field should be linked to the corresponding CiviCRM Custom Field attached to the Contact Type that is synced to the Custom Post Types.
