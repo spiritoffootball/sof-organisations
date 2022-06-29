@@ -183,7 +183,7 @@ class SOF_Organisations_CPT_Partners {
 
 			// Defaults.
 			'menu_icon' => 'dashicons-groups',
-			'description' => __( 'An organisation post type', 'sof-organisations' ),
+			'description' => __( 'An partner organisation post type', 'sof-organisations' ),
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,

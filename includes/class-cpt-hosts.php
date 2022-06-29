@@ -183,7 +183,7 @@ class SOF_Organisations_CPT_Hosts {
 
 			// Defaults.
 			'menu_icon' => 'dashicons-groups',
-			'description' => __( 'An organisation post type', 'sof-organisations' ),
+			'description' => __( 'A ball host organisation post type', 'sof-organisations' ),
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
