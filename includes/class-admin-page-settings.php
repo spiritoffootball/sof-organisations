@@ -54,7 +54,7 @@ class SOF_Organisations_Admin_Page_Settings {
 	 * @access public
 	 * @var string $parent_page_slug The slug of the parent page.
 	 */
-	public $parent_page_slug = 'sof-organisations-parent';
+	public $parent_page_slug = 'sof-hosts-parent';
 
 	/**
 	 * Constructor.
@@ -151,10 +151,10 @@ class SOF_Organisations_Admin_Page_Settings {
 			return;
 		}
 
-		// Add the admin page to the "Organisations" menu.
+		// Add the admin page to the "Ball Hosts" menu.
 		$this->parent_page = add_submenu_page(
-			'edit.php?post_type=' . $this->plugin->cpt->organisation->post_type_name, // Parent slug.
-			__( 'Settings: SOF Organisations', 'sof-organisations' ), // Page title.
+			'edit.php?post_type=' . $this->plugin->cpt->hosts->post_type_name, // Parent slug.
+			__( 'Settings: Ball Hosts', 'sof-organisations' ), // Page title.
 			__( 'Settings', 'sof-organisations' ), // Menu title.
 			$capability, // Required caps.
 			$this->parent_page_slug, // Slug name.
@@ -297,7 +297,7 @@ class SOF_Organisations_Admin_Page_Settings {
 
 		// Define this plugin's Settings Page screen IDs.
 		$settings_screens = [
-			'organisation_page_' . $this->parent_page_slug,
+			'host_page_' . $this->parent_page_slug,
 		];
 
 		/**

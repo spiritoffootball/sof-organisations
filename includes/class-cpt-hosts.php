@@ -1,8 +1,8 @@
 <?php
 /**
- * Organisations Custom Post Type Class.
+ * Ball Hosts Custom Post Type Class.
  *
- * Handles providing an "Organisations" Custom Post Type.
+ * Handles providing a "Ball Hosts" Custom Post Type.
  *
  * @package SOF_Organisations
  * @since 1.0
@@ -12,13 +12,13 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Organisations Custom Post Type Class.
+ * Ball Hosts Custom Post Type Class.
  *
- * A class that encapsulates an "Organisations" Custom Post Type.
+ * A class that encapsulates a "Ball Hosts" Custom Post Type.
  *
  * @since 1.0
  */
-class SOF_Organisations_CPT_Organisations {
+class SOF_Organisations_CPT_Hosts {
 
 	/**
 	 * Plugin object.
@@ -45,7 +45,7 @@ class SOF_Organisations_CPT_Organisations {
 	 * @access public
 	 * @var object $cpt The name of the Custom Post Type.
 	 */
-	public $post_type_name = 'organisation';
+	public $post_type_name = 'host';
 
 	/**
 	 * Custom Post Type REST base.
@@ -54,7 +54,7 @@ class SOF_Organisations_CPT_Organisations {
 	 * @access public
 	 * @var object $cpt The REST base of the Custom Post Type.
 	 */
-	public $post_type_rest_base = 'organisations';
+	public $post_type_rest_base = 'hosts';
 
 	/**
 	 * Taxonomy name.
@@ -63,7 +63,7 @@ class SOF_Organisations_CPT_Organisations {
 	 * @access public
 	 * @var str $taxonomy_name The name of the Custom Taxonomy.
 	 */
-	public $taxonomy_name = 'organisation-type';
+	public $taxonomy_name = 'host-type';
 
 	/**
 	 * Taxonomy REST base.
@@ -72,25 +72,7 @@ class SOF_Organisations_CPT_Organisations {
 	 * @access public
 	 * @var str $taxonomy_rest_base The REST base of the Custom Taxonomy.
 	 */
-	public $taxonomy_rest_base = 'organisation-type';
-
-	/**
-	 * Alternative Taxonomy name.
-	 *
-	 * @since 1.0
-	 * @access public
-	 * @var str $taxonomy_alt_name The name of the alternative Custom Taxonomy.
-	 */
-	public $taxonomy_alt_name = 'partner-type';
-
-	/**
-	 * Alternative Taxonomy REST base.
-	 *
-	 * @since 1.0
-	 * @access public
-	 * @var str $taxonomy_alt_rest_base The REST base of the alternative Custom Taxonomy.
-	 */
-	public $taxonomy_alt_rest_base = 'partner-type';
+	public $taxonomy_rest_base = 'host-type';
 
 	/**
 	 * Constructor.
@@ -134,13 +116,6 @@ class SOF_Organisations_CPT_Organisations {
 		add_action( 'init', [ $this, 'taxonomy_create' ] );
 		add_filter( 'wp_terms_checklist_args', [ $this, 'taxonomy_fix_metabox' ], 10, 2 );
 		add_action( 'restrict_manage_posts', [ $this, 'taxonomy_filter_post_type' ] );
-
-		/*
-		// Create alternative taxonomy.
-		add_action( 'init', [ $this, 'taxonomy_alt_create' ] );
-		add_filter( 'wp_terms_checklist_args', [ $this, 'taxonomy_alt_fix_metabox' ], 10, 2 );
-		add_action( 'restrict_manage_posts', [ $this, 'taxonomy_alt_filter_post_type' ] );
-		*/
 
 	}
 
@@ -187,23 +162,23 @@ class SOF_Organisations_CPT_Organisations {
 			return;
 		}
 
-		// Set up the post type called "Organisation".
+		// Set up the post type called "Ball Host".
 		register_post_type( $this->post_type_name, [
 
 			// Labels.
 			'labels' => [
-				'name'               => __( 'Organisations', 'sof-organisations' ),
-				'singular_name'      => __( 'Organisation', 'sof-organisations' ),
+				'name'               => __( 'Ball Hosts', 'sof-organisations' ),
+				'singular_name'      => __( 'Ball Host', 'sof-organisations' ),
 				'add_new'            => __( 'Add New', 'sof-organisations' ),
-				'add_new_item'       => __( 'Add New Organisation', 'sof-organisations' ),
-				'edit_item'          => __( 'Edit Organisation', 'sof-organisations' ),
-				'new_item'           => __( 'New Organisation', 'sof-organisations' ),
-				'all_items'          => __( 'All Organisations', 'sof-organisations' ),
-				'view_item'          => __( 'View Organisation', 'sof-organisations' ),
-				'search_items'       => __( 'Search Organisations', 'sof-organisations' ),
-				'not_found'          => __( 'No matching Organisation found', 'sof-organisations' ),
-				'not_found_in_trash' => __( 'No Organisations found in Trash', 'sof-organisations' ),
-				'menu_name'          => __( 'Organisations', 'sof-organisations' ),
+				'add_new_item'       => __( 'Add New Ball Host', 'sof-organisations' ),
+				'edit_item'          => __( 'Edit Ball Host', 'sof-organisations' ),
+				'new_item'           => __( 'New Ball Host', 'sof-organisations' ),
+				'all_items'          => __( 'All Ball Hosts', 'sof-organisations' ),
+				'view_item'          => __( 'View Ball Host', 'sof-organisations' ),
+				'search_items'       => __( 'Search Ball Hosts', 'sof-organisations' ),
+				'not_found'          => __( 'No matching Ball Host found', 'sof-organisations' ),
+				'not_found_in_trash' => __( 'No Ball Hosts found in Trash', 'sof-organisations' ),
+				'menu_name'          => __( 'Ball Hosts', 'sof-organisations' ),
 			],
 
 			// Defaults.
@@ -225,7 +200,7 @@ class SOF_Organisations_CPT_Organisations {
 
 			// Rewrite.
 			'rewrite' => [
-				'slug' => 'organisations',
+				'slug' => 'hosts',
 				'with_front' => false,
 			],
 
@@ -270,14 +245,14 @@ class SOF_Organisations_CPT_Organisations {
 			// Item updated.
 			1 => sprintf(
 				/* translators: %s: The permalink. */
-				__( 'Organisation updated. <a href="%s">View Organisation</a>', 'sof-organisations' ),
+				__( 'Ball Host updated. <a href="%s">View Ball Host</a>', 'sof-organisations' ),
 				esc_url( get_permalink( $post_ID ) )
 			),
 
 			// Custom fields.
 			2 => __( 'Custom field updated.', 'sof-organisations' ),
 			3 => __( 'Custom field deleted.', 'sof-organisations' ),
-			4 => __( 'Organisation updated.', 'sof-organisations' ),
+			4 => __( 'Ball Host updated.', 'sof-organisations' ),
 
 			// Item restored to a revision.
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -286,7 +261,7 @@ class SOF_Organisations_CPT_Organisations {
 				// Revision text.
 				sprintf(
 					/* translators: %s: The date and time of the revision. */
-					__( 'Organisation restored to revision from %s', 'sof-organisations' ),
+					__( 'Ball Host restored to revision from %s', 'sof-organisations' ),
 					// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 					wp_post_revision_title( (int) $_GET['revision'], false )
 				) :
@@ -297,24 +272,24 @@ class SOF_Organisations_CPT_Organisations {
 			// Item published.
 			6 => sprintf(
 				/* translators: %s: The permalink. */
-				__( 'Organisation published. <a href="%s">View Organisation</a>', 'sof-organisations' ),
+				__( 'Ball Host published. <a href="%s">View Ball Host</a>', 'sof-organisations' ),
 				esc_url( get_permalink( $post_ID ) )
 			),
 
 			// Item saved.
-			7 => __( 'Organisation saved.', 'sof-organisations' ),
+			7 => __( 'Ball Host saved.', 'sof-organisations' ),
 
 			// Item submitted.
 			8 => sprintf(
 				/* translators: %s: The permalink. */
-				__( 'Organisation submitted. <a target="_blank" href="%s">Preview Organisation</a>', 'sof-organisations' ),
+				__( 'Ball Host submitted. <a target="_blank" href="%s">Preview Ball Host</a>', 'sof-organisations' ),
 				esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) )
 			),
 
 			// Item scheduled.
 			9 => sprintf(
 				/* translators: 1: The date, 2: The permalink. */
-				__( 'Organisation scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Organisation</a>', 'sof-organisations' ),
+				__( 'Ball Host scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Ball Host</a>', 'sof-organisations' ),
 				/* translators: Publish box date format - see https://php.net/date */
 				date_i18n( __( 'M j, Y @ G:i', 'sof-organisations' ), strtotime( $post->post_date ) ),
 				esc_url( get_permalink( $post_ID ) )
@@ -323,7 +298,7 @@ class SOF_Organisations_CPT_Organisations {
 			// Draft updated.
 			10 => sprintf(
 				/* translators: %s: The permalink. */
-				__( 'Organisation draft updated. <a target="_blank" href="%s">Preview Organisation</a>', 'sof-organisations' ),
+				__( 'Ball Host draft updated. <a target="_blank" href="%s">Preview Ball Host</a>', 'sof-organisations' ),
 				esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) )
 			),
 
@@ -350,7 +325,7 @@ class SOF_Organisations_CPT_Organisations {
 		}
 
 		// Overwrite with our string.
-		$title = __( 'Add the name of the Organisation', 'sof-organisations' );
+		$title = __( 'Add the name of the Ball Host', 'sof-organisations' );
 
 		// --<
 		return $title;
@@ -380,23 +355,23 @@ class SOF_Organisations_CPT_Organisations {
 
 			// Labels.
 			'labels' => [
-				'name'              => _x( 'Organisation Types', 'taxonomy general name', 'sof-organisations' ),
-				'singular_name'     => _x( 'Organisation Type', 'taxonomy singular name', 'sof-organisations' ),
-				'search_items'      => __( 'Search Organisation Types', 'sof-organisations' ),
-				'all_items'         => __( 'All Organisation Types', 'sof-organisations' ),
-				'parent_item'       => __( 'Parent Organisation Type', 'sof-organisations' ),
-				'parent_item_colon' => __( 'Parent Organisation Type:', 'sof-organisations' ),
-				'edit_item'         => __( 'Edit Organisation Type', 'sof-organisations' ),
-				'update_item'       => __( 'Update Organisation Type', 'sof-organisations' ),
-				'add_new_item'      => __( 'Add New Organisation Type', 'sof-organisations' ),
-				'new_item_name'     => __( 'New Organisation Type Name', 'sof-organisations' ),
-				'menu_name'         => __( 'Organisation Types', 'sof-organisations' ),
-				'not_found'         => __( 'No Organisation Types found', 'sof-organisations' ),
+				'name'              => _x( 'Ball Host Types', 'taxonomy general name', 'sof-organisations' ),
+				'singular_name'     => _x( 'Ball Host Type', 'taxonomy singular name', 'sof-organisations' ),
+				'search_items'      => __( 'Search Ball Host Types', 'sof-organisations' ),
+				'all_items'         => __( 'All Ball Host Types', 'sof-organisations' ),
+				'parent_item'       => __( 'Parent Ball Host Type', 'sof-organisations' ),
+				'parent_item_colon' => __( 'Parent Ball Host Type:', 'sof-organisations' ),
+				'edit_item'         => __( 'Edit Ball Host Type', 'sof-organisations' ),
+				'update_item'       => __( 'Update Ball Host Type', 'sof-organisations' ),
+				'add_new_item'      => __( 'Add New Ball Host Type', 'sof-organisations' ),
+				'new_item_name'     => __( 'New Ball Host Type Name', 'sof-organisations' ),
+				'menu_name'         => __( 'Ball Host Types', 'sof-organisations' ),
+				'not_found'         => __( 'No Ball Host Types found', 'sof-organisations' ),
 			],
 
 			// Rewrite rules.
 			'rewrite' => [
-				'slug' => 'organisation-types',
+				'slug' => 'host-types',
 			],
 
 			// Show column in wp-admin.
@@ -469,126 +444,6 @@ class SOF_Organisations_CPT_Organisations {
 			'orderby' => 'name',
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
 			'selected' => isset( $_GET[ $this->taxonomy_name ] ) ? wp_unslash( $_GET[ $this->taxonomy_name ] ) : '',
-			'show_count' => true,
-			'hide_empty' => true,
-			'value_field' => 'slug',
-			'hierarchical' => 1,
-		] );
-
-	}
-
-	// -------------------------------------------------------------------------
-
-	/**
-	 * Create our alternative Custom Taxonomy.
-	 *
-	 * @since 1.0
-	 */
-	public function taxonomy_alt_create() {
-
-		// Only register once.
-		static $registered;
-		if ( $registered ) {
-			return;
-		}
-
-		// Arguments.
-		$args = [
-
-			// Same as "category".
-			'hierarchical' => true,
-
-			// Labels.
-			'labels' => [
-				'name'              => _x( 'Partner Types', 'taxonomy general name', 'sof-organisations' ),
-				'singular_name'     => _x( 'Partner Type', 'taxonomy singular name', 'sof-organisations' ),
-				'search_items'      => __( 'Search Partner Types', 'sof-organisations' ),
-				'all_items'         => __( 'All Partner Types', 'sof-organisations' ),
-				'parent_item'       => __( 'Parent Partner Type', 'sof-organisations' ),
-				'parent_item_colon' => __( 'Parent Partner Type:', 'sof-organisations' ),
-				'edit_item'         => __( 'Edit Partner Type', 'sof-organisations' ),
-				'update_item'       => __( 'Update Partner Type', 'sof-organisations' ),
-				'add_new_item'      => __( 'Add New Partner Type', 'sof-organisations' ),
-				'new_item_name'     => __( 'New Partner Type Name', 'sof-organisations' ),
-				'menu_name'         => __( 'Partner Types', 'sof-organisations' ),
-				'not_found'         => __( 'No Partner Types found', 'sof-organisations' ),
-			],
-
-			// Rewrite rules.
-			'rewrite' => [
-				'slug' => 'partner-types',
-			],
-
-			// Show column in wp-admin.
-			'show_admin_column' => true,
-			'show_ui' => true,
-
-			// REST setup.
-			'show_in_rest' => true,
-			'rest_base' => $this->taxonomy_alt_rest_base,
-
-		];
-
-		// Register a taxonomy for this CPT.
-		register_taxonomy( $this->taxonomy_alt_name, $this->post_type_name, $args );
-
-		// Flag done.
-		$registered = true;
-
-	}
-
-	/**
-	 * Fix the alternative Custom Taxonomy metabox.
-	 *
-	 * @see https://core.trac.wordpress.org/ticket/10982
-	 *
-	 * @since 1.0
-	 *
-	 * @param array $args The existing arguments.
-	 * @param int $post_id The WordPress post ID.
-	 */
-	public function taxonomy_alt_fix_metabox( $args, $post_id ) {
-
-		// If rendering metabox for our taxonomy.
-		if ( isset( $args['taxonomy'] ) && $args['taxonomy'] === $this->taxonomy_alt_name ) {
-
-			// Setting 'checked_ontop' to false seems to fix this.
-			$args['checked_ontop'] = false;
-
-		}
-
-		// --<
-		return $args;
-
-	}
-
-	/**
-	 * Add a filter for the alternative Custom Taxonomy to the Custom Post Type listing.
-	 *
-	 * @since 1.0
-	 */
-	public function taxonomy_alt_filter_post_type() {
-
-		// Access current post type.
-		global $typenow;
-
-		// Bail if not our post type.
-		if ( $typenow != $this->post_type_name ) {
-			return;
-		}
-
-		// Get tax object.
-		$taxonomy = get_taxonomy( $this->taxonomy_alt_name );
-
-		// Show a dropdown.
-		wp_dropdown_categories( [
-			/* translators: %s: The plural name of the taxonomy terms. */
-			'show_option_all' => sprintf( __( 'Show All %s', 'sof-organisations' ), $taxonomy->label ),
-			'taxonomy' => $this->taxonomy_alt_name,
-			'name' => $this->taxonomy_alt_name,
-			'orderby' => 'name',
-			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
-			'selected' => isset( $_GET[ $this->taxonomy_alt_name ] ) ? wp_unslash( $_GET[ $this->taxonomy_alt_name ] ) : '',
 			'show_count' => true,
 			'hide_empty' => true,
 			'value_field' => 'slug',

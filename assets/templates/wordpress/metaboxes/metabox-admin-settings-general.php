@@ -9,7 +9,7 @@
  */
 
 ?><!-- assets/templates/wordpress/metaboxes/metabox-admin-settings-general.php -->
-<p><?php esc_html_e( 'The following options configure some SOF Organisation defaults.', 'sof-organisations' ); ?></p>
+<p><?php esc_html_e( 'The following options configure Ball Host defaults.', 'sof-organisations' ); ?></p>
 
 <?php
 

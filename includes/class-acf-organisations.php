@@ -93,7 +93,7 @@ class SOF_Organisations_ACF_Organisations {
 				[
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => $this->plugin->cpt->organisation->post_type_name,
+					'value' => $this->plugin->cpt->organisations->post_type_name,
 				],
 			],
 		];

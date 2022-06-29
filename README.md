@@ -1,10 +1,10 @@
 # SOF Organisations
 
-Provides an "Organisations" post type for Spirit of Football.
+Provides provides Organisation Custom Post Types for The Ball website.
 
 ## Description
 
-*SOF Organisations* is a WordPress plugin that provides a Custom Post Type and associated functionality for Spirit of Football.
+*SOF Organisations* is a WordPress plugin that provides Organisation Custom Post Types and associated functionality for The Ball website.
 
 ### Requirements
 

@@ -35,7 +35,7 @@ class SOF_Organisations_ACF {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $organisation The ACF Organisation object.
+	 * @var object $organisation The ACF Organisations object.
 	 */
 	public $organisation;
 
@@ -44,9 +44,9 @@ class SOF_Organisations_ACF {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $event The ACF Event object.
+	 * @var object $events The ACF Events object.
 	 */
-	public $event;
+	public $events;
 
 	/**
 	 * Constructor.
@@ -112,8 +112,8 @@ class SOF_Organisations_ACF {
 	public function setup_objects() {
 
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-		//$this->organisation = new SOF_Organisations_ACF_Organisations( $this );
-		$this->event = new SOF_Organisations_ACF_Events( $this );
+		//$this->organisations = new SOF_Organisations_ACF_Organisations( $this );
+		$this->events = new SOF_Organisations_ACF_Events( $this );
 
 	}
 

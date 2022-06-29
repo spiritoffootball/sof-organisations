@@ -35,9 +35,27 @@ class SOF_Organisations_CPT {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $organisation The Organisations CPT object.
+	 * @var object $organisations The Organisations CPT object.
 	 */
-	public $organisation;
+	public $organisations;
+
+	/**
+	 * Partners CPT object.
+	 *
+	 * @since 1.0
+	 * @access public
+	 * @var object $partners The Partners CPT object.
+	 */
+	public $partners;
+
+	/**
+	 * Ball Hosts CPT object.
+	 *
+	 * @since 1.0
+	 * @access public
+	 * @var object $hosts The Ball Hosts CPT object.
+	 */
+	public $hosts;
 
 	/**
 	 * Constructor.
@@ -85,6 +103,8 @@ class SOF_Organisations_CPT {
 	public function include_files() {
 
 		include SOF_ORGANISATIONS_PATH . 'includes/class-cpt-organisations.php';
+		include SOF_ORGANISATIONS_PATH . 'includes/class-cpt-partners.php';
+		include SOF_ORGANISATIONS_PATH . 'includes/class-cpt-hosts.php';
 
 	}
 
@@ -95,7 +115,9 @@ class SOF_Organisations_CPT {
 	 */
 	public function setup_objects() {
 
-		$this->organisation = new SOF_Organisations_CPT_Organisations( $this );
+		$this->organisations = new SOF_Organisations_CPT_Organisations( $this );
+		$this->partners = new SOF_Organisations_CPT_Partners( $this );
+		$this->hosts = new SOF_Organisations_CPT_Hosts( $this );
 
 	}
 

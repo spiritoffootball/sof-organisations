@@ -1,8 +1,9 @@
 <?php
 /**
- * Plugin Name: SOF Organisations CPT
- * Plugin URI: https://haystack.co.uk
- * Description: Provides an "Organisations" Custom Post Type for Spirit of Football.
+ * Plugin Name: SOF Organisations
+ * Plugin URI: https://github.com/spiritoffootball/sof-organisations
+ * GitHub Plugin URI: https://github.com/spiritoffootball/sof-organisations
+ * Description: Provides Organisation Custom Post Types for The Ball website.
  * Author: Christian Wach
  * Version: 1.0a
  * Author URI: https://haystack.co.uk
@@ -185,8 +186,12 @@ class SOF_Organisations {
 		// Maybe init.
 		$this->initialise();
 
-		// Pass through.
-		$this->cpt->activate();
+		/**
+		 * Broadcast plugin activation.
+		 *
+		 * @since 1.0
+		 */
+		do_action( 'sof_orgs/activate' );
 
 	}
 
@@ -200,8 +205,12 @@ class SOF_Organisations {
 		// Maybe init.
 		$this->initialise();
 
-		// Pass through.
-		$this->cpt->deactivate();
+		/**
+		 * Broadcast plugin deactivation.
+		 *
+		 * @since 1.0
+		 */
+		do_action( 'sof_orgs/deactivate' );
 
 	}
 

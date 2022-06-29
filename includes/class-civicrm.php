@@ -38,11 +38,6 @@ class SOF_Organisations_CiviCRM {
 	 */
 	public function __construct( $plugin ) {
 
-		// Bail if ACF isn't found.
-		if ( ! function_exists( 'acf' ) ) {
-			return;
-		}
-
 		// Store reference to plugin.
 		$this->plugin = $plugin;
 

@@ -11,7 +11,7 @@
 ?><!-- assets/templates/wordpress/pages/page-admin-settings.php -->
 <div class="wrap">
 
-	<h1><?php esc_html_e( 'SOF Organisations', 'sof-organisations' ); ?></h1>
+	<h1><?php esc_html_e( 'Ball Host Settings', 'sof-organisations' ); ?></h1>
 
 	<?php if ( $show_tabs ) : ?>
 		<h2 class="nav-tab-wrapper">
