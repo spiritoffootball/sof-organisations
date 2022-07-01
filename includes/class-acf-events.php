@@ -125,7 +125,7 @@ class SOF_Organisations_ACF_Events {
 		// Define Field Group.
 		$field_group = [
 			'key' => $this->group_prefix . 'data',
-			'title' => __( 'Ball Host', 'sof-organisations' ),
+			'title' => __( 'Pledgeball Information', 'sof-organisations' ),
 			'fields' => [],
 			'location' => $field_group_location,
 			'hide_on_screen' => $field_group_hide_elements,
@@ -147,7 +147,7 @@ class SOF_Organisations_ACF_Events {
 
 		// Add our ACF Fields.
 		$this->field_organiser_add();
-		//$this->field_organisations_add();
+		$this->field_form_enabled_add();
 
 	}
 
@@ -169,10 +169,10 @@ class SOF_Organisations_ACF_Events {
 		// Define a Contact Reference Field.
 		$field = [
 			'key' => $this->field_prefix . 'organiser',
-			'label' => __( 'Organisation', 'sof-organisations' ),
+			'label' => __( 'Pledgeball Event Host', 'sof-organisations' ),
 			'name' => 'ball_host',
 			'type' => 'civicrm_contact',
-			'instructions' => '',
+			'instructions' => __( 'This is the Organisation that Pledgeball requires the Event to be associated with.', 'sof-organisations' ),
 			'parent' => $this->group_prefix . 'data',
 			'conditional_logic' => 0,
 			'wrapper' => [
@@ -189,48 +189,34 @@ class SOF_Organisations_ACF_Events {
 	}
 
 	/**
-	 * Add "Organisations" Field.
-	 *
-	 * TESTING - NOT USED.
+	 * Add "Pledge Form Enabled" Field.
 	 *
 	 * @since 1.0
 	 */
-	public function field_organisations_add() {
+	public function field_form_enabled_add() {
 
 		// Define a Repeater field.
 		$field = [
-			'key' => $this->field_prefix . 'organisations',
-			'label' => __( 'Organisers', 'sof-organisations' ),
-			'name' => 'organisations',
-			'type' => 'repeater',
+			'key' => $this->field_prefix . 'pledge_form_enabled',
+			'label' => __( 'Enable Pledge Form', 'sof-organisations' ),
+			'name' => 'pledge_form_enabled',
+			'type' => 'true_false',
 			'parent' => $this->group_prefix . 'data',
-			'menu_order' => 0,
+			'instructions' => __( 'Is the Pledge Form enabled for this Event?', 'civicrm-wp-profile-sync' ),
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => [
 				'width' => '',
 				'class' => '',
 				'id' => '',
+				'data-instruction-placement' => 'field',
 			],
-			'min' => 0,
-			'max' => 0,
-			'button_label' => __( 'Add Organiser', 'sof-organisations' ),
-			'sub_fields' => [],
-		];
-
-		// Add Contact Reference Field.
-		$field['sub_fields'][] = [
-			'key' => $this->field_prefix . 'organisation',
-			'label' => __( 'Organiser', 'sof-organisations' ),
-			'name' => 'organisation',
-			'type' => 'civicrm_contact',
-			'instructions' => '',
-			'conditional_logic' => 0,
-			'wrapper' => [
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			],
-			'field_cacf_civicrm_custom_field' => 'caicustom_1',
+			'acfe_permissions' => '',
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
 		];
 
 		// Now add Field.
