@@ -148,6 +148,7 @@ class SOF_Organisations_ACF_Events {
 		// Add our ACF Fields.
 		$this->field_organiser_add();
 		$this->field_form_enabled_add();
+		$this->field_use_country_add();
 
 	}
 
@@ -203,6 +204,42 @@ class SOF_Organisations_ACF_Events {
 			'type' => 'true_false',
 			'parent' => $this->group_prefix . 'data',
 			'instructions' => __( 'Is the Pledge Form enabled for this Event?', 'civicrm-wp-profile-sync' ),
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => [
+				'width' => '',
+				'class' => '',
+				'id' => '',
+				'data-instruction-placement' => 'field',
+			],
+			'acfe_permissions' => '',
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		];
+
+		// Now add Field.
+		acf_add_local_field( $field );
+
+	}
+
+	/**
+	 * Add "Use Pledge List for Country" Field.
+	 *
+	 * @since 1.0
+	 */
+	public function field_use_country_add() {
+
+		// Define a Repeater field.
+		$field = [
+			'key' => $this->field_prefix . 'pledge_form_use_country',
+			'label' => __( 'Use Country-specific Pledge List', 'sof-organisations' ),
+			'name' => 'pledge_form_use_country',
+			'type' => 'true_false',
+			'parent' => $this->group_prefix . 'data',
+			'instructions' => __( 'If yes, the Pledge List for the Venue Country will be used.', 'civicrm-wp-profile-sync' ),
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => [
