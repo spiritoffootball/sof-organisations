@@ -43,7 +43,7 @@ class SOF_Organisations_CPT_Hosts {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $cpt The name of the Custom Post Type.
+	 * @var string $post_type_name The name of the Custom Post Type.
 	 */
 	public $post_type_name = 'host';
 
@@ -52,7 +52,7 @@ class SOF_Organisations_CPT_Hosts {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $cpt The REST base of the Custom Post Type.
+	 * @var string $post_type_rest_base The REST base of the Custom Post Type.
 	 */
 	public $post_type_rest_base = 'hosts';
 
