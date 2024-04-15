@@ -5,7 +5,7 @@
  * GitHub Plugin URI: https://github.com/spiritoffootball/sof-organisations
  * Description: Provides Organisation Custom Post Types for The Ball website.
  * Author: Christian Wach
- * Version: 1.0a
+ * Version: 1.0
  * Author URI: https://haystack.co.uk
  * Text Domain: sof-organisations
  * Domain Path: /languages
@@ -18,7 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Set our version here.
-define( 'SOF_ORGANISATIONS_VERSION', '1.0a' );
+define( 'SOF_ORGANISATIONS_VERSION', '1.0' );
 
 // Store reference to this file.
 if ( ! defined( 'SOF_ORGANISATIONS_FILE' ) ) {
