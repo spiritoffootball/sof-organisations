@@ -43,7 +43,7 @@ class SOF_Organisations_Admin_Page_Settings {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var str $parent_page The parent page.
+	 * @var string
 	 */
 	public $parent_page;
 
@@ -52,7 +52,7 @@ class SOF_Organisations_Admin_Page_Settings {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var string $parent_page_slug The slug of the parent page.
+	 * @var string
 	 */
 	public $parent_page_slug = 'sof-hosts-parent';
 

@@ -34,7 +34,7 @@ class SOF_Organisations_CPT_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $cpt The Custom Post Type object.
+	 * @var SOF_Organisations_CPT
 	 */
 	public $cpt;
 
@@ -43,7 +43,7 @@ class SOF_Organisations_CPT_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $cpt The name of the Custom Post Type.
+	 * @var string
 	 */
 	public $post_type_name = 'organisation';
 
@@ -52,7 +52,7 @@ class SOF_Organisations_CPT_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $cpt The REST base of the Custom Post Type.
+	 * @var string
 	 */
 	public $post_type_rest_base = 'organisations';
 
@@ -61,7 +61,7 @@ class SOF_Organisations_CPT_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var str $taxonomy_name The name of the Custom Taxonomy.
+	 * @var string
 	 */
 	public $taxonomy_name = 'organisation-type';
 
@@ -70,7 +70,7 @@ class SOF_Organisations_CPT_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var str $taxonomy_rest_base The REST base of the Custom Taxonomy.
+	 * @var string
 	 */
 	public $taxonomy_rest_base = 'organisation-type';
 
@@ -79,7 +79,7 @@ class SOF_Organisations_CPT_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var str $taxonomy_alt_name The name of the alternative Custom Taxonomy.
+	 * @var string
 	 */
 	public $taxonomy_alt_name = 'partner-type';
 
@@ -88,7 +88,7 @@ class SOF_Organisations_CPT_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var str $taxonomy_alt_rest_base The REST base of the alternative Custom Taxonomy.
+	 * @var string
 	 */
 	public $taxonomy_alt_rest_base = 'partner-type';
 

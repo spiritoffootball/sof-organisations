@@ -35,7 +35,7 @@ class SOF_Organisations_CPT {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $organisations The Organisations CPT object.
+	 * @var SOF_Organisations_CPT_Organisations
 	 */
 	public $organisations;
 
@@ -44,7 +44,7 @@ class SOF_Organisations_CPT {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $partners The Partners CPT object.
+	 * @var SOF_Organisations_CPT_Partners
 	 */
 	public $partners;
 
@@ -53,7 +53,7 @@ class SOF_Organisations_CPT {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $hosts The Ball Hosts CPT object.
+	 * @var SOF_Organisations_CPT_Hosts
 	 */
 	public $hosts;
 

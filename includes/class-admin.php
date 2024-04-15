@@ -34,7 +34,7 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $page_settings The Settings Page object.
+	 * @var SOF_Organisations_Admin_Page_Settings
 	 */
 	public $page_settings;
 
@@ -43,7 +43,7 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var string $plugin_version_key The Plugin version option key.
+	 * @var string
 	 */
 	public $plugin_version_key = 'sof_orgs_version';
 
@@ -52,7 +52,7 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var string $plugin_version The plugin version.
+	 * @var string
 	 */
 	public $plugin_version;
 
@@ -61,7 +61,7 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var string $settings_key The Settings option key.
+	 * @var string
 	 */
 	public $settings_key = 'sof_orgs_settings';
 
@@ -70,7 +70,7 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var array $settings The array of plugin settings.
+	 * @var array
 	 */
 	public $settings = [];
 

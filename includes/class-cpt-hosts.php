@@ -34,7 +34,7 @@ class SOF_Organisations_CPT_Hosts {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $cpt The Custom Post Type object.
+	 * @var SOF_Organisations_CPT
 	 */
 	public $cpt;
 
@@ -43,7 +43,7 @@ class SOF_Organisations_CPT_Hosts {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var string $post_type_name The name of the Custom Post Type.
+	 * @var string
 	 */
 	public $post_type_name = 'host';
 
@@ -52,7 +52,7 @@ class SOF_Organisations_CPT_Hosts {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var string $post_type_rest_base The REST base of the Custom Post Type.
+	 * @var string
 	 */
 	public $post_type_rest_base = 'hosts';
 
@@ -61,7 +61,7 @@ class SOF_Organisations_CPT_Hosts {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var str $taxonomy_name The name of the Custom Taxonomy.
+	 * @var string
 	 */
 	public $taxonomy_name = 'host-type';
 
@@ -70,7 +70,7 @@ class SOF_Organisations_CPT_Hosts {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var str $taxonomy_rest_base The REST base of the Custom Taxonomy.
+	 * @var string
 	 */
 	public $taxonomy_rest_base = 'host-type';
 

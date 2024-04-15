@@ -5,7 +5,7 @@
  * GitHub Plugin URI: https://github.com/spiritoffootball/sof-organisations
  * Description: Provides Organisation Custom Post Types for The Ball website.
  * Author: Christian Wach
- * Version: 1.0
+ * Version: 1.0.1a
  * Author URI: https://haystack.co.uk
  * Text Domain: sof-organisations
  * Domain Path: /languages
@@ -18,7 +18,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Set our version here.
-define( 'SOF_ORGANISATIONS_VERSION', '1.0' );
+define( 'SOF_ORGANISATIONS_VERSION', '1.0.1a' );
 
 // Store reference to this file.
 if ( ! defined( 'SOF_ORGANISATIONS_FILE' ) ) {
@@ -49,7 +49,7 @@ class SOF_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $admin The Admin object.
+	 * @var SOF_Organisations_Admin
 	 */
 	public $admin;
 
@@ -58,7 +58,7 @@ class SOF_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $civicrm The CiviCRM object.
+	 * @var SOF_Organisations_CiviCRM
 	 */
 	public $civicrm;
 
@@ -67,7 +67,7 @@ class SOF_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $cpt The Custom Post Type loader object.
+	 * @var SOF_Organisations_CPT
 	 */
 	public $cpt;
 
@@ -76,7 +76,7 @@ class SOF_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $acf The ACF loader object.
+	 * @var SOF_Organisations_ACF
 	 */
 	public $acf;
 
