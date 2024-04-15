@@ -25,7 +25,7 @@ class SOF_Organisations_Admin_Page_Settings {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $plugin The plugin object.
+	 * @var SOF_Organisations
 	 */
 	public $plugin;
 
@@ -67,7 +67,7 @@ class SOF_Organisations_Admin_Page_Settings {
 
 		// Store reference to plugin.
 		$this->plugin = $parent->plugin;
-		$this->admin = $parent;
+		$this->admin  = $parent;
 
 		// Init when this plugin is loaded.
 		add_action( 'sof_orgs/admin/loaded', [ $this, 'initialise' ] );
@@ -168,16 +168,12 @@ class SOF_Organisations_Admin_Page_Settings {
 		// Add WordPress scripts and help text.
 		add_action( 'admin_head-' . $this->parent_page, [ $this, 'admin_head' ], 50 );
 
-		// Add scripts and styles.
-		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-		//add_action( 'admin_print_styles-' . $this->parent_page, [ $this, 'page_settings_css' ] );
-		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-		//add_action( 'admin_print_scripts-' . $this->parent_page, [ $this, 'page_settings_js' ] );
-
 	}
 
 	/**
 	 * Adds WordPress scripts and help text.
+	 *
+	 * TODO: Add help text.
 	 *
 	 * @since 1.0
 	 */
@@ -187,8 +183,6 @@ class SOF_Organisations_Admin_Page_Settings {
 		wp_enqueue_script( 'common' );
 		wp_enqueue_script( 'jquery-ui-sortable' );
 		wp_enqueue_script( 'dashboard' );
-
-		// TODO: Add help text here.
 
 	}
 
@@ -279,7 +273,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		do_action( 'add_meta_boxes', $screen->id, null );
 
 		// Grab columns.
-		$columns = ( 1 == $screen->get_columns() ? '1' : '2' );
+		$columns = ( 1 === (int) $screen->get_columns() ? '1' : '2' );
 
 		// Include template file.
 		include SOF_ORGANISATIONS_PATH . 'assets/templates/wordpress/pages/page-admin-settings.php';
@@ -352,7 +346,7 @@ class SOF_Organisations_Admin_Page_Settings {
 
 		// Get our Settings Page screens.
 		$settings_screens = $this->page_settings_screens_get();
-		if ( ! in_array( $screen_id, $settings_screens ) ) {
+		if ( ! in_array( $screen_id, $settings_screens, true ) ) {
 			return;
 		}
 

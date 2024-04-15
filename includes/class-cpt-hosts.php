@@ -25,7 +25,7 @@ class SOF_Organisations_CPT_Hosts {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $plugin The plugin object.
+	 * @var SOF_Organisations
 	 */
 	public $plugin;
 
@@ -85,7 +85,7 @@ class SOF_Organisations_CPT_Hosts {
 
 		// Store references.
 		$this->plugin = $parent->plugin;
-		$this->cpt = $parent;
+		$this->cpt    = $parent;
 
 		// Init when this plugin is loaded.
 		add_action( 'sof_orgs/cpt/loaded', [ $this, 'register_hooks' ] );
@@ -162,11 +162,11 @@ class SOF_Organisations_CPT_Hosts {
 			return;
 		}
 
-		// Set up the post type called "Ball Host".
-		register_post_type( $this->post_type_name, [
+		// Build Post Type args.
+		$args = [
 
 			// Labels.
-			'labels' => [
+			'labels'              => [
 				'name'               => __( 'Ball Hosts', 'sof-organisations' ),
 				'singular_name'      => __( 'Ball Host', 'sof-organisations' ),
 				'add_new'            => __( 'Add New', 'sof-organisations' ),
@@ -182,30 +182,30 @@ class SOF_Organisations_CPT_Hosts {
 			],
 
 			// Defaults.
-			'menu_icon' => 'dashicons-groups',
-			'description' => __( 'A ball host organisation post type', 'sof-organisations' ),
-			'public' => true,
-			'publicly_queryable' => true,
+			'menu_icon'           => 'dashicons-groups',
+			'description'         => __( 'A ball host organisation post type', 'sof-organisations' ),
+			'public'              => true,
+			'publicly_queryable'  => true,
 			'exclude_from_search' => false,
-			'show_ui' => true,
-			'show_in_nav_menus' => true,
-			'show_in_menu' => true,
-			'show_in_admin_bar' => true,
-			'has_archive' => false,
-			'query_var' => true,
-			'capability_type' => 'post',
-			'hierarchical' => false,
-			'menu_position' => 20,
-			'map_meta_cap' => true,
+			'show_ui'             => true,
+			'show_in_nav_menus'   => true,
+			'show_in_menu'        => true,
+			'show_in_admin_bar'   => true,
+			'has_archive'         => false,
+			'query_var'           => true,
+			'capability_type'     => 'post',
+			'hierarchical'        => false,
+			'menu_position'       => 20,
+			'map_meta_cap'        => true,
 
 			// Rewrite.
-			'rewrite' => [
-				'slug' => 'hosts',
+			'rewrite'             => [
+				'slug'       => 'hosts',
 				'with_front' => false,
 			],
 
 			// Supports.
-			'supports' => [
+			'supports'            => [
 				'title',
 				'editor',
 				'excerpt',
@@ -213,10 +213,13 @@ class SOF_Organisations_CPT_Hosts {
 			],
 
 			// REST setup.
-			'show_in_rest' => true,
-			'rest_base' => $this->post_type_rest_base,
+			'show_in_rest'        => true,
+			'rest_base'           => $this->post_type_rest_base,
 
-		] );
+		];
+
+		// Set up the post type called "Ball Host".
+		register_post_type( $this->post_type_name, $args );
 
 		// Flag done.
 		$registered = true;
@@ -240,23 +243,23 @@ class SOF_Organisations_CPT_Hosts {
 		$messages[ $this->post_type_name ] = [
 
 			// Unused - messages start at index 1.
-			0 => '',
+			0  => '',
 
 			// Item updated.
-			1 => sprintf(
+			1  => sprintf(
 				/* translators: %s: The permalink. */
 				__( 'Ball Host updated. <a href="%s">View Ball Host</a>', 'sof-organisations' ),
 				esc_url( get_permalink( $post_ID ) )
 			),
 
 			// Custom fields.
-			2 => __( 'Custom field updated.', 'sof-organisations' ),
-			3 => __( 'Custom field deleted.', 'sof-organisations' ),
-			4 => __( 'Ball Host updated.', 'sof-organisations' ),
+			2  => __( 'Custom field updated.', 'sof-organisations' ),
+			3  => __( 'Custom field deleted.', 'sof-organisations' ),
+			4  => __( 'Ball Host updated.', 'sof-organisations' ),
 
 			// Item restored to a revision.
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			5 => isset( $_GET['revision'] ) ?
+			5  => isset( $_GET['revision'] ) ?
 
 				// Revision text.
 				sprintf(
@@ -270,24 +273,24 @@ class SOF_Organisations_CPT_Hosts {
 				false,
 
 			// Item published.
-			6 => sprintf(
+			6  => sprintf(
 				/* translators: %s: The permalink. */
 				__( 'Ball Host published. <a href="%s">View Ball Host</a>', 'sof-organisations' ),
 				esc_url( get_permalink( $post_ID ) )
 			),
 
 			// Item saved.
-			7 => __( 'Ball Host saved.', 'sof-organisations' ),
+			7  => __( 'Ball Host saved.', 'sof-organisations' ),
 
 			// Item submitted.
-			8 => sprintf(
+			8  => sprintf(
 				/* translators: %s: The permalink. */
 				__( 'Ball Host submitted. <a target="_blank" href="%s">Preview Ball Host</a>', 'sof-organisations' ),
 				esc_url( add_query_arg( 'preview', 'true', get_permalink( $post_ID ) ) )
 			),
 
 			// Item scheduled.
-			9 => sprintf(
+			9  => sprintf(
 				/* translators: 1: The date, 2: The permalink. */
 				__( 'Ball Host scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview Ball Host</a>', 'sof-organisations' ),
 				/* translators: Publish box date format - see https://php.net/date */
@@ -320,7 +323,7 @@ class SOF_Organisations_CPT_Hosts {
 	public function post_type_title( $title ) {
 
 		// Bail if not our post type.
-		if ( $this->post_type_name !== get_post_type() ) {
+		if ( get_post_type() !== $this->post_type_name ) {
 			return $title;
 		}
 
@@ -351,10 +354,10 @@ class SOF_Organisations_CPT_Hosts {
 		$args = [
 
 			// Same as "category".
-			'hierarchical' => true,
+			'hierarchical'      => true,
 
 			// Labels.
-			'labels' => [
+			'labels'            => [
 				'name'              => _x( 'Ball Host Types', 'taxonomy general name', 'sof-organisations' ),
 				'singular_name'     => _x( 'Ball Host Type', 'taxonomy singular name', 'sof-organisations' ),
 				'search_items'      => __( 'Search Ball Host Types', 'sof-organisations' ),
@@ -370,17 +373,17 @@ class SOF_Organisations_CPT_Hosts {
 			],
 
 			// Rewrite rules.
-			'rewrite' => [
+			'rewrite'           => [
 				'slug' => 'host-types',
 			],
 
 			// Show column in wp-admin.
 			'show_admin_column' => true,
-			'show_ui' => true,
+			'show_ui'           => true,
 
 			// REST setup.
-			'show_in_rest' => true,
-			'rest_base' => $this->taxonomy_rest_base,
+			'show_in_rest'      => true,
+			'rest_base'         => $this->taxonomy_rest_base,
 
 		];
 
@@ -400,7 +403,7 @@ class SOF_Organisations_CPT_Hosts {
 	 * @since 1.0
 	 *
 	 * @param array $args The existing arguments.
-	 * @param int $post_id The WordPress post ID.
+	 * @param int   $post_id The WordPress post ID.
 	 */
 	public function taxonomy_fix_metabox( $args, $post_id ) {
 
@@ -428,27 +431,30 @@ class SOF_Organisations_CPT_Hosts {
 		global $typenow;
 
 		// Bail if not our post type.
-		if ( $typenow != $this->post_type_name ) {
+		if ( $typenow !== $this->post_type_name ) {
 			return;
 		}
 
 		// Get tax object.
 		$taxonomy = get_taxonomy( $this->taxonomy_name );
 
-		// Show a dropdown.
-		wp_dropdown_categories( [
+		// Build args.
+		$args = [
 			/* translators: %s: The plural name of the taxonomy terms. */
 			'show_option_all' => sprintf( __( 'Show All %s', 'sof-organisations' ), $taxonomy->label ),
-			'taxonomy' => $this->taxonomy_name,
-			'name' => $this->taxonomy_name,
-			'orderby' => 'name',
+			'taxonomy'        => $this->taxonomy_name,
+			'name'            => $this->taxonomy_name,
+			'orderby'         => 'name',
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
-			'selected' => isset( $_GET[ $this->taxonomy_name ] ) ? wp_unslash( $_GET[ $this->taxonomy_name ] ) : '',
-			'show_count' => true,
-			'hide_empty' => true,
-			'value_field' => 'slug',
-			'hierarchical' => 1,
-		] );
+			'selected'        => isset( $_GET[ $this->taxonomy_name ] ) ? wp_unslash( $_GET[ $this->taxonomy_name ] ) : '',
+			'show_count'      => true,
+			'hide_empty'      => true,
+			'value_field'     => 'slug',
+			'hierarchical'    => 1,
+		];
+
+		// Show a dropdown.
+		wp_dropdown_categories( $args );
 
 	}
 

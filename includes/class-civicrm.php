@@ -25,7 +25,7 @@ class SOF_Organisations_CiviCRM {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $plugin The plugin object.
+	 * @var SOF_Organisations
 	 */
 	public $plugin;
 
@@ -152,26 +152,26 @@ class SOF_Organisations_CiviCRM {
 
 		// Construct params.
 		$params = [
-			'version' => 3,
-			'sequential' => 1,
-			'is_active' => 1,
-			'options' => [
+			'version'             => 3,
+			'sequential'          => 1,
+			'is_active'           => 1,
+			'options'             => [
 				'limit' => 0,
 			],
 			'api.CustomField.get' => [
 				'is_active' => 1,
-				'options' => [
+				'options'   => [
 					'limit' => 0,
 				],
 			],
-			'extends' => 'Event',
+			'extends'             => 'Event',
 		];
 
 		// Call the API.
 		$result = civicrm_api( 'CustomGroup', 'get', $params );
 
 		// Bail if there's an error.
-		if ( ! empty( $result['is_error'] ) && (int) $result['is_error'] === 1 ) {
+		if ( ! empty( $result['is_error'] ) && 1 === (int) $result['is_error'] ) {
 			return $custom_groups;
 		}
 

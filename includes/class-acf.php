@@ -26,7 +26,7 @@ class SOF_Organisations_ACF {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $plugin The plugin object.
+	 * @var SOF_Organisations
 	 */
 	public $plugin;
 
@@ -35,7 +35,7 @@ class SOF_Organisations_ACF {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $organisation The ACF Organisations object.
+	 * @var SOF_Organisations_ACF_Organisations
 	 */
 	public $organisation;
 
@@ -44,7 +44,7 @@ class SOF_Organisations_ACF {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $events The ACF Events object.
+	 * @var SOF_Organisations_ACF_Events
 	 */
 	public $events;
 
@@ -99,7 +99,7 @@ class SOF_Organisations_ACF {
 	public function include_files() {
 
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-		//include SOF_ORGANISATIONS_PATH . 'includes/class-acf-organisations.php';
+		// include SOF_ORGANISATIONS_PATH . 'includes/class-acf-organisations.php';
 		include SOF_ORGANISATIONS_PATH . 'includes/class-acf-events.php';
 
 	}
@@ -112,7 +112,7 @@ class SOF_Organisations_ACF {
 	public function setup_objects() {
 
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-		//$this->organisations = new SOF_Organisations_ACF_Organisations( $this );
+		// $this->organisations = new SOF_Organisations_ACF_Organisations( $this );
 		$this->events = new SOF_Organisations_ACF_Events( $this );
 
 	}

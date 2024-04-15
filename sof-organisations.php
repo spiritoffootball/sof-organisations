@@ -17,8 +17,6 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-
-
 // Set our version here.
 define( 'SOF_ORGANISATIONS_VERSION', '1.0a' );
 
@@ -31,12 +29,11 @@ if ( ! defined( 'SOF_ORGANISATIONS_FILE' ) ) {
 if ( ! defined( 'SOF_ORGANISATIONS_URL' ) ) {
 	define( 'SOF_ORGANISATIONS_URL', plugin_dir_url( SOF_ORGANISATIONS_FILE ) );
 }
+
 // Store PATH to this plugin's directory.
 if ( ! defined( 'SOF_ORGANISATIONS_PATH' ) ) {
 	define( 'SOF_ORGANISATIONS_PATH', plugin_dir_path( SOF_ORGANISATIONS_FILE ) );
 }
-
-
 
 /**
  * Main Plugin Class.
@@ -104,7 +101,7 @@ class SOF_Organisations {
 
 		// Only do this once.
 		static $done;
-		if ( isset( $done ) && $done === true ) {
+		if ( isset( $done ) && true === $done ) {
 			return;
 		}
 
@@ -169,10 +166,10 @@ class SOF_Organisations {
 	public function setup_objects() {
 
 		// Init objects.
-		$this->admin = new SOF_Organisations_Admin( $this );
+		$this->admin   = new SOF_Organisations_Admin( $this );
 		$this->civicrm = new SOF_Organisations_CiviCRM( $this );
-		$this->cpt = new SOF_Organisations_CPT( $this );
-		$this->acf = new SOF_Organisations_ACF( $this );
+		$this->cpt     = new SOF_Organisations_CPT( $this );
+		$this->acf     = new SOF_Organisations_ACF( $this );
 
 	}
 
@@ -215,8 +212,6 @@ class SOF_Organisations {
 	}
 
 }
-
-
 
 /**
  * Utility to get a reference to this plugin.

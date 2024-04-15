@@ -8,7 +8,11 @@
  * @since 1.0
  */
 
-?><!-- assets/templates/wordpress/metaboxes/metabox-admin-settings-general.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- assets/templates/wordpress/metaboxes/metabox-admin-settings-general.php -->
 <p><?php esc_html_e( 'The following options configure Ball Host defaults.', 'sof-organisations' ); ?></p>
 
 <?php

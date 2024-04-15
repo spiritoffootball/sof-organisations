@@ -25,16 +25,25 @@ class SOF_Organisations_ACF_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $plugin The plugin object.
+	 * @var SOF_Organisations
 	 */
 	public $plugin;
+
+	/**
+	 * ACF object.
+	 *
+	 * @since 1.0
+	 * @access public
+	 * @var SOF_Organisations_ACF
+	 */
+	public $acf;
 
 	/**
 	 * ACF Field Group prefix.
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $group_prefix The prefix of the ACF Field Group.
+	 * @var string
 	 */
 	public $group_prefix = 'group_sof_org_';
 
@@ -43,7 +52,7 @@ class SOF_Organisations_ACF_Organisations {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $group_prefix The prefix of the ACF Field.
+	 * @var string
 	 */
 	public $field_prefix = 'field_sof_org_';
 
@@ -58,7 +67,7 @@ class SOF_Organisations_ACF_Organisations {
 
 		// Store references.
 		$this->plugin = $parent->plugin;
-		$this->acf = $parent;
+		$this->acf    = $parent;
 
 		// Init when this plugin is loaded.
 		add_action( 'sof_orgs/acf/loaded', [ $this, 'register_hooks' ] );
@@ -91,20 +100,20 @@ class SOF_Organisations_ACF_Organisations {
 		$field_group_location = [
 			[
 				[
-					'param' => 'post_type',
+					'param'    => 'post_type',
 					'operator' => '==',
-					'value' => $this->plugin->cpt->organisations->post_type_name,
+					'value'    => $this->plugin->cpt->organisations->post_type_name,
 				],
 			],
 		];
 
 		// Hide UI elements on our CPT edit page.
 		$field_group_hide_elements = [
-			//'the_content',
-			//'excerpt',
+			// 'the_content',
+			// 'excerpt',
 			'discussion',
 			'comments',
-			//'revisions',
+			// 'revisions',
 			'author',
 			'format',
 			'page_attributes',
@@ -115,10 +124,10 @@ class SOF_Organisations_ACF_Organisations {
 
 		// Define Field Group.
 		$field_group = [
-			'key' => $this->group_prefix . 'data',
-			'title' => __( 'Organisation Information', 'sof-organisations' ),
-			'fields' => [],
-			'location' => $field_group_location,
+			'key'            => $this->group_prefix . 'data',
+			'title'          => __( 'Organisation Information', 'sof-organisations' ),
+			'fields'         => [],
+			'location'       => $field_group_location,
 			'hide_on_screen' => $field_group_hide_elements,
 		];
 
@@ -148,14 +157,14 @@ class SOF_Organisations_ACF_Organisations {
 
 		// Define Field.
 		$field = [
-			'key' => $this->field_prefix . 'link',
-			'label' => __( 'Link to website', 'sof-organisations' ),
-			'name' => 'link',
-			'type' => 'url',
-			'instructions' => '',
+			'key'           => $this->field_prefix . 'link',
+			'label'         => __( 'Link to website', 'sof-organisations' ),
+			'name'          => 'link',
+			'type'          => 'url',
+			'instructions'  => '',
 			'default_value' => '',
-			'placeholder' => '',
-			'parent' => $this->group_prefix . 'data',
+			'placeholder'   => '',
+			'parent'        => $this->group_prefix . 'data',
 		];
 
 		// Now add Field.

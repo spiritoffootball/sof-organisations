@@ -25,7 +25,7 @@ class SOF_Organisations_ACF_Events {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $plugin The plugin object.
+	 * @var SOF_Organisations
 	 */
 	public $plugin;
 
@@ -34,7 +34,7 @@ class SOF_Organisations_ACF_Events {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $acf The ACF object.
+	 * @var SOF_Organisations_ACF
 	 */
 	public $acf;
 
@@ -43,7 +43,7 @@ class SOF_Organisations_ACF_Events {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $group_prefix The prefix of the ACF Field Group.
+	 * @var string
 	 */
 	public $group_prefix = 'group_sof_event_';
 
@@ -52,7 +52,7 @@ class SOF_Organisations_ACF_Events {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $group_prefix The prefix of the ACF Field.
+	 * @var string
 	 */
 	public $field_prefix = 'field_sof_event_';
 
@@ -67,7 +67,7 @@ class SOF_Organisations_ACF_Events {
 
 		// Store references.
 		$this->plugin = $parent->plugin;
-		$this->acf = $parent;
+		$this->acf    = $parent;
 
 		// Init when this plugin is loaded.
 		add_action( 'sof_orgs/acf/loaded', [ $this, 'register_hooks' ] );
@@ -100,37 +100,37 @@ class SOF_Organisations_ACF_Events {
 		$field_group_location = [
 			[
 				[
-					'param' => 'post_type',
+					'param'    => 'post_type',
 					'operator' => '==',
-					'value' => 'event',
+					'value'    => 'event',
 				],
 			],
 		];
 
 		// Hide UI elements on our CPT edit page.
 		$field_group_hide_elements = [
-			//'the_content',
-			//'excerpt',
-			//'discussion',
-			//'comments',
-			//'revisions',
+			// 'the_content',
+			// 'excerpt',
+			// 'discussion',
+			// 'comments',
+			// 'revisions',
 			'author',
-			//'format',
-			//'page_attributes',
-			//'featured_image',
-			//'tags',
-			//'send-trackbacks',
+			// 'format',
+			// 'page_attributes',
+			// 'featured_image',
+			// 'tags',
+			// 'send-trackbacks',
 		];
 
 		// Define Field Group.
 		$field_group = [
-			'key' => $this->group_prefix . 'data',
-			'title' => __( 'Pledgeball Information', 'sof-organisations' ),
-			'fields' => [],
-			'location' => $field_group_location,
+			'key'            => $this->group_prefix . 'data',
+			'title'          => __( 'Pledgeball Information', 'sof-organisations' ),
+			'fields'         => [],
+			'location'       => $field_group_location,
 			'hide_on_screen' => $field_group_hide_elements,
-			'position' => 'normal',
-			'menu_order' => 100,
+			'position'       => 'normal',
+			'menu_order'     => 100,
 		];
 
 		// Now add the Field Group.
@@ -169,17 +169,17 @@ class SOF_Organisations_ACF_Events {
 
 		// Define a Contact Reference Field.
 		$field = [
-			'key' => $this->field_prefix . 'organiser',
-			'label' => __( 'Pledgeball Event Host', 'sof-organisations' ),
-			'name' => 'ball_host',
-			'type' => 'civicrm_contact',
-			'instructions' => __( 'This is the Organisation that Pledgeball requires the Event to be associated with.', 'sof-organisations' ),
-			'parent' => $this->group_prefix . 'data',
-			'conditional_logic' => 0,
-			'wrapper' => [
+			'key'                             => $this->field_prefix . 'organiser',
+			'label'                           => __( 'Pledgeball Event Host', 'sof-organisations' ),
+			'name'                            => 'ball_host',
+			'type'                            => 'civicrm_contact',
+			'instructions'                    => __( 'This is the Organisation that Pledgeball requires the Event to be associated with.', 'sof-organisations' ),
+			'parent'                          => $this->group_prefix . 'data',
+			'conditional_logic'               => 0,
+			'wrapper'                         => [
 				'width' => '',
 				'class' => '',
-				'id' => '',
+				'id'    => '',
 			],
 			'field_cacf_civicrm_custom_field' => 'caicustom_' . $field_id,
 		];
@@ -198,26 +198,26 @@ class SOF_Organisations_ACF_Events {
 
 		// Define a Repeater field.
 		$field = [
-			'key' => $this->field_prefix . 'pledge_form_enabled',
-			'label' => __( 'Enable Pledge Form', 'sof-organisations' ),
-			'name' => 'pledge_form_enabled',
-			'type' => 'true_false',
-			'parent' => $this->group_prefix . 'data',
-			'instructions' => __( 'Is the Pledge Form enabled for this Event?', 'civicrm-wp-profile-sync' ),
-			'required' => 0,
+			'key'               => $this->field_prefix . 'pledge_form_enabled',
+			'label'             => __( 'Enable Pledge Form', 'sof-organisations' ),
+			'name'              => 'pledge_form_enabled',
+			'type'              => 'true_false',
+			'parent'            => $this->group_prefix . 'data',
+			'instructions'      => __( 'Is the Pledge Form enabled for this Event?', 'sof-organisations' ),
+			'required'          => 0,
 			'conditional_logic' => 0,
-			'wrapper' => [
-				'width' => '',
-				'class' => '',
-				'id' => '',
+			'wrapper'           => [
+				'width'                      => '',
+				'class'                      => '',
+				'id'                         => '',
 				'data-instruction-placement' => 'field',
 			],
-			'acfe_permissions' => '',
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
+			'acfe_permissions'  => '',
+			'message'           => '',
+			'default_value'     => 0,
+			'ui'                => 1,
+			'ui_on_text'        => '',
+			'ui_off_text'       => '',
 		];
 
 		// Now add Field.
@@ -234,26 +234,26 @@ class SOF_Organisations_ACF_Events {
 
 		// Define a Repeater field.
 		$field = [
-			'key' => $this->field_prefix . 'pledge_form_use_country',
-			'label' => __( 'Use Country-specific Pledge List', 'sof-organisations' ),
-			'name' => 'pledge_form_use_country',
-			'type' => 'true_false',
-			'parent' => $this->group_prefix . 'data',
-			'instructions' => __( 'If yes, the Pledge List for the Venue Country will be used.', 'civicrm-wp-profile-sync' ),
-			'required' => 0,
+			'key'               => $this->field_prefix . 'pledge_form_use_country',
+			'label'             => __( 'Use Country-specific Pledge List', 'sof-organisations' ),
+			'name'              => 'pledge_form_use_country',
+			'type'              => 'true_false',
+			'parent'            => $this->group_prefix . 'data',
+			'instructions'      => __( 'If yes, the Pledge List for the Venue Country will be used.', 'sof-organisations' ),
+			'required'          => 0,
 			'conditional_logic' => 0,
-			'wrapper' => [
-				'width' => '',
-				'class' => '',
-				'id' => '',
+			'wrapper'           => [
+				'width'                      => '',
+				'class'                      => '',
+				'id'                         => '',
 				'data-instruction-placement' => 'field',
 			],
-			'acfe_permissions' => '',
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 1,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
+			'acfe_permissions'  => '',
+			'message'           => '',
+			'default_value'     => 0,
+			'ui'                => 1,
+			'ui_on_text'        => '',
+			'ui_off_text'       => '',
 		];
 
 		// Now add Field.

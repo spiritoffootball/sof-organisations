@@ -25,7 +25,7 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $plugin The plugin object.
+	 * @var SOF_Organisations
 	 */
 	public $plugin;
 
@@ -137,7 +137,7 @@ class SOF_Organisations_Admin {
 		$this->settings = $this->option_get( $this->settings_key, $this->settings );
 
 		// Store version if there has been a change.
-		if ( $this->plugin_version !== SOF_ORGANISATIONS_VERSION ) {
+		if ( SOF_ORGANISATIONS_VERSION !== $this->plugin_version ) {
 			$this->version_set();
 		}
 
@@ -220,7 +220,7 @@ class SOF_Organisations_Admin {
 	public function upgrade_tasks() {
 
 		// Bail if this is a new install.
-		if ( $this->plugin_version === false ) {
+		if ( false === $this->plugin_version ) {
 			return;
 		}
 
@@ -260,7 +260,7 @@ class SOF_Organisations_Admin {
 
 		// Get our Settings Page screens.
 		$settings_screens = $this->page_settings->page_settings_screens_get();
-		if ( in_array( $screen->id, $settings_screens ) ) {
+		if ( in_array( $screen->id, $settings_screens, true ) ) {
 			return;
 		}
 
@@ -275,6 +275,7 @@ class SOF_Organisations_Admin {
 		);
 
 		// Show it.
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo '<div class="notice notice-error is-dismissible"><p>' . $message . '</p></div>';
 
 	}
@@ -348,7 +349,7 @@ class SOF_Organisations_Admin {
 	 * @since 1.0
 	 *
 	 * @param string $name The name of the setting.
-	 * @param mixed $data The value of the setting.
+	 * @param mixed  $data The value of the setting.
 	 */
 	public function setting_set( $name, $data ) {
 
@@ -386,7 +387,7 @@ class SOF_Organisations_Admin {
 	public function option_exists( $key ) {
 
 		// Test by getting option with unlikely default.
-		if ( $this->option_get( $key, 'fenfgehgefdfdjgrkj' ) == 'fenfgehgefdfdjgrkj' ) {
+		if ( $this->option_get( $key, 'fenfgehgefdfdjgrkj' ) === 'fenfgehgefdfdjgrkj' ) {
 			return false;
 		} else {
 			return true;
@@ -400,7 +401,7 @@ class SOF_Organisations_Admin {
 	 * @since 1.0
 	 *
 	 * @param string $key The option name.
-	 * @param mixed $default The default option value if none exists.
+	 * @param mixed  $default The default option value if none exists.
 	 * @return mixed $value The value of the requested option.
 	 */
 	public function option_get( $key, $default = null ) {
@@ -419,7 +420,7 @@ class SOF_Organisations_Admin {
 	 * @since 1.0
 	 *
 	 * @param string $key The option name.
-	 * @param mixed $value The value to save.
+	 * @param mixed  $value The value to save.
 	 */
 	public function option_set( $key, $value ) {
 

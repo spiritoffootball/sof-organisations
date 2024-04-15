@@ -26,7 +26,7 @@ class SOF_Organisations_CPT {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $plugin The plugin object.
+	 * @var SOF_Organisations
 	 */
 	public $plugin;
 
@@ -116,8 +116,8 @@ class SOF_Organisations_CPT {
 	public function setup_objects() {
 
 		$this->organisations = new SOF_Organisations_CPT_Organisations( $this );
-		$this->partners = new SOF_Organisations_CPT_Partners( $this );
-		$this->hosts = new SOF_Organisations_CPT_Hosts( $this );
+		$this->partners      = new SOF_Organisations_CPT_Partners( $this );
+		$this->hosts         = new SOF_Organisations_CPT_Hosts( $this );
 
 	}
 

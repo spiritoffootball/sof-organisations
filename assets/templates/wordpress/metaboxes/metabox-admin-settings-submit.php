@@ -8,7 +8,11 @@
  * @since 1.0
  */
 
-?><!-- assets/templates/wordpress/metaboxes/metabox-admin-settings-submit.php -->
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+<!-- assets/templates/wordpress/metaboxes/metabox-admin-settings-submit.php -->
 <div class="submitbox">
 	<div id="minor-publishing">
 		<div id="misc-publishing-actions">
