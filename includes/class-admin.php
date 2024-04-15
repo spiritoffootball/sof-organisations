@@ -5,7 +5,6 @@
  * Handles admin functionality.
  *
  * @package SOF_Organisations
- * @since 1.0
  */
 
 // Exit if accessed directly.
@@ -16,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * A class that encapsulates admin functionality.
  *
- * @package SOF_Organisations
+ * @since 1.0
  */
 class SOF_Organisations_Admin {
 

@@ -5,7 +5,6 @@
  * Handles providing a "Ball Hosts" Custom Post Type.
  *
  * @package SOF_Organisations
- * @since 1.0
  */
 
 // Exit if accessed directly.

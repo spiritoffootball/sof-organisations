@@ -5,7 +5,6 @@
  * Handles providing an "Organisations" Custom Post Type.
  *
  * @package SOF_Organisations
- * @since 1.0
  */
 
 // Exit if accessed directly.

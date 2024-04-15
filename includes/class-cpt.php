@@ -6,7 +6,6 @@
  * individual CPTs.
  *
  * @package SOF_Organisations
- * @since 1.0
  */
 
 // Exit if accessed directly.
@@ -17,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * A class that encapsulates CPT functionality.
  *
- * @package SOF_Organisations
+ * @since 1.0
  */
 class SOF_Organisations_CPT {
 

@@ -1,17 +1,18 @@
 <?php
 /**
- * Plugin Name: SOF Organisations
- * Plugin URI: https://github.com/spiritoffootball/sof-organisations
+ * SOF Organisations
+ *
+ * Plugin Name:       SOF Organisations
+ * Description:       Provides Organisation Custom Post Types for The Ball website.
+ * Plugin URI:        https://github.com/spiritoffootball/sof-organisations
  * GitHub Plugin URI: https://github.com/spiritoffootball/sof-organisations
- * Description: Provides Organisation Custom Post Types for The Ball website.
- * Author: Christian Wach
- * Version: 1.0.1a
- * Author URI: https://haystack.co.uk
- * Text Domain: sof-organisations
- * Domain Path: /languages
+ * Version:           1.0.1a
+ * Author:            Christian Wach
+ * Author URI:        https://haystack.co.uk
+ * Text Domain:       sof-organisations
+ * Domain Path:       /languages
  *
  * @package SOF_Organisations
- * @since 1.0
  */
 
 // Exit if accessed directly.

@@ -5,7 +5,6 @@
  * Handles providing a "Partners" Custom Post Type.
  *
  * @package SOF_Organisations
- * @since 1.0
  */
 
 // Exit if accessed directly.
