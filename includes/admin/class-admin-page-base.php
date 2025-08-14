@@ -230,6 +230,15 @@ abstract class SOF_Organisations_Admin_Settings_Base {
 	protected $key_host_enabled = 'sof_host_enabled';
 
 	/**
+	 * The "name" and "id" of the "Pledgeball Enabled" select element.
+	 *
+	 * @since 1.0.1
+	 * @access protected
+	 * @var string
+	 */
+	protected $key_pledgeball_enabled = 'sof_pledgeball_enabled';
+
+	/**
 	 * Class constructor.
 	 *
 	 * @since 1.0.1
@@ -760,6 +769,7 @@ abstract class SOF_Organisations_Admin_Settings_Base {
 		$organisation_enabled = $this->admin->setting_get( 'organisation_enabled', $defaults['organisation_enabled'] );
 		$partner_enabled      = $this->admin->setting_get( 'partner_enabled', $defaults['partner_enabled'] );
 		$host_enabled         = $this->admin->setting_get( 'host_enabled', $defaults['host_enabled'] );
+		$pledgeball_enabled   = $this->admin->setting_get( 'pledgeball_enabled', $defaults['pledgeball_enabled'] );
 
 		// Include template file.
 		include $this->path_plugin . $this->path_template . $this->path_metabox . 'metabox-settings-general.php';
@@ -873,11 +883,13 @@ abstract class SOF_Organisations_Admin_Settings_Base {
 		$organisation_enabled = isset( $_POST[ $this->key_organisation_enabled ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->key_organisation_enabled ] ) ) : 'n';
 		$partner_enabled      = isset( $_POST[ $this->key_partner_enabled ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->key_partner_enabled ] ) ) : 'n';
 		$host_enabled         = isset( $_POST[ $this->key_host_enabled ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->key_host_enabled ] ) ) : 'n';
+		$pledgeball_enabled   = isset( $_POST[ $this->key_host_enabled ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->key_pledgeball_enabled ] ) ) : 'n';
 
 		// Set individual settings.
 		$this->admin->setting_set( 'organisation_enabled', $organisation_enabled );
 		$this->admin->setting_set( 'partner_enabled', $partner_enabled );
 		$this->admin->setting_set( 'host_enabled', $host_enabled );
+		$this->admin->setting_set( 'pledgeball_enabled', $pledgeball_enabled );
 
 		// Save settings.
 		$this->admin->settings_save();

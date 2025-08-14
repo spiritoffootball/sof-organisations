@@ -106,9 +106,19 @@ class SOF_Organisations_ACF {
 	 */
 	private function include_files() {
 
+		// Get defaults.
+		$defaults = $this->plugin->admin->settings_get_defaults();
+
+		// Retrieve "Pledgeball enabled" setting.
+		$pledgeball_enabled = $this->plugin->admin->setting_get( 'pledgeball_enabled', $defaults['pledgeball_enabled'] );
+
+		// Optionally include class files.
+		if ( 'y' === $pledgeball_enabled ) {
+			require SOF_ORGANISATIONS_PATH . 'includes/acf/class-acf-events.php';
+		}
+
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// require SOF_ORGANISATIONS_PATH . 'includes/acf/class-acf-organisations.php';
-		require SOF_ORGANISATIONS_PATH . 'includes/acf/class-acf-events.php';
 
 	}
 
@@ -119,9 +129,19 @@ class SOF_Organisations_ACF {
 	 */
 	private function setup_objects() {
 
+		// Get defaults.
+		$defaults = $this->plugin->admin->settings_get_defaults();
+
+		// Retrieve "Pledgeball enabled" setting.
+		$pledgeball_enabled = $this->plugin->admin->setting_get( 'pledgeball_enabled', $defaults['pledgeball_enabled'] );
+
+		// Optionally instantiate objects.
+		if ( 'y' === $pledgeball_enabled ) {
+			$this->events = new SOF_Organisations_ACF_Events( $this );
+		}
+
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// $this->organisations = new SOF_Organisations_ACF_Organisations( $this );
-		$this->events = new SOF_Organisations_ACF_Events( $this );
 
 	}
 

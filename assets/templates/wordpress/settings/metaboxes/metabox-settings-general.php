@@ -54,4 +54,17 @@ defined( 'ABSPATH' ) || exit;
 		</td>
 	</tr>
 
+	<tr>
+		<th scope="row">
+			<label for="<?php echo esc_attr( $this->key_pledgeball_enabled ); ?>"><?php esc_html_e( 'Pledgeball', 'sof-organisations' ); ?></label>
+		</th>
+		<td>
+			<select id="<?php echo esc_attr( $this->key_pledgeball_enabled ); ?>" name="<?php echo esc_attr( $this->key_pledgeball_enabled ); ?>">
+				<option value="y" <?php selected( $pledgeball_enabled, 'y' ); ?>><?php esc_html_e( 'Yes', 'sof-organisations' ); ?></option>
+				<option value="n" <?php selected( $pledgeball_enabled, 'n' ); ?>><?php esc_html_e( 'No', 'sof-organisations' ); ?></option>
+			</select>
+			<p class="description"><?php esc_html_e( 'Choose whether to enable the Pledgeball settings on Events.', 'sof-organisations' ); ?></p>
+		</td>
+	</tr>
+
 </table>

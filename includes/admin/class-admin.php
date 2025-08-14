@@ -285,6 +285,9 @@ class SOF_Organisations_Admin {
 		// Default Ball Host CiviCRM Custom Field ID.
 		$settings['event_ball_host_custom_field_id'] = '';
 
+		// Default Pledgeball Event settings enabled.
+		$settings['pledgeball_enabled'] = 'y';
+
 		/**
 		 * Filter default settings.
 		 *
