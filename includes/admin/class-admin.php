@@ -158,7 +158,7 @@ class SOF_Organisations_Admin {
 	 */
 	private function include_files() {
 
-		require SOF_ORGANISATIONS_PATH . 'includes/class-admin-page-settings.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-page-settings.php';
 
 	}
 

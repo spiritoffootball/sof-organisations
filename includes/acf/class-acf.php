@@ -107,8 +107,8 @@ class SOF_Organisations_ACF {
 	private function include_files() {
 
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-		// require SOF_ORGANISATIONS_PATH . 'includes/class-acf-organisations.php';
-		require SOF_ORGANISATIONS_PATH . 'includes/class-acf-events.php';
+		// require SOF_ORGANISATIONS_PATH . 'includes/acf/class-acf-organisations.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/acf/class-acf-events.php';
 
 	}
 

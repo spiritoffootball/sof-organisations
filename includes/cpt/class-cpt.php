@@ -110,9 +110,9 @@ class SOF_Organisations_CPT {
 	 */
 	private function include_files() {
 
-		require SOF_ORGANISATIONS_PATH . 'includes/class-cpt-organisations.php';
-		require SOF_ORGANISATIONS_PATH . 'includes/class-cpt-partners.php';
-		require SOF_ORGANISATIONS_PATH . 'includes/class-cpt-hosts.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-organisations.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-partners.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-hosts.php';
 
 	}
 

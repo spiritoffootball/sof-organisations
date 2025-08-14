@@ -131,10 +131,10 @@ class SOF_Organisations {
 	private function include_files() {
 
 		// Include class files.
-		require SOF_ORGANISATIONS_PATH . 'includes/class-admin.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin.php';
 		require SOF_ORGANISATIONS_PATH . 'includes/class-civicrm.php';
-		require SOF_ORGANISATIONS_PATH . 'includes/class-cpt.php';
-		require SOF_ORGANISATIONS_PATH . 'includes/class-acf.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/acf/class-acf.php';
 
 	}
 
