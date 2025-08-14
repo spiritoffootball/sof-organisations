@@ -1,8 +1,8 @@
 <?php
 /**
- * Settings Page "General Settings" template.
+ * Ball Host Settings Page "General Settings" template.
  *
- * Handles markup for the Settings Page "General Settings" meta box.
+ * Handles markup for the Ball Host Settings Page "General Settings" meta box.
  *
  * @package SOF_Organisations
  * @since 1.0
@@ -12,7 +12,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- assets/templates/wordpress/metaboxes/metabox-admin-settings-general.php -->
+<!-- assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php -->
 <p><?php esc_html_e( 'The following options configure Ball Host defaults.', 'sof-organisations' ); ?></p>
 
 <?php

@@ -1,8 +1,8 @@
 <?php
 /**
- * Settings Page template.
+ * Ball Host Settings Page template.
  *
- * Handles markup for the Settings Page.
+ * Handles markup for the Ball Host Settings Page.
  *
  * @package SOF_Organisations
  * @since 1.0
@@ -12,7 +12,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- assets/templates/wordpress/pages/page-admin-settings.php -->
+<!-- assets/templates/wordpress/pages/page-ball-host-settings.php -->
 <div class="wrap">
 
 	<h1><?php esc_html_e( 'Ball Host Settings', 'sof-organisations' ); ?></h1>
@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 			 *
 			 * @since 1.0
 			 *
-			 * @param array $urls The array of subpage URLs.
+			 * @param array  $urls The array of subpage URLs.
 			 * @param string The key of the active tab in the subpage URLs array.
 			 */
 			do_action( 'sof_orgs/admin/settings/nav_tabs', $urls, 'settings' );

@@ -1,8 +1,8 @@
 <?php
 /**
- * Settings Page submit template.
+ * Ball Host Settings Page submit template.
  *
- * Handles markup for the Settings Page submit meta box.
+ * Handles markup for the Ball Host Settings Page submit meta box.
  *
  * @package SOF_Organisations
  * @since 1.0

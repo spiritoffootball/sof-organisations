@@ -33,9 +33,9 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var SOF_Organisations_Admin_Page_Settings
+	 * @var SOF_Organisations_Admin_Settings_Ball_Host
 	 */
-	public $page_settings;
+	public $settings_page_ball_host;
 
 	/**
 	 * Plugin version option key.
@@ -158,7 +158,7 @@ class SOF_Organisations_Admin {
 	 */
 	private function include_files() {
 
-		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-page-settings.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-settings-ball-host.php';
 
 	}
 
@@ -169,7 +169,7 @@ class SOF_Organisations_Admin {
 	 */
 	private function setup_objects() {
 
-		$this->page_settings = new SOF_Organisations_Admin_Page_Settings( $this );
+		$this->settings_page_ball_host = new SOF_Organisations_Admin_Settings_Ball_Host( $this );
 
 	}
 
@@ -267,19 +267,20 @@ class SOF_Organisations_Admin {
 		}
 
 		// Get our Settings Page screens.
-		$settings_screens = $this->page_settings->page_settings_screens_get();
+		$settings_screens = $this->settings_page_ball_host->page_settings_screens_get();
 		if ( in_array( $screen->id, $settings_screens, true ) ) {
 			return;
 		}
 
 		// Get Settings Page Tab URLs.
-		$urls = $this->page_settings->page_tab_urls_get();
+		$urls = $this->settings_page_ball_host->page_tab_urls_get();
 
 		// Construct message.
 		$message = sprintf(
-			/* translators: %s: The URL of the Settings Page. */
-			__( 'SOF Organisations needs your attention. Please visit the <a href="%s">Settings Page</a>.', 'sof-organisations' ),
-			$urls['settings']
+			/* translators: 1: The opening anchor tag, 2: The closing anchor tag. */
+			esc_html__( 'SOF Organisations needs your attention. Please visit the %1$sSettings Page%2$s.', 'sof-organisations' ),
+			'<a href="' . $urls['settings'] . '">',
+			'</a>'
 		);
 
 		// Show it.

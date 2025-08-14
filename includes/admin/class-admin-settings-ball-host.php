@@ -1,8 +1,8 @@
 <?php
 /**
- * Admin Settings Page Class.
+ * Ball Host Settings Page Class.
  *
- * Handles Settings Page functionality.
+ * Handles Ball Host Settings Page functionality.
  *
  * @package SOF_Organisations
  */
@@ -11,13 +11,13 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Admin Settings Page Class.
+ * Ball Host Settings Page Class.
  *
- * A class that encapsulates admin Settings Page functionality.
+ * A class that encapsulates the Ball Host Settings Page functionality.
  *
  * @since 1.0
  */
-class SOF_Organisations_Admin_Page_Settings {
+class SOF_Organisations_Admin_Settings_Ball_Host {
 
 	/**
 	 * Plugin object.
@@ -54,6 +54,15 @@ class SOF_Organisations_Admin_Page_Settings {
 	 * @var string
 	 */
 	public $parent_page_slug = 'sof-hosts-parent';
+
+	/**
+	 * URLs array.
+	 *
+	 * @since 1.0
+	 * @access public
+	 * @var array
+	 */
+	public $urls;
 
 	/**
 	 * Constructor.
@@ -132,7 +141,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		add_action( 'admin_menu', [ $this, 'admin_menu' ], 30 );
 
 		// Add our meta boxes.
-		add_action( 'add_meta_boxes', [ $this, 'meta_boxes_add' ], 11 );
+		add_action( 'sof_orgs/admin/ball_host/add_meta_boxes', [ $this, 'meta_boxes_add' ], 11 );
 
 	}
 
@@ -152,7 +161,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		 *
 		 * @param string The default capability for access to Settings.
 		 */
-		$capability = apply_filters( 'sof_orgs/admin/settings/cap', 'manage_options' );
+		$capability = apply_filters( 'sof_orgs/admin/ball_host/settings/cap', 'manage_options' );
 
 		// Check user permissions.
 		if ( ! current_user_can( $capability ) ) {
@@ -223,7 +232,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		 *
 		 * @param array $urls The existing list of URLs.
 		 */
-		$this->urls = apply_filters( 'sof_orgs/admin/settings/tab_urls', $this->urls );
+		$this->urls = apply_filters( 'sof_orgs/admin/ball_host/settings/tab_urls', $this->urls );
 
 		// --<
 		return $this->urls;
@@ -244,7 +253,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		 *
 		 * @param string The default capability for access to Settings.
 		 */
-		$capability = apply_filters( 'sof_orgs/admin/settings/cap', 'manage_options' );
+		$capability = apply_filters( 'sof_orgs/admin/ball_host/settings/cap', 'manage_options' );
 
 		// Check user permissions.
 		if ( ! current_user_can( $capability ) ) {
@@ -261,7 +270,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		 *
 		 * @param bool False by default - do not show tabs.
 		 */
-		$show_tabs = apply_filters( 'sof_orgs/admin/settings/show_tabs', false );
+		$show_tabs = apply_filters( 'sof_orgs/admin/ball_host/settings/show_tabs', false );
 
 		// Get current screen.
 		$screen = get_current_screen();
@@ -278,13 +287,13 @@ class SOF_Organisations_Admin_Page_Settings {
 		 *
 		 * @param string $screen_id The ID of the current screen.
 		 */
-		do_action( 'add_meta_boxes', $screen->id, null );
+		do_action( 'sof_orgs/admin/ball_host/add_meta_boxes', $screen->id, null );
 
 		// Grab columns.
 		$columns = ( 1 === (int) $screen->get_columns() ? '1' : '2' );
 
 		// Include template file.
-		include SOF_ORGANISATIONS_PATH . 'assets/templates/wordpress/pages/page-admin-settings.php';
+		include SOF_ORGANISATIONS_PATH . 'assets/templates/wordpress/pages/page-ball-host-settings.php';
 
 	}
 
@@ -309,7 +318,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		 *
 		 * @param array $settings_screens The default array of Settings Page screens.
 		 */
-		return apply_filters( 'sof_orgs/admin/page/settings/screens', $settings_screens );
+		return apply_filters( 'sof_orgs/admin/ball_host/settings/page/screens', $settings_screens );
 
 	}
 
@@ -334,7 +343,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		 *
 		 * @param array $submit_url The Settings Page submit URL.
 		 */
-		$submit_url = apply_filters( 'sof_orgs/admin/page/settings/submit_url', $submit_url );
+		$submit_url = apply_filters( 'sof_orgs/admin/ball_host/settings/page/submit_url', $submit_url );
 
 		// --<
 		return $submit_url;
@@ -365,7 +374,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		 *
 		 * @param string The default capability for access to Settings.
 		 */
-		$capability = apply_filters( 'sof_orgs/admin/settings/cap', 'manage_options' );
+		$capability = apply_filters( 'sof_orgs/admin/ball_host/settings/cap', 'manage_options' );
 
 		// Check user permissions.
 		if ( ! current_user_can( $capability ) ) {
@@ -402,7 +411,7 @@ class SOF_Organisations_Admin_Page_Settings {
 	public function meta_box_submit_render() {
 
 		// Include template file.
-		include SOF_ORGANISATIONS_PATH . 'assets/templates/wordpress/metaboxes/metabox-admin-settings-submit.php';
+		include SOF_ORGANISATIONS_PATH . 'assets/templates/wordpress/metaboxes/metabox-ball-host-settings-submit.php';
 
 	}
 
@@ -435,7 +444,7 @@ class SOF_Organisations_Admin_Page_Settings {
 		}
 
 		// Include template file.
-		include SOF_ORGANISATIONS_PATH . 'assets/templates/wordpress/metaboxes/metabox-admin-settings-general.php';
+		include SOF_ORGANISATIONS_PATH . 'assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php';
 
 	}
 
@@ -449,12 +458,13 @@ class SOF_Organisations_Admin_Page_Settings {
 	public function form_submitted() {
 
 		// Was the "Settings" form submitted?
-		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Missing
-		if ( isset( $_POST['sof_orgs_save'] ) ) {
-			$this->form_nonce_check();
-			$this->form_settings_update();
-			$this->form_redirect();
+		// phpcs:ignore WordPress.Security.NonceVerification.Missing
+		if ( ! isset( $_POST['sof_orgs_save'] ) ) {
+			return;
 		}
+
+		$this->form_settings_update();
+		$this->form_redirect();
 
 	}
 
@@ -465,32 +475,22 @@ class SOF_Organisations_Admin_Page_Settings {
 	 */
 	public function form_settings_update() {
 
+		// Check that we trust the source of the data.
+		check_admin_referer( 'sof_orgs_settings_action', 'sof_orgs_settings_nonce' );
+
 		// Sanitise and save setting.
-		// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Missing
-		$event_organiser_custom_field_id = isset( $_POST['sof_orgs_event_org'] ) ? (int) wp_unslash( $_POST['sof_orgs_event_org'] ) : 0;
-		$this->admin->setting_set( 'event_ball_host_custom_field_id', $event_organiser_custom_field_id );
+		$custom_field_id = isset( $_POST['sof_orgs_event_org'] ) ? (int) sanitize_text_field( wp_unslash( $_POST['sof_orgs_event_org'] ) ) : 0;
+		$this->admin->setting_set( 'event_ball_host_custom_field_id', $custom_field_id );
 
 		// Save settings.
 		$this->admin->settings_save();
 
 		/**
-		 * Broadcast end of settings update.
+		 * Fires at the end of settings update.
 		 *
 		 * @since 1.0
 		 */
-		do_action( 'sof_orgs/settings/updated' );
-
-	}
-
-	/**
-	 * Checks the nonce.
-	 *
-	 * @since 1.0
-	 */
-	private function form_nonce_check() {
-
-		// Check that we trust the source of the data.
-		check_admin_referer( 'sof_orgs_settings_action', 'sof_orgs_settings_nonce' );
+		do_action( 'sof_orgs/admin/ball_host/settings/updated' );
 
 	}
 
