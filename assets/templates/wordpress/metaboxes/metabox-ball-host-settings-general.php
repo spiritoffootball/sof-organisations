@@ -22,7 +22,7 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 1.0
  */
-do_action( 'sof_orgs/settings_table/before' );
+do_action( 'sof_orgs/ball_host/settings_table/before' );
 
 ?>
 
@@ -35,7 +35,7 @@ do_action( 'sof_orgs/settings_table/before' );
 	 *
 	 * @since 1.0
 	 */
-	do_action( 'sof_orgs/settings_table/first_row' );
+	do_action( 'sof_orgs/ball_host/settings_table/first_row' );
 
 	?>
 
@@ -69,7 +69,7 @@ do_action( 'sof_orgs/settings_table/before' );
 	 *
 	 * @since 1.0
 	 */
-	do_action( 'sof_orgs/settings_table/last_row' );
+	do_action( 'sof_orgs/ball_host/settings_table/last_row' );
 
 	?>
 
@@ -82,4 +82,4 @@ do_action( 'sof_orgs/settings_table/before' );
  *
  * @since 1.0
  */
-do_action( 'sof_orgs/settings_table/after' );
+do_action( 'sof_orgs/ball_host/settings_table/after' );

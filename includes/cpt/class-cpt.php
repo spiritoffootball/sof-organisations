@@ -110,9 +110,24 @@ class SOF_Organisations_CPT {
 	 */
 	private function include_files() {
 
-		require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-organisations.php';
-		require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-partners.php';
-		require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-hosts.php';
+		// Get defaults.
+		$defaults = $this->plugin->admin->settings_get_defaults();
+
+		// Retrieve settings for each option.
+		$organisation_enabled = $this->plugin->admin->setting_get( 'organisation_enabled', $defaults['organisation_enabled'] );
+		$partner_enabled      = $this->plugin->admin->setting_get( 'partner_enabled', $defaults['partner_enabled'] );
+		$host_enabled         = $this->plugin->admin->setting_get( 'host_enabled', $defaults['host_enabled'] );
+
+		// Optionally include class files.
+		if ( 'y' === $organisation_enabled ) {
+			require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-organisations.php';
+		}
+		if ( 'y' === $partner_enabled ) {
+			require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-partners.php';
+		}
+		if ( 'y' === $partner_enabled ) {
+			require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-hosts.php';
+		}
 
 	}
 
@@ -123,9 +138,24 @@ class SOF_Organisations_CPT {
 	 */
 	private function setup_objects() {
 
-		$this->organisations = new SOF_Organisations_CPT_Organisations( $this );
-		$this->partners      = new SOF_Organisations_CPT_Partners( $this );
-		$this->hosts         = new SOF_Organisations_CPT_Hosts( $this );
+		// Get defaults.
+		$defaults = $this->plugin->admin->settings_get_defaults();
+
+		// Retrieve settings for each option.
+		$organisation_enabled = $this->plugin->admin->setting_get( 'organisation_enabled', $defaults['organisation_enabled'] );
+		$partner_enabled      = $this->plugin->admin->setting_get( 'partner_enabled', $defaults['partner_enabled'] );
+		$host_enabled         = $this->plugin->admin->setting_get( 'host_enabled', $defaults['host_enabled'] );
+
+		// Optionally instantiate objects.
+		if ( 'y' === $organisation_enabled ) {
+			$this->organisations = new SOF_Organisations_CPT_Organisations( $this );
+		}
+		if ( 'y' === $partner_enabled ) {
+			$this->partners = new SOF_Organisations_CPT_Partners( $this );
+		}
+		if ( 'y' === $host_enabled ) {
+			$this->hosts = new SOF_Organisations_CPT_Hosts( $this );
+		}
 
 	}
 

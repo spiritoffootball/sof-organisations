@@ -12,7 +12,7 @@
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- assets/templates/wordpress/metaboxes/metabox-admin-settings-submit.php -->
+<!-- assets/templates/wordpress/metaboxes/metabox-ball-host-settings-submit.php -->
 <div class="submitbox">
 	<div id="minor-publishing">
 		<div id="misc-publishing-actions">

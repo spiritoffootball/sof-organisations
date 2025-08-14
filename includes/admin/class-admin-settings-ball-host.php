@@ -476,7 +476,7 @@ class SOF_Organisations_Admin_Settings_Ball_Host {
 	public function form_settings_update() {
 
 		// Check that we trust the source of the data.
-		check_admin_referer( 'sof_orgs_settings_action', 'sof_orgs_settings_nonce' );
+		check_admin_referer( 'sof_orgs_ball_host_settings_action', 'sof_orgs_ball_host_settings_nonce' );
 
 		// Sanitise and save setting.
 		$custom_field_id = isset( $_POST['sof_orgs_event_org'] ) ? (int) sanitize_text_field( wp_unslash( $_POST['sof_orgs_event_org'] ) ) : 0;

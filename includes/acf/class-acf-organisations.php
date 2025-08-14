@@ -123,6 +123,18 @@ class SOF_Organisations_ACF_Organisations {
 	 */
 	public function field_groups_add() {
 
+		// Add our ACF Field Groups.
+		$this->field_group_info_add();
+
+	}
+
+	/**
+	 * Adds "Organisation Information" Field Group.
+	 *
+	 * @since 1.0
+	 */
+	private function field_group_info_add() {
+
 		// Attach the Field Group to our CPT.
 		$field_group_location = [
 			[
@@ -164,7 +176,7 @@ class SOF_Organisations_ACF_Organisations {
 	}
 
 	/**
-	 * Add ACF Fields.
+	 * Adds ACF Fields.
 	 *
 	 * @since 1.0
 	 */
@@ -176,11 +188,11 @@ class SOF_Organisations_ACF_Organisations {
 	}
 
 	/**
-	 * Add "Link" Field.
+	 * Adds "Link" Field.
 	 *
 	 * @since 1.0
 	 */
-	public function field_link_add() {
+	private function field_link_add() {
 
 		// Define Field.
 		$field = [

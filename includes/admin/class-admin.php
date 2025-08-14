@@ -29,7 +29,16 @@ class SOF_Organisations_Admin {
 	public $plugin;
 
 	/**
-	 * Settings Page object.
+	 * General Settings Page object.
+	 *
+	 * @since 1.0.1
+	 * @access public
+	 * @var SOF_Organisations_Admin_Settings
+	 */
+	public $settings_page;
+
+	/**
+	 * Ball Host Settings Page object.
 	 *
 	 * @since 1.0
 	 * @access public
@@ -138,11 +147,11 @@ class SOF_Organisations_Admin {
 
 		// Store default settings if none exist.
 		if ( ! $this->option_exists( $this->settings_key ) ) {
-			$this->option_set( $this->settings_key, $this->settings );
+			$this->option_set( $this->settings_key, $this->settings_get_defaults() );
 		}
 
 		// Load settings array.
-		$this->settings = $this->option_get( $this->settings_key, $this->settings );
+		$this->settings = $this->option_get( $this->settings_key, $this->settings_get_defaults() );
 
 		// Store version if there has been a change.
 		if ( SOF_ORGANISATIONS_VERSION !== $this->plugin_version ) {
@@ -158,6 +167,13 @@ class SOF_Organisations_Admin {
 	 */
 	private function include_files() {
 
+		// Always include Base class.
+		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-page-base.php';
+
+		// General Settings Page class.
+		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-page-settings.php';
+
+		// Ball Host Settings Page class.
 		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-settings-ball-host.php';
 
 	}
@@ -169,6 +185,10 @@ class SOF_Organisations_Admin {
 	 */
 	private function setup_objects() {
 
+		// General Settings Page.
+		$this->settings_page = new SOF_Organisations_Admin_Settings( $this );
+
+		// Ball Host Settings Page.
 		$this->settings_page_ball_host = new SOF_Organisations_Admin_Settings_Ball_Host( $this );
 
 	}
@@ -239,57 +259,42 @@ class SOF_Organisations_Admin {
 
 	}
 
+	// -----------------------------------------------------------------------------------
+
 	/**
-	 * Adds a message to admin pages when an upgrade is required.
+	 * Gets the default settings for this plugin.
 	 *
-	 * @since 1.0
+	 * @since 1.0.1
+	 *
+	 * @return array $settings The default settings for this plugin.
 	 */
-	public function upgrade_alert() {
+	public function settings_get_defaults() {
+
+		// Init return.
+		$settings = [];
+
+		// Default Organisation CPT enabled.
+		$settings['organisation_enabled'] = 'y';
+
+		// Default Partners CPT enabled.
+		$settings['partner_enabled'] = 'y';
+
+		// Default Ball Hosts CPT enabled.
+		$settings['host_enabled'] = 'y';
 
 		/**
-		 * Set access capability but allow overrides.
+		 * Filter default settings.
 		 *
-		 * @since 1.0
+		 * @since 1.0.1
 		 *
-		 * @param string The default capability for access to Settings.
+		 * @param array $settings The existing array of default settings.
 		 */
-		$capability = apply_filters( 'sof_orgs/admin/settings/cap', 'manage_options' );
+		$settings = apply_filters( 'sof_orgs/admin/settings_default', $settings );
 
-		// Check user permissions.
-		if ( ! current_user_can( $capability ) ) {
-			return;
-		}
-
-		// Get current screen.
-		$screen = get_current_screen();
-		if ( ! ( $screen instanceof WP_Screen ) ) {
-			return;
-		}
-
-		// Get our Settings Page screens.
-		$settings_screens = $this->settings_page_ball_host->page_settings_screens_get();
-		if ( in_array( $screen->id, $settings_screens, true ) ) {
-			return;
-		}
-
-		// Get Settings Page Tab URLs.
-		$urls = $this->settings_page_ball_host->page_tab_urls_get();
-
-		// Construct message.
-		$message = sprintf(
-			/* translators: 1: The opening anchor tag, 2: The closing anchor tag. */
-			esc_html__( 'SOF Organisations needs your attention. Please visit the %1$sSettings Page%2$s.', 'sof-organisations' ),
-			'<a href="' . $urls['settings'] . '">',
-			'</a>'
-		);
-
-		// Show it.
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo '<div class="notice notice-error is-dismissible"><p>' . $message . '</p></div>';
+		// --<
+		return $settings;
 
 	}
-
-	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Gets all settings.

@@ -1,37 +1,34 @@
 <?php
 /**
- * Ball Host Settings Page template.
+ * Settings Page template.
  *
- * Handles markup for the Ball Host Settings Page.
+ * Handles markup for the Settings Page.
  *
  * @package SOF_Organisations
- * @since 1.0
+ * @since 1.0.1
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<!-- assets/templates/wordpress/pages/page-ball-host-settings.php -->
+<!-- <?php echo esc_html( $this->path_template . $this->path_page ); ?>page-settings.php -->
 <div class="wrap">
 
-	<h1><?php esc_html_e( 'Ball Host Settings', 'sof-organisations' ); ?></h1>
+	<h1><?php echo esc_html( $this->plugin_name ); ?></h1>
+
+	<?php settings_errors( $this->hook_prefix ); ?>
 
 	<?php if ( $show_tabs ) : ?>
 		<h2 class="nav-tab-wrapper">
-			<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
-			<a href="<?php echo $urls['settings']; ?>" class="nav-tab nav-tab-active"><?php esc_html_e( 'Settings', 'sof-organisations' ); ?></a>
 			<?php
 
 			/**
-			 * Allow others to add tabs.
+			 * Renders the Page Tabs.
 			 *
-			 * @since 1.0
-			 *
-			 * @param array  $urls The array of subpage URLs.
-			 * @param string The key of the active tab in the subpage URLs array.
+			 * @since 1.0.1
 			 */
-			do_action( 'sof_orgs/admin/ball_host/settings/nav_tabs', $urls, 'settings' );
+			do_action( $this->hook_prefix_common . '/settings/page/tabs' );
 
 			?>
 		</h2>
@@ -39,12 +36,23 @@ defined( 'ABSPATH' ) || exit;
 		<hr />
 	<?php endif; ?>
 
+	<?php
+
+	/**
+	 * Fires before the form is rendered.
+	 *
+	 * @since 1.0.1
+	 */
+	do_action( $this->hook_prefix . '/settings/page/form/before' );
+
+	?>
+
 	<?php /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
-	<form method="post" id="sof_orgs_ball_host_settings_form" action="<?php echo $this->page_settings_submit_url_get(); ?>">
+	<form method="post" id="<?php echo esc_attr( $this->form_id ); ?>" action="<?php echo $this->form_submit_url_get(); ?>">
 
 		<?php wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false ); ?>
 		<?php wp_nonce_field( 'closedpostboxes', 'closedpostboxesnonce', false ); ?>
-		<?php wp_nonce_field( 'sof_orgs_ball_host_settings_action', 'sof_orgs_ball_host_settings_nonce' ); ?>
+		<?php wp_nonce_field( $this->form_nonce_action, $this->form_nonce_field ); ?>
 
 		<div id="poststuff">
 
@@ -68,5 +76,16 @@ defined( 'ABSPATH' ) || exit;
 		</div><!-- #poststuff -->
 
 	</form>
+
+	<?php
+
+	/**
+	 * Fires after the form is rendered.
+	 *
+	 * @since 1.0.1
+	 */
+	do_action( $this->hook_prefix . '/settings/page/form/after' );
+
+	?>
 
 </div><!-- /.wrap -->
