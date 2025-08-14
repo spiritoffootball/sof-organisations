@@ -282,6 +282,9 @@ class SOF_Organisations_Admin {
 		// Default Ball Hosts CPT enabled.
 		$settings['host_enabled'] = 'y';
 
+		// Default Ball Host CiviCRM Custom Field ID.
+		$settings['event_ball_host_custom_field_id'] = '';
+
 		/**
 		 * Filter default settings.
 		 *
