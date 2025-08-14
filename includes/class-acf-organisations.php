@@ -60,7 +60,7 @@ class SOF_Organisations_ACF_Organisations {
 	 *
 	 * @since 1.0
 	 *
-	 * @param object $parent The parent object.
+	 * @param SOF_Organisations_ACF $parent The parent object.
 	 */
 	public function __construct( $parent ) {
 
@@ -69,16 +69,44 @@ class SOF_Organisations_ACF_Organisations {
 		$this->acf    = $parent;
 
 		// Init when this plugin is loaded.
-		add_action( 'sof_orgs/acf/loaded', [ $this, 'register_hooks' ] );
+		add_action( 'sof_orgs/acf/loaded', [ $this, 'initialise' ] );
 
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Initialises this object.
+	 *
+	 * @since 1.0.1
+	 */
+	public function initialise() {
+
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
+		// Bootstrap class.
+		$this->register_hooks();
+
+		/**
+		 * Fires when this class is loaded.
+		 *
+		 * @since 1.0.1
+		 */
+		do_action( 'sof_orgs/acf/organisations/loaded' );
+
+		// We're done.
+		$done = true;
+
+	}
+
+	/**
+	 * Registers hook callbacks.
 	 *
 	 * @since 1.0
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 		// Add Field Group and Fields.
 		add_action( 'acf/init', [ $this, 'field_groups_add' ] );
@@ -86,7 +114,7 @@ class SOF_Organisations_ACF_Organisations {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Add ACF Field Groups.

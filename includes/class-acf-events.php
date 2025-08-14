@@ -60,7 +60,7 @@ class SOF_Organisations_ACF_Events {
 	 *
 	 * @since 1.0
 	 *
-	 * @param object $parent The parent object.
+	 * @param SOF_Organisations_ACF $parent The parent object.
 	 */
 	public function __construct( $parent ) {
 
@@ -69,16 +69,44 @@ class SOF_Organisations_ACF_Events {
 		$this->acf    = $parent;
 
 		// Init when this plugin is loaded.
-		add_action( 'sof_orgs/acf/loaded', [ $this, 'register_hooks' ] );
+		add_action( 'sof_orgs/acf/loaded', [ $this, 'initialise' ] );
 
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Initialises this object.
+	 *
+	 * @since 1.0.1
+	 */
+	public function initialise() {
+
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
+		// Bootstrap class.
+		$this->register_hooks();
+
+		/**
+		 * Fires when this class is loaded.
+		 *
+		 * @since 1.0.1
+		 */
+		do_action( 'sof_orgs/acf/events/loaded' );
+
+		// We're done.
+		$done = true;
+
+	}
+
+	/**
+	 * Registers hook callbacks.
 	 *
 	 * @since 1.0
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 		// Add Field Group and Fields.
 		add_action( 'acf/init', [ $this, 'field_groups_add' ] );
@@ -86,7 +114,7 @@ class SOF_Organisations_ACF_Events {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Adds the ACF Field Groups.
@@ -94,6 +122,18 @@ class SOF_Organisations_ACF_Events {
 	 * @since 1.0
 	 */
 	public function field_groups_add() {
+
+		// Add our ACF Field Groups.
+		$this->field_group_pledgeball_add();
+
+	}
+
+	/**
+	 * Adds "Pledgeball Information" Field.
+	 *
+	 * @since 1.0
+	 */
+	private function field_group_pledgeball_add() {
 
 		// Attach the Field Group to our CPT.
 		$field_group_location = [
@@ -156,7 +196,7 @@ class SOF_Organisations_ACF_Events {
 	 *
 	 * @since 1.0
 	 */
-	public function field_organiser_add() {
+	private function field_organiser_add() {
 
 		// Get the ID of the Ball Host Custom Field.
 		$field_id = $this->plugin->admin->setting_get( 'event_ball_host_custom_field_id' );
@@ -193,7 +233,7 @@ class SOF_Organisations_ACF_Events {
 	 *
 	 * @since 1.0
 	 */
-	public function field_form_enabled_add() {
+	private function field_form_enabled_add() {
 
 		// Define a Repeater field.
 		$field = [
@@ -229,7 +269,7 @@ class SOF_Organisations_ACF_Events {
 	 *
 	 * @since 1.0
 	 */
-	public function field_use_country_add() {
+	private function field_use_country_add() {
 
 		// Define a Repeater field.
 		$field = [

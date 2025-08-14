@@ -33,7 +33,7 @@ class SOF_Organisations_CiviCRM {
 	 *
 	 * @since 1.0
 	 *
-	 * @param object $plugin The plugin object.
+	 * @param SOF_Organisations $plugin The plugin object.
 	 */
 	public function __construct( $plugin ) {
 
@@ -52,17 +52,26 @@ class SOF_Organisations_CiviCRM {
 	 */
 	public function initialise() {
 
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
 		// Bootstrap class.
 		$this->include_files();
 		$this->setup_objects();
 		$this->register_hooks();
 
 		/**
-		 * Broadcast that this class is active.
+		 * Fires when this class is loaded.
 		 *
 		 * @since 1.0
 		 */
 		do_action( 'sof_orgs/civicrm/loaded' );
+
+		// We're done.
+		$done = true;
 
 	}
 
@@ -71,7 +80,7 @@ class SOF_Organisations_CiviCRM {
 	 *
 	 * @since 1.0
 	 */
-	public function include_files() {
+	private function include_files() {
 
 	}
 
@@ -80,20 +89,20 @@ class SOF_Organisations_CiviCRM {
 	 *
 	 * @since 1.0
 	 */
-	public function setup_objects() {
+	private function setup_objects() {
 
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Registers hook callbacks.
 	 *
 	 * @since 1.0
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Check if CiviCRM is initialised.
@@ -105,10 +114,7 @@ class SOF_Organisations_CiviCRM {
 	public function is_initialised() {
 
 		// Init only when CiviCRM is fully installed.
-		if ( ! defined( 'CIVICRM_INSTALLED' ) ) {
-			return false;
-		}
-		if ( ! CIVICRM_INSTALLED ) {
+		if ( ! defined( 'CIVICRM_INSTALLED' ) || ! CIVICRM_INSTALLED ) {
 			return false;
 		}
 
@@ -122,10 +128,10 @@ class SOF_Organisations_CiviCRM {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
-	 * Get all the Custom Groups for CiviCRM Events.
+	 * Gets all the Custom Groups for CiviCRM Events.
 	 *
 	 * We are only interested in Custom Fields that have been added to all Events.
 	 *
@@ -154,6 +160,7 @@ class SOF_Organisations_CiviCRM {
 			'version'             => 3,
 			'sequential'          => 1,
 			'is_active'           => 1,
+			'extends'             => 'Event',
 			'options'             => [
 				'limit' => 0,
 			],
@@ -163,7 +170,6 @@ class SOF_Organisations_CiviCRM {
 					'limit' => 0,
 				],
 			],
-			'extends'             => 'Event',
 		];
 
 		// Call the API.

@@ -88,13 +88,13 @@ class SOF_Organisations {
 	 */
 	public function __construct() {
 
-		// Initialise on "plugins_loaded".
+		// Initialise when all plugins are loaded.
 		add_action( 'plugins_loaded', [ $this, 'initialise' ] );
 
 	}
 
 	/**
-	 * Do stuff on plugin init.
+	 * Initialises this plugin.
 	 *
 	 * @since 1.0
 	 */
@@ -106,14 +106,10 @@ class SOF_Organisations {
 			return;
 		}
 
-		// Load translation.
-		$this->translation();
-
-		// Include files.
+		// Bootstrap plugin.
 		$this->include_files();
-
-		// Set up objects and references.
 		$this->setup_objects();
+		$this->register_hooks();
 
 		/**
 		 * Broadcast that this plugin is now loaded.
@@ -124,6 +120,48 @@ class SOF_Organisations {
 
 		// We're done.
 		$done = true;
+
+	}
+
+	/**
+	 * Include files.
+	 *
+	 * @since 1.0
+	 */
+	private function include_files() {
+
+		// Include class files.
+		require SOF_ORGANISATIONS_PATH . 'includes/class-admin.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/class-civicrm.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/class-cpt.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/class-acf.php';
+
+	}
+
+	/**
+	 * Set up this plugin's objects.
+	 *
+	 * @since 1.0
+	 */
+	private function setup_objects() {
+
+		// Init objects.
+		$this->admin   = new SOF_Organisations_Admin( $this );
+		$this->civicrm = new SOF_Organisations_CiviCRM( $this );
+		$this->cpt     = new SOF_Organisations_CPT( $this );
+		$this->acf     = new SOF_Organisations_ACF( $this );
+
+	}
+
+	/**
+	 * Registers hook callbacks.
+	 *
+	 * @since 1.0.1
+	 */
+	private function register_hooks() {
+
+		// Use translation.
+		add_action( 'init', [ $this, 'translation' ] );
 
 	}
 
@@ -141,36 +179,6 @@ class SOF_Organisations {
 			false, // Deprecated argument.
 			dirname( plugin_basename( SOF_ORGANISATIONS_FILE ) ) . '/languages/' // Relative path to files.
 		);
-
-	}
-
-	/**
-	 * Include files.
-	 *
-	 * @since 1.0
-	 */
-	public function include_files() {
-
-		// Include class files.
-		include SOF_ORGANISATIONS_PATH . 'includes/class-admin.php';
-		include SOF_ORGANISATIONS_PATH . 'includes/class-civicrm.php';
-		include SOF_ORGANISATIONS_PATH . 'includes/class-cpt.php';
-		include SOF_ORGANISATIONS_PATH . 'includes/class-acf.php';
-
-	}
-
-	/**
-	 * Set up this plugin's objects.
-	 *
-	 * @since 1.0
-	 */
-	public function setup_objects() {
-
-		// Init objects.
-		$this->admin   = new SOF_Organisations_Admin( $this );
-		$this->civicrm = new SOF_Organisations_CiviCRM( $this );
-		$this->cpt     = new SOF_Organisations_CPT( $this );
-		$this->acf     = new SOF_Organisations_ACF( $this );
 
 	}
 

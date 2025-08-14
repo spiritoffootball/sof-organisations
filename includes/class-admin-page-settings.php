@@ -33,7 +33,7 @@ class SOF_Organisations_Admin_Page_Settings {
 	 *
 	 * @since 1.0
 	 * @access public
-	 * @var object $admin The Admin object.
+	 * @var SOF_Organisations_Admin $admin The Admin object.
 	 */
 	public $admin;
 
@@ -60,7 +60,7 @@ class SOF_Organisations_Admin_Page_Settings {
 	 *
 	 * @since 1.0
 	 *
-	 * @param object $parent The parent object.
+	 * @param SOF_Organisations_Admin $parent The parent object.
 	 */
 	public function __construct( $parent ) {
 
@@ -80,6 +80,12 @@ class SOF_Organisations_Admin_Page_Settings {
 	 */
 	public function initialise() {
 
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
 		// Bootstrap class.
 		$this->include_files();
 		$this->setup_objects();
@@ -92,10 +98,13 @@ class SOF_Organisations_Admin_Page_Settings {
 		 */
 		do_action( 'sof_orgs/admin/page/settings/loaded' );
 
+		// We're done.
+		$done = true;
+
 	}
 
 	/**
-	 * Includes files.
+	 * Includes required files.
 	 *
 	 * @since 1.0
 	 */
@@ -113,7 +122,7 @@ class SOF_Organisations_Admin_Page_Settings {
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Registers hook callbacks.
 	 *
 	 * @since 1.0
 	 */
@@ -127,7 +136,7 @@ class SOF_Organisations_Admin_Page_Settings {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Add admin pages for this plugin.
@@ -185,7 +194,7 @@ class SOF_Organisations_Admin_Page_Settings {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Get Settings Page Tab URLs.
@@ -332,7 +341,7 @@ class SOF_Organisations_Admin_Page_Settings {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Register meta boxes.
@@ -430,7 +439,7 @@ class SOF_Organisations_Admin_Page_Settings {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Performs actions when a form has been submitted.

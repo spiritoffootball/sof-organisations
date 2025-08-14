@@ -78,7 +78,7 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 *
-	 * @param object $plugin The plugin object.
+	 * @param SOF_Organisations $plugin The plugin object.
 	 */
 	public function __construct( $plugin ) {
 
@@ -97,6 +97,12 @@ class SOF_Organisations_Admin {
 	 */
 	public function initialise() {
 
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
 		// Init settings.
 		$this->settings_initialise();
 
@@ -112,6 +118,9 @@ class SOF_Organisations_Admin {
 		 */
 		do_action( 'sof_orgs/admin/loaded' );
 
+		// We're done.
+		$done = true;
+
 	}
 
 	/**
@@ -119,7 +128,7 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 */
-	public function settings_initialise() {
+	private function settings_initialise() {
 
 		// Assign plugin version.
 		$this->plugin_version = $this->version_get();
@@ -143,13 +152,13 @@ class SOF_Organisations_Admin {
 	}
 
 	/**
-	 * Includes files.
+	 * Includes required files.
 	 *
 	 * @since 1.0
 	 */
-	public function include_files() {
+	private function include_files() {
 
-		include SOF_ORGANISATIONS_PATH . 'includes/class-admin-page-settings.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/class-admin-page-settings.php';
 
 	}
 
@@ -158,22 +167,22 @@ class SOF_Organisations_Admin {
 	 *
 	 * @since 1.0
 	 */
-	public function setup_objects() {
+	private function setup_objects() {
 
 		$this->page_settings = new SOF_Organisations_Admin_Page_Settings( $this );
 
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Registers hook callbacks.
 	 *
 	 * @since 1.0
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Gets the stored plugin version.
@@ -209,10 +218,10 @@ class SOF_Organisations_Admin {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
-	 * Perform tasks when an upgrade is required.
+	 * Performs tasks when an upgrade is required.
 	 *
 	 * @since 1.0
 	 */
@@ -279,7 +288,7 @@ class SOF_Organisations_Admin {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Gets all settings.
@@ -373,7 +382,7 @@ class SOF_Organisations_Admin {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Tests for the existence of a given option.

@@ -52,7 +52,7 @@ class SOF_Organisations_ACF {
 	 *
 	 * @since 1.0
 	 *
-	 * @param object $plugin The plugin object.
+	 * @param SOF_Organisations $plugin The plugin object.
 	 */
 	public function __construct( $plugin ) {
 
@@ -76,30 +76,39 @@ class SOF_Organisations_ACF {
 	 */
 	public function initialise() {
 
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
 		// Bootstrap class.
 		$this->include_files();
 		$this->setup_objects();
 		$this->register_hooks();
 
 		/**
-		 * Broadcast that this class is active.
+		 * Fires when this class is loaded.
 		 *
 		 * @since 1.0
 		 */
 		do_action( 'sof_orgs/acf/loaded' );
 
+		// We're done.
+		$done = true;
+
 	}
 
 	/**
-	 * Includes files.
+	 * Includes required files.
 	 *
 	 * @since 1.0
 	 */
-	public function include_files() {
+	private function include_files() {
 
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-		// include SOF_ORGANISATIONS_PATH . 'includes/class-acf-organisations.php';
-		include SOF_ORGANISATIONS_PATH . 'includes/class-acf-events.php';
+		// require SOF_ORGANISATIONS_PATH . 'includes/class-acf-organisations.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/class-acf-events.php';
 
 	}
 
@@ -108,7 +117,7 @@ class SOF_Organisations_ACF {
 	 *
 	 * @since 1.0
 	 */
-	public function setup_objects() {
+	private function setup_objects() {
 
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
 		// $this->organisations = new SOF_Organisations_ACF_Organisations( $this );
@@ -117,11 +126,11 @@ class SOF_Organisations_ACF {
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Registers hook callbacks.
 	 *
 	 * @since 1.0
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 	}
 

@@ -61,7 +61,7 @@ class SOF_Organisations_CPT {
 	 *
 	 * @since 1.0
 	 *
-	 * @param object $plugin The plugin object.
+	 * @param SOF_Organisations $plugin The plugin object.
 	 */
 	public function __construct( $plugin ) {
 
@@ -80,30 +80,39 @@ class SOF_Organisations_CPT {
 	 */
 	public function initialise() {
 
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
 		// Bootstrap class.
 		$this->include_files();
 		$this->setup_objects();
 		$this->register_hooks();
 
 		/**
-		 * Broadcast that this class is active.
+		 * Fires when this class is loaded.
 		 *
 		 * @since 1.0
 		 */
 		do_action( 'sof_orgs/cpt/loaded' );
 
+		// We're done.
+		$done = true;
+
 	}
 
 	/**
-	 * Includes files.
+	 * Includes required files.
 	 *
 	 * @since 1.0
 	 */
-	public function include_files() {
+	private function include_files() {
 
-		include SOF_ORGANISATIONS_PATH . 'includes/class-cpt-organisations.php';
-		include SOF_ORGANISATIONS_PATH . 'includes/class-cpt-partners.php';
-		include SOF_ORGANISATIONS_PATH . 'includes/class-cpt-hosts.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/class-cpt-organisations.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/class-cpt-partners.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/class-cpt-hosts.php';
 
 	}
 
@@ -112,7 +121,7 @@ class SOF_Organisations_CPT {
 	 *
 	 * @since 1.0
 	 */
-	public function setup_objects() {
+	private function setup_objects() {
 
 		$this->organisations = new SOF_Organisations_CPT_Organisations( $this );
 		$this->partners      = new SOF_Organisations_CPT_Partners( $this );
@@ -121,11 +130,11 @@ class SOF_Organisations_CPT {
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Register hook callbacks.
 	 *
 	 * @since 1.0
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 	}
 

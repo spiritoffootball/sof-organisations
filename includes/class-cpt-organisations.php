@@ -96,7 +96,7 @@ class SOF_Organisations_CPT_Organisations {
 	 *
 	 * @since 1.0
 	 *
-	 * @param object $parent The parent object.
+	 * @param SOF_Organisations_CPT $parent The parent object.
 	 */
 	public function __construct( $parent ) {
 
@@ -105,16 +105,44 @@ class SOF_Organisations_CPT_Organisations {
 		$this->cpt    = $parent;
 
 		// Init when this plugin is loaded.
-		add_action( 'sof_orgs/cpt/loaded', [ $this, 'register_hooks' ] );
+		add_action( 'sof_orgs/cpt/loaded', [ $this, 'initialise' ] );
 
 	}
 
 	/**
-	 * Register WordPress hooks.
+	 * Initialises this object.
+	 *
+	 * @since 1.0.1
+	 */
+	public function initialise() {
+
+		// Only do this once.
+		static $done;
+		if ( isset( $done ) && true === $done ) {
+			return;
+		}
+
+		// Bootstrap class.
+		$this->register_hooks();
+
+		/**
+		 * Fires when this class is loaded.
+		 *
+		 * @since 1.0.1
+		 */
+		do_action( 'sof_orgs/cpt/organisations/loaded' );
+
+		// We're done.
+		$done = true;
+
+	}
+
+	/**
+	 * Registers hook callbacks.
 	 *
 	 * @since 1.0
 	 */
-	public function register_hooks() {
+	private function register_hooks() {
 
 		// Activation and deactivation.
 		add_action( 'sof_orgs/activate', [ $this, 'activate' ] );
@@ -171,7 +199,7 @@ class SOF_Organisations_CPT_Organisations {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Create our Custom Post Type.
@@ -359,7 +387,7 @@ class SOF_Organisations_CPT_Organisations {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Create our Custom Taxonomy.
@@ -482,7 +510,7 @@ class SOF_Organisations_CPT_Organisations {
 
 	}
 
-	// -------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------------
 
 	/**
 	 * Create our alternative Custom Taxonomy.
