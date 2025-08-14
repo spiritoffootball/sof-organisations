@@ -1,21 +1,25 @@
-# Copyright (C) 2024 Christian Wach
+# Copyright (C) 2025 Christian Wach
 # This file is distributed under the same license as the SOF Organisations plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: SOF Organisations 1.0a\n"
+"Project-Id-Version: SOF Organisations 1.0.1a\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sof-organisations\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-15T14:11:49+00:00\n"
+"POT-Creation-Date: 2025-08-14T18:02:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sof-organisations\n"
 
 #. Plugin Name of the plugin
 #: sof-organisations.php
+#: includes/admin/class-admin-page-base.php:388
+#: includes/admin/class-admin-page-settings.php:68
+#: includes/admin/class-admin-page-settings.php:110
+#: includes/admin/class-admin-page-settings.php:139
 msgid "SOF Organisations"
 msgstr ""
 
@@ -39,541 +43,603 @@ msgstr ""
 msgid "https://haystack.co.uk"
 msgstr ""
 
-#: assets/templates/wordpress/metaboxes/metabox-admin-settings-general.php:16
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php:16
 msgid "The following options configure Ball Host defaults."
 msgstr ""
 
-#: assets/templates/wordpress/metaboxes/metabox-admin-settings-general.php:44
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php:44
 msgid "Event Ball Host"
 msgstr ""
 
-#: assets/templates/wordpress/metaboxes/metabox-admin-settings-general.php:48
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php:48
 msgid "- Select Field -"
 msgstr ""
 
-#: assets/templates/wordpress/metaboxes/metabox-admin-settings-general.php:60
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php:60
 msgid "Select the CiviCRM Custom Field that defines the Contact ID of the Event Ball Host."
 msgstr ""
 
-#: assets/templates/wordpress/metaboxes/metabox-admin-settings-submit.php:20
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-submit.php:20
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-submit.php:23
 msgid "Save your settings here."
 msgstr ""
 
-#: assets/templates/wordpress/metaboxes/metabox-admin-settings-submit.php:28
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-submit.php:28
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-submit.php:47
 msgid "Update"
 msgstr ""
 
-#: assets/templates/wordpress/pages/page-admin-settings.php:18
+#: assets/templates/wordpress/pages/page-ball-host-settings.php:18
 msgid "Ball Host Settings"
 msgstr ""
 
-#: assets/templates/wordpress/pages/page-admin-settings.php:23
-#: includes/class-admin-page-settings.php:158
-#: includes/class-admin-page-settings.php:370
+#: assets/templates/wordpress/pages/page-ball-host-settings.php:23
+#: includes/admin/class-admin-page-settings.php:69
+#: includes/admin/class-admin-settings-ball-host.php:175
+#: includes/admin/class-admin-settings-ball-host.php:387
 msgid "Settings"
 msgstr ""
 
-#: includes/class-acf-events.php:128
+#: assets/templates/wordpress/settings/help/page-settings-help.php:16
+msgid "Settings: For further information about using this plugin, please refer to the readme file that is supplied with it."
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:20
+msgid "Organisations Post Type"
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:24
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:37
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:50
+msgid "Yes"
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:25
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:38
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:51
+msgid "No"
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:27
+msgid "Choose whether to enable the Organisations Post Type."
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:33
+msgid "Partners Post Type"
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:40
+msgid "Choose whether to enable the Partners Post Type."
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:46
+msgid "Ball Hosts Post Type"
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:53
+msgid "Choose whether to enable the Ball Hosts Post Type."
+msgstr ""
+
+#: includes/acf/class-acf-events.php:167
 msgid "Pledgeball Information"
 msgstr ""
 
-#: includes/class-acf-events.php:173
+#: includes/acf/class-acf-events.php:212
 msgid "Pledgeball Event Host"
 msgstr ""
 
-#: includes/class-acf-events.php:176
+#: includes/acf/class-acf-events.php:215
 msgid "This is the Organisation that Pledgeball requires the Event to be associated with."
 msgstr ""
 
-#: includes/class-acf-events.php:202
+#: includes/acf/class-acf-events.php:241
 msgid "Enable Pledge Form"
 msgstr ""
 
-#: includes/class-acf-events.php:206
+#: includes/acf/class-acf-events.php:245
 msgid "Is the Pledge Form enabled for this Event?"
 msgstr ""
 
-#: includes/class-acf-events.php:238
+#: includes/acf/class-acf-events.php:277
 msgid "Use Country-specific Pledge List"
 msgstr ""
 
-#: includes/class-acf-events.php:242
+#: includes/acf/class-acf-events.php:281
 msgid "If yes, the Pledge List for the Venue Country will be used."
 msgstr ""
 
-#: includes/class-acf-organisations.php:128
+#: includes/acf/class-acf-organisations.php:167
 msgid "Organisation Information"
 msgstr ""
 
-#: includes/class-acf-organisations.php:161
+#: includes/acf/class-acf-organisations.php:200
 msgid "Link to website"
 msgstr ""
 
-#: includes/class-admin-page-settings.php:157
-msgid "Settings: Ball Hosts"
-msgstr ""
-
-#: includes/class-admin-page-settings.php:380
+#: includes/admin/class-admin-page-base.php:659
+#: includes/admin/class-admin-settings-ball-host.php:397
 msgid "General Settings"
 msgstr ""
 
-#. translators: %s: The URL of the Settings Page.
-#: includes/class-admin.php:273
-msgid "SOF Organisations needs your attention. Please visit the <a href=\"%s\">Settings Page</a>."
+#: includes/admin/class-admin-page-settings.php:109
+msgid "SOF Organisations: Settings"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:170
-#: includes/class-cpt-hosts.php:181
+#: includes/admin/class-admin-settings-ball-host.php:174
+msgid "Settings: Ball Hosts"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:197
+#: includes/cpt/class-cpt-hosts.php:208
 msgid "Ball Hosts"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:171
+#: includes/cpt/class-cpt-hosts.php:198
 msgid "Ball Host"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:172
-#: includes/class-cpt-organisations.php:197
-#: includes/class-cpt-partners.php:172
+#: includes/cpt/class-cpt-hosts.php:199
+#: includes/cpt/class-cpt-organisations.php:224
+#: includes/cpt/class-cpt-partners.php:199
 msgid "Add New"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:173
+#: includes/cpt/class-cpt-hosts.php:200
 msgid "Add New Ball Host"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:174
+#: includes/cpt/class-cpt-hosts.php:201
 msgid "Edit Ball Host"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:175
+#: includes/cpt/class-cpt-hosts.php:202
 msgid "New Ball Host"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:176
+#: includes/cpt/class-cpt-hosts.php:203
 msgid "All Ball Hosts"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:177
+#: includes/cpt/class-cpt-hosts.php:204
 msgid "View Ball Host"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:178
+#: includes/cpt/class-cpt-hosts.php:205
 msgid "Search Ball Hosts"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:179
+#: includes/cpt/class-cpt-hosts.php:206
 msgid "No matching Ball Host found"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:180
+#: includes/cpt/class-cpt-hosts.php:207
 msgid "No Ball Hosts found in Trash"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:186
+#: includes/cpt/class-cpt-hosts.php:213
 msgid "A ball host organisation post type"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-hosts.php:251
+#: includes/cpt/class-cpt-hosts.php:278
+#, php-format
 msgid "Ball Host updated. <a href=\"%s\">View Ball Host</a>"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:256
-#: includes/class-cpt-organisations.php:281
-#: includes/class-cpt-partners.php:256
+#: includes/cpt/class-cpt-hosts.php:283
+#: includes/cpt/class-cpt-organisations.php:308
+#: includes/cpt/class-cpt-partners.php:283
 msgid "Custom field updated."
 msgstr ""
 
-#: includes/class-cpt-hosts.php:257
-#: includes/class-cpt-organisations.php:282
-#: includes/class-cpt-partners.php:257
+#: includes/cpt/class-cpt-hosts.php:284
+#: includes/cpt/class-cpt-organisations.php:309
+#: includes/cpt/class-cpt-partners.php:284
 msgid "Custom field deleted."
 msgstr ""
 
-#: includes/class-cpt-hosts.php:258
+#: includes/cpt/class-cpt-hosts.php:285
 msgid "Ball Host updated."
 msgstr ""
 
 #. translators: %s: The date and time of the revision.
-#: includes/class-cpt-hosts.php:267
+#: includes/cpt/class-cpt-hosts.php:294
+#, php-format
 msgid "Ball Host restored to revision from %s"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-hosts.php:278
+#: includes/cpt/class-cpt-hosts.php:305
+#, php-format
 msgid "Ball Host published. <a href=\"%s\">View Ball Host</a>"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:283
+#: includes/cpt/class-cpt-hosts.php:310
 msgid "Ball Host saved."
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-hosts.php:288
+#: includes/cpt/class-cpt-hosts.php:315
+#, php-format
 msgid "Ball Host submitted. <a target=\"_blank\" href=\"%s\">Preview Ball Host</a>"
 msgstr ""
 
 #. translators: 1: The date, 2: The permalink.
-#: includes/class-cpt-hosts.php:295
+#: includes/cpt/class-cpt-hosts.php:322
+#, php-format
 msgid "Ball Host scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Ball Host</a>"
 msgstr ""
 
 #. translators: Publish box date format - see https://php.net/date
-#: includes/class-cpt-hosts.php:297
-#: includes/class-cpt-organisations.php:322
-#: includes/class-cpt-partners.php:297
+#: includes/cpt/class-cpt-hosts.php:324
+#: includes/cpt/class-cpt-organisations.php:349
+#: includes/cpt/class-cpt-partners.php:324
 msgid "M j, Y @ G:i"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-hosts.php:304
+#: includes/cpt/class-cpt-hosts.php:331
+#, php-format
 msgid "Ball Host draft updated. <a target=\"_blank\" href=\"%s\">Preview Ball Host</a>"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:331
+#: includes/cpt/class-cpt-hosts.php:358
 msgid "Add the name of the Ball Host"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:361
+#: includes/cpt/class-cpt-hosts.php:388
 msgctxt "taxonomy general name"
 msgid "Ball Host Types"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:362
+#: includes/cpt/class-cpt-hosts.php:389
 msgctxt "taxonomy singular name"
 msgid "Ball Host Type"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:363
+#: includes/cpt/class-cpt-hosts.php:390
 msgid "Search Ball Host Types"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:364
+#: includes/cpt/class-cpt-hosts.php:391
 msgid "All Ball Host Types"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:365
+#: includes/cpt/class-cpt-hosts.php:392
 msgid "Parent Ball Host Type"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:366
+#: includes/cpt/class-cpt-hosts.php:393
 msgid "Parent Ball Host Type:"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:367
+#: includes/cpt/class-cpt-hosts.php:394
 msgid "Edit Ball Host Type"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:368
+#: includes/cpt/class-cpt-hosts.php:395
 msgid "Update Ball Host Type"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:369
+#: includes/cpt/class-cpt-hosts.php:396
 msgid "Add New Ball Host Type"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:370
+#: includes/cpt/class-cpt-hosts.php:397
 msgid "New Ball Host Type Name"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:371
+#: includes/cpt/class-cpt-hosts.php:398
 msgid "Ball Host Types"
 msgstr ""
 
-#: includes/class-cpt-hosts.php:372
+#: includes/cpt/class-cpt-hosts.php:399
 msgid "No Ball Host Types found"
 msgstr ""
 
 #. translators: %s: The plural name of the taxonomy terms.
-#: includes/class-cpt-hosts.php:444
-#: includes/class-cpt-organisations.php:469
-#: includes/class-cpt-organisations.php:592
-#: includes/class-cpt-partners.php:444
+#: includes/cpt/class-cpt-hosts.php:471
+#: includes/cpt/class-cpt-organisations.php:496
+#: includes/cpt/class-cpt-organisations.php:619
+#: includes/cpt/class-cpt-partners.php:471
+#, php-format
 msgid "Show All %s"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:195
-#: includes/class-cpt-organisations.php:206
+#: includes/cpt/class-cpt-organisations.php:222
+#: includes/cpt/class-cpt-organisations.php:233
 msgid "Organisations"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:196
+#: includes/cpt/class-cpt-organisations.php:223
 msgid "Organisation"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:198
+#: includes/cpt/class-cpt-organisations.php:225
 msgid "Add New Organisation"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:199
+#: includes/cpt/class-cpt-organisations.php:226
 msgid "Edit Organisation"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:200
+#: includes/cpt/class-cpt-organisations.php:227
 msgid "New Organisation"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:201
+#: includes/cpt/class-cpt-organisations.php:228
 msgid "All Organisations"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:202
+#: includes/cpt/class-cpt-organisations.php:229
 msgid "View Organisation"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:203
+#: includes/cpt/class-cpt-organisations.php:230
 msgid "Search Organisations"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:204
+#: includes/cpt/class-cpt-organisations.php:231
 msgid "No matching Organisation found"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:205
+#: includes/cpt/class-cpt-organisations.php:232
 msgid "No Organisations found in Trash"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:211
+#: includes/cpt/class-cpt-organisations.php:238
 msgid "An organisation post type"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-organisations.php:276
+#: includes/cpt/class-cpt-organisations.php:303
+#, php-format
 msgid "Organisation updated. <a href=\"%s\">View Organisation</a>"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:283
+#: includes/cpt/class-cpt-organisations.php:310
 msgid "Organisation updated."
 msgstr ""
 
 #. translators: %s: The date and time of the revision.
-#: includes/class-cpt-organisations.php:292
+#: includes/cpt/class-cpt-organisations.php:319
+#, php-format
 msgid "Organisation restored to revision from %s"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-organisations.php:303
+#: includes/cpt/class-cpt-organisations.php:330
+#, php-format
 msgid "Organisation published. <a href=\"%s\">View Organisation</a>"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:308
+#: includes/cpt/class-cpt-organisations.php:335
 msgid "Organisation saved."
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-organisations.php:313
+#: includes/cpt/class-cpt-organisations.php:340
+#, php-format
 msgid "Organisation submitted. <a target=\"_blank\" href=\"%s\">Preview Organisation</a>"
 msgstr ""
 
 #. translators: 1: The date, 2: The permalink.
-#: includes/class-cpt-organisations.php:320
+#: includes/cpt/class-cpt-organisations.php:347
+#, php-format
 msgid "Organisation scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Organisation</a>"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-organisations.php:329
+#: includes/cpt/class-cpt-organisations.php:356
+#, php-format
 msgid "Organisation draft updated. <a target=\"_blank\" href=\"%s\">Preview Organisation</a>"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:356
+#: includes/cpt/class-cpt-organisations.php:383
 msgid "Add the name of the Organisation"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:386
+#: includes/cpt/class-cpt-organisations.php:413
 msgctxt "taxonomy general name"
 msgid "Organisation Types"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:387
+#: includes/cpt/class-cpt-organisations.php:414
 msgctxt "taxonomy singular name"
 msgid "Organisation Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:388
+#: includes/cpt/class-cpt-organisations.php:415
 msgid "Search Organisation Types"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:389
+#: includes/cpt/class-cpt-organisations.php:416
 msgid "All Organisation Types"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:390
+#: includes/cpt/class-cpt-organisations.php:417
 msgid "Parent Organisation Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:391
+#: includes/cpt/class-cpt-organisations.php:418
 msgid "Parent Organisation Type:"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:392
+#: includes/cpt/class-cpt-organisations.php:419
 msgid "Edit Organisation Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:393
+#: includes/cpt/class-cpt-organisations.php:420
 msgid "Update Organisation Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:394
+#: includes/cpt/class-cpt-organisations.php:421
 msgid "Add New Organisation Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:395
+#: includes/cpt/class-cpt-organisations.php:422
 msgid "New Organisation Type Name"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:396
+#: includes/cpt/class-cpt-organisations.php:423
 msgid "Organisation Types"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:397
+#: includes/cpt/class-cpt-organisations.php:424
 msgid "No Organisation Types found"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:509
-#: includes/class-cpt-partners.php:361
+#: includes/cpt/class-cpt-organisations.php:536
+#: includes/cpt/class-cpt-partners.php:388
 msgctxt "taxonomy general name"
 msgid "Partner Types"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:510
-#: includes/class-cpt-partners.php:362
+#: includes/cpt/class-cpt-organisations.php:537
+#: includes/cpt/class-cpt-partners.php:389
 msgctxt "taxonomy singular name"
 msgid "Partner Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:511
-#: includes/class-cpt-partners.php:363
+#: includes/cpt/class-cpt-organisations.php:538
+#: includes/cpt/class-cpt-partners.php:390
 msgid "Search Partner Types"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:512
-#: includes/class-cpt-partners.php:364
+#: includes/cpt/class-cpt-organisations.php:539
+#: includes/cpt/class-cpt-partners.php:391
 msgid "All Partner Types"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:513
-#: includes/class-cpt-partners.php:365
+#: includes/cpt/class-cpt-organisations.php:540
+#: includes/cpt/class-cpt-partners.php:392
 msgid "Parent Partner Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:514
-#: includes/class-cpt-partners.php:366
+#: includes/cpt/class-cpt-organisations.php:541
+#: includes/cpt/class-cpt-partners.php:393
 msgid "Parent Partner Type:"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:515
-#: includes/class-cpt-partners.php:367
+#: includes/cpt/class-cpt-organisations.php:542
+#: includes/cpt/class-cpt-partners.php:394
 msgid "Edit Partner Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:516
-#: includes/class-cpt-partners.php:368
+#: includes/cpt/class-cpt-organisations.php:543
+#: includes/cpt/class-cpt-partners.php:395
 msgid "Update Partner Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:517
-#: includes/class-cpt-partners.php:369
+#: includes/cpt/class-cpt-organisations.php:544
+#: includes/cpt/class-cpt-partners.php:396
 msgid "Add New Partner Type"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:518
-#: includes/class-cpt-partners.php:370
+#: includes/cpt/class-cpt-organisations.php:545
+#: includes/cpt/class-cpt-partners.php:397
 msgid "New Partner Type Name"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:519
-#: includes/class-cpt-partners.php:371
+#: includes/cpt/class-cpt-organisations.php:546
+#: includes/cpt/class-cpt-partners.php:398
 msgid "Partner Types"
 msgstr ""
 
-#: includes/class-cpt-organisations.php:520
-#: includes/class-cpt-partners.php:372
+#: includes/cpt/class-cpt-organisations.php:547
+#: includes/cpt/class-cpt-partners.php:399
 msgid "No Partner Types found"
 msgstr ""
 
-#: includes/class-cpt-partners.php:170
-#: includes/class-cpt-partners.php:181
+#: includes/cpt/class-cpt-partners.php:197
+#: includes/cpt/class-cpt-partners.php:208
 msgid "Partners"
 msgstr ""
 
-#: includes/class-cpt-partners.php:171
+#: includes/cpt/class-cpt-partners.php:198
 msgid "Partner"
 msgstr ""
 
-#: includes/class-cpt-partners.php:173
+#: includes/cpt/class-cpt-partners.php:200
 msgid "Add New Partner"
 msgstr ""
 
-#: includes/class-cpt-partners.php:174
+#: includes/cpt/class-cpt-partners.php:201
 msgid "Edit Partner"
 msgstr ""
 
-#: includes/class-cpt-partners.php:175
+#: includes/cpt/class-cpt-partners.php:202
 msgid "New Partner"
 msgstr ""
 
-#: includes/class-cpt-partners.php:176
+#: includes/cpt/class-cpt-partners.php:203
 msgid "All Partners"
 msgstr ""
 
-#: includes/class-cpt-partners.php:177
+#: includes/cpt/class-cpt-partners.php:204
 msgid "View Partner"
 msgstr ""
 
-#: includes/class-cpt-partners.php:178
+#: includes/cpt/class-cpt-partners.php:205
 msgid "Search Partners"
 msgstr ""
 
-#: includes/class-cpt-partners.php:179
+#: includes/cpt/class-cpt-partners.php:206
 msgid "No matching Partner found"
 msgstr ""
 
-#: includes/class-cpt-partners.php:180
+#: includes/cpt/class-cpt-partners.php:207
 msgid "No Partners found in Trash"
 msgstr ""
 
-#: includes/class-cpt-partners.php:186
+#: includes/cpt/class-cpt-partners.php:213
 msgid "An partner organisation post type"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-partners.php:251
+#: includes/cpt/class-cpt-partners.php:278
+#, php-format
 msgid "Partner updated. <a href=\"%s\">View Partner</a>"
 msgstr ""
 
-#: includes/class-cpt-partners.php:258
+#: includes/cpt/class-cpt-partners.php:285
 msgid "Partner updated."
 msgstr ""
 
 #. translators: %s: The date and time of the revision.
-#: includes/class-cpt-partners.php:267
+#: includes/cpt/class-cpt-partners.php:294
+#, php-format
 msgid "Partner restored to revision from %s"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-partners.php:278
+#: includes/cpt/class-cpt-partners.php:305
+#, php-format
 msgid "Partner published. <a href=\"%s\">View Partner</a>"
 msgstr ""
 
-#: includes/class-cpt-partners.php:283
+#: includes/cpt/class-cpt-partners.php:310
 msgid "Partner saved."
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-partners.php:288
+#: includes/cpt/class-cpt-partners.php:315
+#, php-format
 msgid "Partner submitted. <a target=\"_blank\" href=\"%s\">Preview Partner</a>"
 msgstr ""
 
 #. translators: 1: The date, 2: The permalink.
-#: includes/class-cpt-partners.php:295
+#: includes/cpt/class-cpt-partners.php:322
+#, php-format
 msgid "Partner scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Partner</a>"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/class-cpt-partners.php:304
+#: includes/cpt/class-cpt-partners.php:331
+#, php-format
 msgid "Partner draft updated. <a target=\"_blank\" href=\"%s\">Preview Partner</a>"
 msgstr ""
 
-#: includes/class-cpt-partners.php:331
+#: includes/cpt/class-cpt-partners.php:358
 msgid "Add the name of the Partner"
 msgstr ""
