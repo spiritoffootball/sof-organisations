@@ -4,9 +4,9 @@
  *
  * Plugin Name:       SOF Organisations
  * Description:       Provides Organisation Custom Post Types for The Ball website.
+ * Version:           1.0.1a
  * Plugin URI:        https://github.com/spiritoffootball/sof-organisations
  * GitHub Plugin URI: https://github.com/spiritoffootball/sof-organisations
- * Version:           1.0.1a
  * Author:            Christian Wach
  * Author URI:        https://haystack.co.uk
  * Text Domain:       sof-organisations
