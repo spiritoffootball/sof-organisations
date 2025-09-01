@@ -167,6 +167,10 @@ class SOF_Organisations_Admin {
 	 */
 	private function include_files() {
 
+		// Get enabled settings.
+		$defaults = $this->settings_get_defaults();
+		$host_enabled = $this->setting_get( 'host_enabled', $defaults['host_enabled'] );
+
 		// Always include Base class.
 		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-page-base.php';
 
@@ -174,7 +178,9 @@ class SOF_Organisations_Admin {
 		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-page-settings.php';
 
 		// Ball Host Settings Page class.
-		require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-settings-ball-host.php';
+		if ( 'y' === $host_enabled ) {
+			require SOF_ORGANISATIONS_PATH . 'includes/admin/class-admin-settings-ball-host.php';
+		}
 
 	}
 
@@ -185,11 +191,17 @@ class SOF_Organisations_Admin {
 	 */
 	private function setup_objects() {
 
+		// Get enabled settings.
+		$defaults = $this->settings_get_defaults();
+		$host_enabled = $this->setting_get( 'host_enabled', $defaults['host_enabled'] );
+
 		// General Settings Page.
 		$this->settings_page = new SOF_Organisations_Admin_Settings( $this );
 
 		// Ball Host Settings Page.
-		$this->settings_page_ball_host = new SOF_Organisations_Admin_Settings_Ball_Host( $this );
+		if ( 'y' === $host_enabled ) {
+			$this->settings_page_ball_host = new SOF_Organisations_Admin_Settings_Ball_Host( $this );
+		}
 
 	}
 

@@ -125,7 +125,7 @@ class SOF_Organisations_CPT {
 		if ( 'y' === $partner_enabled ) {
 			require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-partners.php';
 		}
-		if ( 'y' === $partner_enabled ) {
+		if ( 'y' === $host_enabled ) {
 			require SOF_ORGANISATIONS_PATH . 'includes/cpt/class-cpt-hosts.php';
 		}
 
