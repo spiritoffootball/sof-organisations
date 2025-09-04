@@ -224,7 +224,7 @@ class SOF_Organisations_CPT_Partners {
 			'query_var'           => true,
 			'capability_type'     => 'post',
 			'hierarchical'        => false,
-			'menu_position'       => 20,
+			'menu_position'       => 43,
 			'map_meta_cap'        => true,
 
 			// Rewrite.

@@ -270,7 +270,7 @@ class SOF_Organisations_CPT_Organisations {
 			'query_var'           => true,
 			'capability_type'     => 'post',
 			'hierarchical'        => false,
-			'menu_position'       => 20,
+			'menu_position'       => 42,
 			'map_meta_cap'        => true,
 
 			// Rewrite.
