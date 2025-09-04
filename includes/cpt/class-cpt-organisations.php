@@ -92,6 +92,24 @@ class SOF_Organisations_CPT_Organisations {
 	public $taxonomy_alt_rest_base = 'partner-type';
 
 	/**
+	 * Free Taxonomy name.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @var string
+	 */
+	public $taxonomy_free_name = 'organisation-tag';
+
+	/**
+	 * Free Taxonomy REST base.
+	 *
+	 * @since 1.0.0
+	 * @access public
+	 * @var string
+	 */
+	public $taxonomy_free_rest_base = 'organisation-tags';
+
+	/**
 	 * Constructor.
 	 *
 	 * @since 1.0
@@ -169,6 +187,9 @@ class SOF_Organisations_CPT_Organisations {
 		add_action( 'restrict_manage_posts', [ $this, 'taxonomy_alt_filter_post_type' ] );
 		*/
 
+		// Create free tagging taxonomy.
+		add_action( 'init', [ $this, 'taxonomy_free_create' ] );
+
 	}
 
 	/**
@@ -214,33 +235,35 @@ class SOF_Organisations_CPT_Organisations {
 			return;
 		}
 
+		// Define labels.
+		$labels = [
+			'name'               => __( 'Organisations', 'sof-organisations' ),
+			'singular_name'      => __( 'Organisation', 'sof-organisations' ),
+			'add_new'            => __( 'Add New', 'sof-organisations' ),
+			'add_new_item'       => __( 'Add New Organisation', 'sof-organisations' ),
+			'edit_item'          => __( 'Edit Organisation', 'sof-organisations' ),
+			'new_item'           => __( 'New Organisation', 'sof-organisations' ),
+			'all_items'          => __( 'All Organisations', 'sof-organisations' ),
+			'view_item'          => __( 'View Organisation', 'sof-organisations' ),
+			'search_items'       => __( 'Search Organisations', 'sof-organisations' ),
+			'not_found'          => __( 'No matching Organisation found', 'sof-organisations' ),
+			'not_found_in_trash' => __( 'No Organisations found in Trash', 'sof-organisations' ),
+			'menu_name'          => __( 'Organisations', 'sof-organisations' ),
+		];
+
 		// Define Post Type args.
 		$args = [
 
-			// Labels.
-			'labels'              => [
-				'name'               => __( 'Organisations', 'sof-organisations' ),
-				'singular_name'      => __( 'Organisation', 'sof-organisations' ),
-				'add_new'            => __( 'Add New', 'sof-organisations' ),
-				'add_new_item'       => __( 'Add New Organisation', 'sof-organisations' ),
-				'edit_item'          => __( 'Edit Organisation', 'sof-organisations' ),
-				'new_item'           => __( 'New Organisation', 'sof-organisations' ),
-				'all_items'          => __( 'All Organisations', 'sof-organisations' ),
-				'view_item'          => __( 'View Organisation', 'sof-organisations' ),
-				'search_items'       => __( 'Search Organisations', 'sof-organisations' ),
-				'not_found'          => __( 'No matching Organisation found', 'sof-organisations' ),
-				'not_found_in_trash' => __( 'No Organisations found in Trash', 'sof-organisations' ),
-				'menu_name'          => __( 'Organisations', 'sof-organisations' ),
-			],
+			'labels'              => $labels,
 
 			// Defaults.
 			'menu_icon'           => 'dashicons-groups',
 			'description'         => __( 'An organisation post type', 'sof-organisations' ),
 			'public'              => true,
 			'publicly_queryable'  => true,
-			'exclude_from_search' => false,
+			'exclude_from_search' => true,
 			'show_ui'             => true,
-			'show_in_nav_menus'   => true,
+			'show_in_nav_menus'   => false,
 			'show_in_menu'        => true,
 			'show_in_admin_bar'   => true,
 			'has_archive'         => false,
@@ -259,8 +282,6 @@ class SOF_Organisations_CPT_Organisations {
 			// Supports.
 			'supports'            => [
 				'title',
-				'editor',
-				'excerpt',
 				'thumbnail',
 			],
 
@@ -630,6 +651,69 @@ class SOF_Organisations_CPT_Organisations {
 
 		// Show a dropdown.
 		wp_dropdown_categories( $args );
+
+	}
+
+	// -----------------------------------------------------------------------------------
+
+	/**
+	 * Create our alternative Custom Taxonomy.
+	 *
+	 * @since 1.0.0
+	 */
+	public function taxonomy_free_create() {
+
+		// Only register once.
+		static $registered;
+		if ( $registered ) {
+			return;
+		}
+
+		// Define Taxonomy arguments.
+		$args = [
+
+			// General.
+			'public'            => true,
+			'hierarchical'      => false,
+
+			// Labels.
+			'labels'            => [
+				'name'                       => _x( 'Organisation Tags', 'taxonomy general name', 'sof-organisations' ),
+				'singular_name'              => _x( 'Organisation Tag', 'taxonomy singular name', 'sof-organisations' ),
+				'menu_name'                  => __( 'Organisation Tags', 'sof-organisations' ),
+				'search_items'               => __( 'Search Organisation Tags', 'sof-organisations' ),
+				'all_items'                  => __( 'All Organisation Tags', 'sof-organisations' ),
+				'edit_item'                  => __( 'Edit Organisation Tag', 'sof-organisations' ),
+				'update_item'                => __( 'Update Organisation Tag', 'sof-organisations' ),
+				'add_new_item'               => __( 'Add New Organisation Tag', 'sof-organisations' ),
+				'new_item_name'              => __( 'New Organisation Tag Name', 'sof-organisations' ),
+				'not_found'                  => __( 'No Organisation Tags found', 'sof-organisations' ),
+				'popular_items'              => __( 'Popular Organisation Tags', 'sof-organisations' ),
+				'separate_items_with_commas' => __( 'Separate Organisation Tags with commas', 'sof-organisations' ),
+				'add_or_remove_items'        => __( 'Add or remove Organisation Tag', 'sof-organisations' ),
+				'choose_from_most_used'      => __( 'Choose from the most popular Organisation Tags', 'sof-organisations' ),
+			],
+
+			// Rewrite rules.
+			'rewrite'           => [
+				'slug' => 'organisation-tags',
+			],
+
+			// Show column in wp-admin.
+			'show_admin_column' => true,
+			'show_ui'           => true,
+
+			// REST setup.
+			'show_in_rest'      => true,
+			'rest_base'         => $this->taxonomy_free_rest_base,
+
+		];
+
+		// Go ahead and register the Taxonomy now.
+		register_taxonomy( $this->taxonomy_free_name, $this->post_type_name, $args );
+
+		// Flag done.
+		$registered = true;
 
 	}
 

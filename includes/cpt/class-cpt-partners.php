@@ -189,33 +189,35 @@ class SOF_Organisations_CPT_Partners {
 			return;
 		}
 
+		// Define labels.
+		$labels = [
+			'name'               => __( 'Partners', 'sof-organisations' ),
+			'singular_name'      => __( 'Partner', 'sof-organisations' ),
+			'add_new'            => __( 'Add New', 'sof-organisations' ),
+			'add_new_item'       => __( 'Add New Partner', 'sof-organisations' ),
+			'edit_item'          => __( 'Edit Partner', 'sof-organisations' ),
+			'new_item'           => __( 'New Partner', 'sof-organisations' ),
+			'all_items'          => __( 'All Partners', 'sof-organisations' ),
+			'view_item'          => __( 'View Partner', 'sof-organisations' ),
+			'search_items'       => __( 'Search Partners', 'sof-organisations' ),
+			'not_found'          => __( 'No matching Partner found', 'sof-organisations' ),
+			'not_found_in_trash' => __( 'No Partners found in Trash', 'sof-organisations' ),
+			'menu_name'          => __( 'Partners', 'sof-organisations' ),
+		];
+
 		// Build Post Type args.
 		$args = [
 
-			// Labels.
-			'labels'              => [
-				'name'               => __( 'Partners', 'sof-organisations' ),
-				'singular_name'      => __( 'Partner', 'sof-organisations' ),
-				'add_new'            => __( 'Add New', 'sof-organisations' ),
-				'add_new_item'       => __( 'Add New Partner', 'sof-organisations' ),
-				'edit_item'          => __( 'Edit Partner', 'sof-organisations' ),
-				'new_item'           => __( 'New Partner', 'sof-organisations' ),
-				'all_items'          => __( 'All Partners', 'sof-organisations' ),
-				'view_item'          => __( 'View Partner', 'sof-organisations' ),
-				'search_items'       => __( 'Search Partners', 'sof-organisations' ),
-				'not_found'          => __( 'No matching Partner found', 'sof-organisations' ),
-				'not_found_in_trash' => __( 'No Partners found in Trash', 'sof-organisations' ),
-				'menu_name'          => __( 'Partners', 'sof-organisations' ),
-			],
+			'labels'              => $labels,
 
 			// Defaults.
 			'menu_icon'           => 'dashicons-groups',
 			'description'         => __( 'An partner organisation post type', 'sof-organisations' ),
 			'public'              => true,
 			'publicly_queryable'  => true,
-			'exclude_from_search' => false,
+			'exclude_from_search' => true,
 			'show_ui'             => true,
-			'show_in_nav_menus'   => true,
+			'show_in_nav_menus'   => false,
 			'show_in_menu'        => true,
 			'show_in_admin_bar'   => true,
 			'has_archive'         => false,
@@ -234,8 +236,6 @@ class SOF_Organisations_CPT_Partners {
 			// Supports.
 			'supports'            => [
 				'title',
-				'editor',
-				'excerpt',
 				'thumbnail',
 			],
 

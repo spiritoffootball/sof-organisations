@@ -189,33 +189,35 @@ class SOF_Organisations_CPT_Hosts {
 			return;
 		}
 
+		// Define labels.
+		$labels = [
+			'name'               => __( 'Ball Hosts', 'sof-organisations' ),
+			'singular_name'      => __( 'Ball Host', 'sof-organisations' ),
+			'add_new'            => __( 'Add New', 'sof-organisations' ),
+			'add_new_item'       => __( 'Add New Ball Host', 'sof-organisations' ),
+			'edit_item'          => __( 'Edit Ball Host', 'sof-organisations' ),
+			'new_item'           => __( 'New Ball Host', 'sof-organisations' ),
+			'all_items'          => __( 'All Ball Hosts', 'sof-organisations' ),
+			'view_item'          => __( 'View Ball Host', 'sof-organisations' ),
+			'search_items'       => __( 'Search Ball Hosts', 'sof-organisations' ),
+			'not_found'          => __( 'No matching Ball Host found', 'sof-organisations' ),
+			'not_found_in_trash' => __( 'No Ball Hosts found in Trash', 'sof-organisations' ),
+			'menu_name'          => __( 'Ball Hosts', 'sof-organisations' ),
+		];
+
 		// Build Post Type args.
 		$args = [
 
-			// Labels.
-			'labels'              => [
-				'name'               => __( 'Ball Hosts', 'sof-organisations' ),
-				'singular_name'      => __( 'Ball Host', 'sof-organisations' ),
-				'add_new'            => __( 'Add New', 'sof-organisations' ),
-				'add_new_item'       => __( 'Add New Ball Host', 'sof-organisations' ),
-				'edit_item'          => __( 'Edit Ball Host', 'sof-organisations' ),
-				'new_item'           => __( 'New Ball Host', 'sof-organisations' ),
-				'all_items'          => __( 'All Ball Hosts', 'sof-organisations' ),
-				'view_item'          => __( 'View Ball Host', 'sof-organisations' ),
-				'search_items'       => __( 'Search Ball Hosts', 'sof-organisations' ),
-				'not_found'          => __( 'No matching Ball Host found', 'sof-organisations' ),
-				'not_found_in_trash' => __( 'No Ball Hosts found in Trash', 'sof-organisations' ),
-				'menu_name'          => __( 'Ball Hosts', 'sof-organisations' ),
-			],
+			'labels'              => $labels,
 
 			// Defaults.
 			'menu_icon'           => 'dashicons-groups',
 			'description'         => __( 'A ball host organisation post type', 'sof-organisations' ),
 			'public'              => true,
 			'publicly_queryable'  => true,
-			'exclude_from_search' => false,
+			'exclude_from_search' => true,
 			'show_ui'             => true,
-			'show_in_nav_menus'   => true,
+			'show_in_nav_menus'   => false,
 			'show_in_menu'        => true,
 			'show_in_admin_bar'   => true,
 			'has_archive'         => false,
@@ -234,8 +236,6 @@ class SOF_Organisations_CPT_Hosts {
 			// Supports.
 			'supports'            => [
 				'title',
-				'editor',
-				'excerpt',
 				'thumbnail',
 			],
 
