@@ -224,7 +224,7 @@ class SOF_Organisations_CPT_Hosts {
 			'query_var'           => true,
 			'capability_type'     => 'post',
 			'hierarchical'        => false,
-			'menu_position'       => 44,
+			'menu_position'       => 46,
 			'map_meta_cap'        => true,
 
 			// Rewrite.
