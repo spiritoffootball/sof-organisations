@@ -883,7 +883,7 @@ abstract class SOF_Organisations_Admin_Settings_Base {
 		$organisation_enabled = isset( $_POST[ $this->key_organisation_enabled ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->key_organisation_enabled ] ) ) : 'n';
 		$partner_enabled      = isset( $_POST[ $this->key_partner_enabled ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->key_partner_enabled ] ) ) : 'n';
 		$host_enabled         = isset( $_POST[ $this->key_host_enabled ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->key_host_enabled ] ) ) : 'n';
-		$pledgeball_enabled   = isset( $_POST[ $this->key_host_enabled ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->key_pledgeball_enabled ] ) ) : 'n';
+		$pledgeball_enabled   = isset( $_POST[ $this->key_pledgeball_enabled ] ) ? sanitize_text_field( wp_unslash( $_POST[ $this->key_pledgeball_enabled ] ) ) : 'n';
 
 		// Set individual settings.
 		$this->admin->setting_set( 'organisation_enabled', $organisation_enabled );

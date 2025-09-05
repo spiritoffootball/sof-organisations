@@ -168,7 +168,7 @@ class SOF_Organisations_Admin {
 	private function include_files() {
 
 		// Get enabled settings.
-		$defaults = $this->settings_get_defaults();
+		$defaults     = $this->settings_get_defaults();
 		$host_enabled = $this->setting_get( 'host_enabled', $defaults['host_enabled'] );
 
 		// Always include Base class.
@@ -192,7 +192,7 @@ class SOF_Organisations_Admin {
 	private function setup_objects() {
 
 		// Get enabled settings.
-		$defaults = $this->settings_get_defaults();
+		$defaults     = $this->settings_get_defaults();
 		$host_enabled = $this->setting_get( 'host_enabled', $defaults['host_enabled'] );
 
 		// General Settings Page.

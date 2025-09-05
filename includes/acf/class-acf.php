@@ -117,8 +117,10 @@ class SOF_Organisations_ACF {
 			require SOF_ORGANISATIONS_PATH . 'includes/acf/class-acf-events.php';
 		}
 
+		/*
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-		// require SOF_ORGANISATIONS_PATH . 'includes/acf/class-acf-organisations.php';
+		require SOF_ORGANISATIONS_PATH . 'includes/acf/class-acf-organisations.php';
+		*/
 
 	}
 
@@ -140,8 +142,10 @@ class SOF_Organisations_ACF {
 			$this->events = new SOF_Organisations_ACF_Events( $this );
 		}
 
+		/*
 		// phpcs:ignore Squiz.Commenting.InlineComment.InvalidEndChar
-		// $this->organisations = new SOF_Organisations_ACF_Organisations( $this );
+		$this->organisations = new SOF_Organisations_ACF_Organisations( $this );
+		*/
 
 	}
 
