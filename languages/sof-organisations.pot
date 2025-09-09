@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the SOF Organisations plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: SOF Organisations 1.0.2a\n"
+"Project-Id-Version: SOF Organisations 1.0.3a\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sof-organisations\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-07T11:39:31+00:00\n"
+"POT-Creation-Date: 2025-09-09T09:20:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sof-organisations\n"
@@ -661,7 +661,7 @@ msgid "No Partners found in Trash"
 msgstr ""
 
 #: includes/cpt/class-cpt-partners.php:215
-msgid "An partner organisation post type"
+msgid "A partner organisation post type"
 msgstr ""
 
 #. translators: %s: The permalink.

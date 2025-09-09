@@ -1,0 +1,741 @@
+# Copyright (C) 2025 Christian Wach
+# This file is distributed under the same license as the SOF Organisations plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: SOF Organisations 1.0.3a\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sof-"
+"organisations\n"
+"Last-Translator: Christian Wach\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-09-09T08:34:27+00:00\n"
+"PO-Revision-Date: 2025-09-09 09:20+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: sof-organisations\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.4"
+
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php:48
+msgid "- Select Field -"
+msgstr "- Feld auswählen -"
+
+#: includes/cpt/class-cpt-hosts.php:215
+msgid "A ball host organisation post type"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:215
+msgid "A partner organisation post type"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:196
+#: includes/cpt/class-cpt-organisations.php:242
+#: includes/cpt/class-cpt-partners.php:196
+msgid "Add New"
+msgstr "Neu hinzufügen"
+
+#: includes/cpt/class-cpt-hosts.php:197
+msgid "Add New Ball Host"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:396
+msgid "Add New Ball Host Type"
+msgstr "Kategorie hinzufügen"
+
+#: includes/cpt/class-cpt-organisations.php:243
+msgid "Add New Organisation"
+msgstr "Neue Organisation hinzufügen"
+
+#: includes/cpt/class-cpt-organisations.php:688
+msgid "Add New Organisation Tag"
+msgstr "Schlagwort hinzufügen"
+
+#: includes/cpt/class-cpt-organisations.php:442
+msgid "Add New Organisation Type"
+msgstr "Kategorie hinzufügen"
+
+#: includes/cpt/class-cpt-partners.php:197
+msgid "Add New Partner"
+msgstr "Neuen Partner hinzufügen"
+
+#: includes/cpt/class-cpt-organisations.php:565
+#: includes/cpt/class-cpt-partners.php:396
+msgid "Add New Partner Type"
+msgstr "Kategorie hinzufügen"
+
+#: includes/cpt/class-cpt-organisations.php:693
+msgid "Add or remove Organisation Tag"
+msgstr "Schlagwort hinzufügen oder entfernen"
+
+#: includes/cpt/class-cpt-hosts.php:358
+msgid "Add the name of the Ball Host"
+msgstr ""
+
+#: includes/cpt/class-cpt-organisations.php:404
+msgid "Add the name of the Organisation"
+msgstr "Fügen Sie den Namen der Organisation hinzu"
+
+#: includes/cpt/class-cpt-partners.php:358
+msgid "Add the name of the Partner"
+msgstr "Fügen Sie den Namen des Partners hinzu"
+
+#: includes/cpt/class-cpt-hosts.php:391
+msgid "All Ball Host Types"
+msgstr "Alle Kategorien"
+
+#: includes/cpt/class-cpt-hosts.php:200
+msgid "All Ball Hosts"
+msgstr ""
+
+#: includes/cpt/class-cpt-organisations.php:685
+msgid "All Organisation Tags"
+msgstr "Alle Schlagwörter"
+
+#: includes/cpt/class-cpt-organisations.php:437
+msgid "All Organisation Types"
+msgstr "Alle Kategorien"
+
+#: includes/cpt/class-cpt-organisations.php:246
+msgid "All Organisations"
+msgstr "Alle Organisationen"
+
+#: includes/cpt/class-cpt-organisations.php:560
+#: includes/cpt/class-cpt-partners.php:391
+msgid "All Partner Types"
+msgstr "Alle Kategorien"
+
+#: includes/cpt/class-cpt-partners.php:200
+msgid "All Partners"
+msgstr "Alle Partner"
+
+#: includes/cpt/class-cpt-organisations.php:261
+msgid "An organisation post type"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:195
+msgid "Ball Host"
+msgstr ""
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-hosts.php:331
+#, php-format
+msgid ""
+"Ball Host draft updated. <a target=\"_blank\" href=\"%s\">Preview Ball "
+"Host</a>"
+msgstr ""
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-hosts.php:305
+#, php-format
+msgid "Ball Host published. <a href=\"%s\">View Ball Host</a>"
+msgstr ""
+
+#. translators: %s: The date and time of the revision.
+#: includes/cpt/class-cpt-hosts.php:294
+#, php-format
+msgid "Ball Host restored to revision from %s"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:310
+msgid "Ball Host saved."
+msgstr ""
+
+#. translators: 1: The date, 2: The permalink.
+#: includes/cpt/class-cpt-hosts.php:322
+#, php-format
+msgid ""
+"Ball Host scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
+"href=\"%2$s\">Preview Ball Host</a>"
+msgstr ""
+
+#: assets/templates/wordpress/pages/page-ball-host-settings.php:18
+msgid "Ball Host Settings"
+msgstr ""
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-hosts.php:315
+#, php-format
+msgid ""
+"Ball Host submitted. <a target=\"_blank\" href=\"%s\">Preview Ball Host</a>"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:398
+msgid "Ball Host Types"
+msgstr "Kategorien"
+
+#: includes/cpt/class-cpt-hosts.php:285
+msgid "Ball Host updated."
+msgstr ""
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-hosts.php:278
+#, php-format
+msgid "Ball Host updated. <a href=\"%s\">View Ball Host</a>"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:194 includes/cpt/class-cpt-hosts.php:205
+msgid "Ball Hosts"
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:46
+msgid "Ball Hosts Post Type"
+msgstr ""
+
+#: includes/cpt/class-cpt-organisations.php:694
+msgid "Choose from the most popular Organisation Tags"
+msgstr "Wählen Sie aus den beliebtesten Schlagwörter aus."
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:53
+msgid "Choose whether to enable the Ball Hosts Post Type."
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:27
+msgid "Choose whether to enable the Organisations Post Type."
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:40
+msgid "Choose whether to enable the Partners Post Type."
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:66
+msgid "Choose whether to enable the Pledgeball settings on Events."
+msgstr ""
+
+#. Author of the plugin
+#: sof-organisations.php
+msgid "Christian Wach"
+msgstr "Christian Wach"
+
+#: includes/cpt/class-cpt-hosts.php:284
+#: includes/cpt/class-cpt-organisations.php:330
+#: includes/cpt/class-cpt-partners.php:284
+msgid "Custom field deleted."
+msgstr "Benutzerdefiniertes Feld gelöscht."
+
+#: includes/cpt/class-cpt-hosts.php:283
+#: includes/cpt/class-cpt-organisations.php:329
+#: includes/cpt/class-cpt-partners.php:283
+msgid "Custom field updated."
+msgstr "Benutzerdefiniertes Feld aktualisiert."
+
+#: includes/cpt/class-cpt-hosts.php:198
+msgid "Edit Ball Host"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:394
+msgid "Edit Ball Host Type"
+msgstr "Kategorie bearbeiten"
+
+#: includes/cpt/class-cpt-organisations.php:244
+msgid "Edit Organisation"
+msgstr "Organisation bearbeiten"
+
+#: includes/cpt/class-cpt-organisations.php:686
+msgid "Edit Organisation Tag"
+msgstr "Schlagwort bearbeiten"
+
+#: includes/cpt/class-cpt-organisations.php:440
+msgid "Edit Organisation Type"
+msgstr "Kategorie bearbeiten"
+
+#: includes/cpt/class-cpt-partners.php:198
+msgid "Edit Partner"
+msgstr "Partner bearbeiten"
+
+#: includes/cpt/class-cpt-organisations.php:563
+#: includes/cpt/class-cpt-partners.php:394
+msgid "Edit Partner Type"
+msgstr "Kategorie bearbeiten"
+
+#: includes/acf/class-acf-events.php:241
+msgid "Enable Pledge Form"
+msgstr ""
+
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php:44
+msgid "Event Ball Host"
+msgstr ""
+
+#: includes/admin/class-admin-page-base.php:668
+#: includes/admin/class-admin-settings-ball-host.php:397
+msgid "General Settings"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: sof-organisations.php
+msgid "https://github.com/spiritoffootball/sof-organisations"
+msgstr "https://github.com/spiritoffootball/sof-organisations"
+
+#. Author URI of the plugin
+#: sof-organisations.php
+msgid "https://haystack.co.uk"
+msgstr "https://haystack.co.uk"
+
+#: includes/acf/class-acf-events.php:281
+msgid "If yes, the Pledge List for the Venue Country will be used."
+msgstr ""
+
+#: includes/acf/class-acf-events.php:245
+msgid "Is the Pledge Form enabled for this Event?"
+msgstr ""
+
+#: includes/acf/class-acf-organisations.php:200
+msgid "Link to website"
+msgstr "Link zur Website"
+
+#. translators: Publish box date format - see https://php.net/date
+#: includes/cpt/class-cpt-hosts.php:324
+#: includes/cpt/class-cpt-organisations.php:370
+#: includes/cpt/class-cpt-partners.php:324
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ G:i"
+
+#: includes/cpt/class-cpt-hosts.php:199
+msgid "New Ball Host"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:397
+msgid "New Ball Host Type Name"
+msgstr "Neuer Kategoriename"
+
+#: includes/cpt/class-cpt-organisations.php:245
+msgid "New Organisation"
+msgstr "Neue Organisation"
+
+#: includes/cpt/class-cpt-organisations.php:689
+msgid "New Organisation Tag Name"
+msgstr "Neuer Schlagwort Name"
+
+#: includes/cpt/class-cpt-organisations.php:443
+msgid "New Organisation Type Name"
+msgstr "Neuer Kategoriename"
+
+#: includes/cpt/class-cpt-partners.php:199
+msgid "New Partner"
+msgstr "Neuer Partner"
+
+#: includes/cpt/class-cpt-organisations.php:566
+#: includes/cpt/class-cpt-partners.php:397
+msgid "New Partner Type Name"
+msgstr "Neuer Kategoriename"
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:25
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:38
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:51
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:64
+msgid "No"
+msgstr "Nein"
+
+#: includes/cpt/class-cpt-hosts.php:399
+msgid "No Ball Host Types found"
+msgstr "Keine Kategorien gefunden"
+
+#: includes/cpt/class-cpt-hosts.php:204
+msgid "No Ball Hosts found in Trash"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:203
+msgid "No matching Ball Host found"
+msgstr ""
+
+#: includes/cpt/class-cpt-organisations.php:249
+msgid "No matching Organisation found"
+msgstr "Keine passende Organisation gefunden"
+
+#: includes/cpt/class-cpt-partners.php:203
+msgid "No matching Partner found"
+msgstr "Kein passender Partner gefunden"
+
+#: includes/cpt/class-cpt-organisations.php:690
+msgid "No Organisation Tags found"
+msgstr "Keine Schlagwörter gefunden"
+
+#: includes/cpt/class-cpt-organisations.php:445
+msgid "No Organisation Types found"
+msgstr "Keine Kategorien gefunden"
+
+#: includes/cpt/class-cpt-organisations.php:250
+msgid "No Organisations found in Trash"
+msgstr "Keine Organisationen im Papierkorb gefunden"
+
+#: includes/cpt/class-cpt-organisations.php:568
+#: includes/cpt/class-cpt-partners.php:399
+msgid "No Partner Types found"
+msgstr "Keine Kategorien gefunden"
+
+#: includes/cpt/class-cpt-partners.php:204
+msgid "No Partners found in Trash"
+msgstr "Keine Partner im Papierkorb gefunden"
+
+#: includes/cpt/class-cpt-organisations.php:241
+msgid "Organisation"
+msgstr "Organisation"
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-organisations.php:377
+#, php-format
+msgid ""
+"Organisation draft updated. <a target=\"_blank\" href=\"%s\">Preview "
+"Organisation</a>"
+msgstr ""
+"Entwurf der Organisation aktualisiert. <a target=\"_blank\" href=\"%s\">"
+"Vorschau Organisation</a>"
+
+#: includes/acf/class-acf-organisations.php:167
+msgid "Organisation Information"
+msgstr "Informationen zur Organisation"
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-organisations.php:351
+#, php-format
+msgid "Organisation published. <a href=\"%s\">View Organisation</a>"
+msgstr "Organisation veröffentlicht. <a href=\"%s\">Organisation ansehen</a>"
+
+#. translators: %s: The date and time of the revision.
+#: includes/cpt/class-cpt-organisations.php:340
+#, php-format
+msgid "Organisation restored to revision from %s"
+msgstr "Organisation wurde auf die Version vom %s zurückgesetzt."
+
+#: includes/cpt/class-cpt-organisations.php:356
+msgid "Organisation saved."
+msgstr "Organisation gespeichert."
+
+#. translators: 1: The date, 2: The permalink.
+#: includes/cpt/class-cpt-organisations.php:368
+#, php-format
+msgid ""
+"Organisation scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
+"href=\"%2$s\">Preview Organisation</a>"
+msgstr ""
+"Organisation geplant für: <strong>%1$s</strong>. <a target=\"_blank\" "
+"href=\"%2$s\">Vorschau Organisation</a>"
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-organisations.php:361
+#, php-format
+msgid ""
+"Organisation submitted. <a target=\"_blank\" href=\"%s\">Preview "
+"Organisation</a>"
+msgstr ""
+"Organisation eingereicht. <a target=\"_blank\" href=\"%s\">Vorschau "
+"Organisation</a>"
+
+#: includes/cpt/class-cpt-organisations.php:683
+msgid "Organisation Tags"
+msgstr "Schlagwörter"
+
+#: includes/cpt/class-cpt-organisations.php:444
+msgid "Organisation Types"
+msgstr "Kategorien"
+
+#: includes/cpt/class-cpt-organisations.php:331
+msgid "Organisation updated."
+msgstr "Organisation aktualisiert."
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-organisations.php:324
+#, php-format
+msgid "Organisation updated. <a href=\"%s\">View Organisation</a>"
+msgstr "Organisation aktualisiert. <a href=\"%s\">Organisation ansehen</a>"
+
+#: includes/cpt/class-cpt-organisations.php:240
+#: includes/cpt/class-cpt-organisations.php:251
+msgid "Organisations"
+msgstr "Organisationen"
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:20
+msgid "Organisations Post Type"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:392
+msgid "Parent Ball Host Type"
+msgstr "Übergeordnete Kategorie"
+
+#: includes/cpt/class-cpt-hosts.php:393
+msgid "Parent Ball Host Type:"
+msgstr "Übergeordnete Kategorie:"
+
+#: includes/cpt/class-cpt-organisations.php:438
+msgid "Parent Organisation Type"
+msgstr "Übergeordnete Kategorie"
+
+#: includes/cpt/class-cpt-organisations.php:439
+msgid "Parent Organisation Type:"
+msgstr "Übergeordnete Kategorie:"
+
+#: includes/cpt/class-cpt-organisations.php:561
+#: includes/cpt/class-cpt-partners.php:392
+msgid "Parent Partner Type"
+msgstr "Übergeordnete Kategorie"
+
+#: includes/cpt/class-cpt-organisations.php:562
+#: includes/cpt/class-cpt-partners.php:393
+msgid "Parent Partner Type:"
+msgstr "Übergeordnete Kategorie:"
+
+#: includes/cpt/class-cpt-partners.php:195
+msgid "Partner"
+msgstr "Partner"
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-partners.php:331
+#, php-format
+msgid ""
+"Partner draft updated. <a target=\"_blank\" href=\"%s\">Preview Partner</a>"
+msgstr ""
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-partners.php:305
+#, php-format
+msgid "Partner published. <a href=\"%s\">View Partner</a>"
+msgstr ""
+
+#. translators: %s: The date and time of the revision.
+#: includes/cpt/class-cpt-partners.php:294
+#, php-format
+msgid "Partner restored to revision from %s"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:310
+msgid "Partner saved."
+msgstr "Partner gespeichert."
+
+#. translators: 1: The date, 2: The permalink.
+#: includes/cpt/class-cpt-partners.php:322
+#, php-format
+msgid ""
+"Partner scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
+"href=\"%2$s\">Preview Partner</a>"
+msgstr ""
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-partners.php:315
+#, php-format
+msgid "Partner submitted. <a target=\"_blank\" href=\"%s\">Preview Partner</a>"
+msgstr ""
+
+#: includes/cpt/class-cpt-organisations.php:567
+#: includes/cpt/class-cpt-partners.php:398
+msgid "Partner Types"
+msgstr "Kategorien"
+
+#: includes/cpt/class-cpt-partners.php:285
+msgid "Partner updated."
+msgstr ""
+
+#. translators: %s: The permalink.
+#: includes/cpt/class-cpt-partners.php:278
+#, php-format
+msgid "Partner updated. <a href=\"%s\">View Partner</a>"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:194
+#: includes/cpt/class-cpt-partners.php:205
+msgid "Partners"
+msgstr "Partner"
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:33
+msgid "Partners Post Type"
+msgstr ""
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:59
+msgid "Pledgeball"
+msgstr ""
+
+#: includes/acf/class-acf-events.php:212
+msgid "Pledgeball Event Host"
+msgstr ""
+
+#: includes/acf/class-acf-events.php:167
+msgid "Pledgeball Information"
+msgstr ""
+
+#: includes/cpt/class-cpt-organisations.php:691
+msgid "Popular Organisation Tags"
+msgstr "Beliebte Schlagwörter"
+
+#. Description of the plugin
+#: sof-organisations.php
+msgid "Provides Organisation Custom Post Types for The Ball website."
+msgstr ""
+
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-submit.php:20
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-submit.php:23
+msgid "Save your settings here."
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:390
+msgid "Search Ball Host Types"
+msgstr "Kategorien durchsuchen"
+
+#: includes/cpt/class-cpt-hosts.php:202
+msgid "Search Ball Hosts"
+msgstr ""
+
+#: includes/cpt/class-cpt-organisations.php:684
+msgid "Search Organisation Tags"
+msgstr "Schlagwörter durchsuchen"
+
+#: includes/cpt/class-cpt-organisations.php:436
+msgid "Search Organisation Types"
+msgstr "Kategorien durchsuchen"
+
+#: includes/cpt/class-cpt-organisations.php:248
+msgid "Search Organisations"
+msgstr "Organisationen durchsuchen"
+
+#: includes/cpt/class-cpt-organisations.php:559
+#: includes/cpt/class-cpt-partners.php:390
+msgid "Search Partner Types"
+msgstr "Kategorien durchsuchen"
+
+#: includes/cpt/class-cpt-partners.php:202
+msgid "Search Partners"
+msgstr "Partner durchsuchen"
+
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php:60
+msgid ""
+"Select the CiviCRM Custom Field that defines the Contact ID of the Event "
+"Ball Host."
+msgstr ""
+
+#: includes/cpt/class-cpt-organisations.php:692
+msgid "Separate Organisation Tags with commas"
+msgstr "Trenn die Schlagwörter mit Kommas."
+
+#: assets/templates/wordpress/pages/page-ball-host-settings.php:23
+#: includes/admin/class-admin-page-settings.php:69
+#: includes/admin/class-admin-settings-ball-host.php:175
+#: includes/admin/class-admin-settings-ball-host.php:387
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-admin-settings-ball-host.php:174
+msgid "Settings: Ball Hosts"
+msgstr ""
+
+#: assets/templates/wordpress/settings/help/page-settings-help.php:16
+msgid ""
+"Settings: For further information about using this plugin, please refer to "
+"the readme file that is supplied with it."
+msgstr ""
+
+#. translators: %s: The plural name of the taxonomy terms.
+#: includes/cpt/class-cpt-hosts.php:471
+#: includes/cpt/class-cpt-organisations.php:517
+#: includes/cpt/class-cpt-organisations.php:640
+#: includes/cpt/class-cpt-partners.php:471
+#, php-format
+msgid "Show All %s"
+msgstr "Alle %s anzeigen"
+
+#. Plugin Name of the plugin
+#: sof-organisations.php includes/admin/class-admin-page-base.php:397
+#: includes/admin/class-admin-page-settings.php:68
+#: includes/admin/class-admin-page-settings.php:110
+#: includes/admin/class-admin-page-settings.php:139
+msgid "SOF Organisations"
+msgstr "SOF Organisationen"
+
+#: includes/admin/class-admin-page-settings.php:109
+msgid "SOF Organisations: Settings"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:388
+msgctxt "taxonomy general name"
+msgid "Ball Host Types"
+msgstr "Kategorien"
+
+#: includes/cpt/class-cpt-organisations.php:681
+msgctxt "taxonomy general name"
+msgid "Organisation Tags"
+msgstr "Schlagwörter"
+
+#: includes/cpt/class-cpt-organisations.php:434
+msgctxt "taxonomy general name"
+msgid "Organisation Types"
+msgstr "Kategorien"
+
+#: includes/cpt/class-cpt-organisations.php:557
+#: includes/cpt/class-cpt-partners.php:388
+msgctxt "taxonomy general name"
+msgid "Partner Types"
+msgstr "Kategorien"
+
+#: includes/cpt/class-cpt-hosts.php:389
+msgctxt "taxonomy singular name"
+msgid "Ball Host Type"
+msgstr "Kategorie"
+
+#: includes/cpt/class-cpt-organisations.php:682
+msgctxt "taxonomy singular name"
+msgid "Organisation Tag"
+msgstr "Schlagwort"
+
+#: includes/cpt/class-cpt-organisations.php:435
+msgctxt "taxonomy singular name"
+msgid "Organisation Type"
+msgstr "Kategorie"
+
+#: includes/cpt/class-cpt-organisations.php:558
+#: includes/cpt/class-cpt-partners.php:389
+msgctxt "taxonomy singular name"
+msgid "Partner Type"
+msgstr "Kategorie"
+
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-general.php:16
+msgid "The following options configure Ball Host defaults."
+msgstr ""
+
+#: includes/acf/class-acf-events.php:215
+msgid ""
+"This is the Organisation that Pledgeball requires the Event to be associated "
+"with."
+msgstr ""
+
+#: assets/templates/wordpress/metaboxes/metabox-ball-host-settings-submit.php:28
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-submit.php:47
+msgid "Update"
+msgstr "Aktualisieren"
+
+#: includes/cpt/class-cpt-hosts.php:395
+msgid "Update Ball Host Type"
+msgstr "Kategorie aktualisieren"
+
+#: includes/cpt/class-cpt-organisations.php:687
+msgid "Update Organisation Tag"
+msgstr "Schlagwort aktualisieren"
+
+#: includes/cpt/class-cpt-organisations.php:441
+msgid "Update Organisation Type"
+msgstr "Kategorie aktualisieren"
+
+#: includes/cpt/class-cpt-organisations.php:564
+#: includes/cpt/class-cpt-partners.php:395
+msgid "Update Partner Type"
+msgstr "Kategorie aktualisieren"
+
+#: includes/acf/class-acf-events.php:277
+msgid "Use Country-specific Pledge List"
+msgstr ""
+
+#: includes/cpt/class-cpt-hosts.php:201
+msgid "View Ball Host"
+msgstr ""
+
+#: includes/cpt/class-cpt-organisations.php:247
+msgid "View Organisation"
+msgstr "Organisation ansehen"
+
+#: includes/cpt/class-cpt-partners.php:201
+msgid "View Partner"
+msgstr "Partner ansehen"
+
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:24
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:37
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:50
+#: assets/templates/wordpress/settings/metaboxes/metabox-settings-general.php:63
+msgid "Yes"
+msgstr "Ja"
