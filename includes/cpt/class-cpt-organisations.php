@@ -89,7 +89,7 @@ class SOF_Organisations_CPT_Organisations {
 	 * @access public
 	 * @var string
 	 */
-	public $taxonomy_free_rest_base = 'organisation-tags';
+	public $taxonomy_free_rest_base = 'organisation-tag';
 
 	/**
 	 * Constructor.
