@@ -509,7 +509,7 @@ class SOF_Organisations_CPT_Organisations {
 	// -----------------------------------------------------------------------------------
 
 	/**
-	 * Create our alternative Custom Taxonomy.
+	 * Create our free-tagging Custom Taxonomy.
 	 *
 	 * @since 1.0.0
 	 */
