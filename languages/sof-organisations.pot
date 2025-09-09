@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-09T09:20:30+00:00\n"
+"POT-Creation-Date: 2025-09-09T10:33:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sof-organisations\n"
@@ -189,7 +189,7 @@ msgid "Ball Host"
 msgstr ""
 
 #: includes/cpt/class-cpt-hosts.php:196
-#: includes/cpt/class-cpt-organisations.php:242
+#: includes/cpt/class-cpt-organisations.php:217
 #: includes/cpt/class-cpt-partners.php:196
 msgid "Add New"
 msgstr ""
@@ -237,13 +237,13 @@ msgid "Ball Host updated. <a href=\"%s\">View Ball Host</a>"
 msgstr ""
 
 #: includes/cpt/class-cpt-hosts.php:283
-#: includes/cpt/class-cpt-organisations.php:329
+#: includes/cpt/class-cpt-organisations.php:304
 #: includes/cpt/class-cpt-partners.php:283
 msgid "Custom field updated."
 msgstr ""
 
 #: includes/cpt/class-cpt-hosts.php:284
-#: includes/cpt/class-cpt-organisations.php:330
+#: includes/cpt/class-cpt-organisations.php:305
 #: includes/cpt/class-cpt-partners.php:284
 msgid "Custom field deleted."
 msgstr ""
@@ -282,7 +282,7 @@ msgstr ""
 
 #. translators: Publish box date format - see https://php.net/date
 #: includes/cpt/class-cpt-hosts.php:324
-#: includes/cpt/class-cpt-organisations.php:370
+#: includes/cpt/class-cpt-organisations.php:345
 #: includes/cpt/class-cpt-partners.php:324
 msgid "M j, Y @ G:i"
 msgstr ""
@@ -349,273 +349,210 @@ msgstr ""
 
 #. translators: %s: The plural name of the taxonomy terms.
 #: includes/cpt/class-cpt-hosts.php:471
-#: includes/cpt/class-cpt-organisations.php:517
-#: includes/cpt/class-cpt-organisations.php:640
+#: includes/cpt/class-cpt-organisations.php:492
 #: includes/cpt/class-cpt-partners.php:471
 #, php-format
 msgid "Show All %s"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:240
-#: includes/cpt/class-cpt-organisations.php:251
+#: includes/cpt/class-cpt-organisations.php:215
+#: includes/cpt/class-cpt-organisations.php:226
 msgid "Organisations"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:241
+#: includes/cpt/class-cpt-organisations.php:216
 msgid "Organisation"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:243
+#: includes/cpt/class-cpt-organisations.php:218
 msgid "Add New Organisation"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:244
+#: includes/cpt/class-cpt-organisations.php:219
 msgid "Edit Organisation"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:245
+#: includes/cpt/class-cpt-organisations.php:220
 msgid "New Organisation"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:246
+#: includes/cpt/class-cpt-organisations.php:221
 msgid "All Organisations"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:247
+#: includes/cpt/class-cpt-organisations.php:222
 msgid "View Organisation"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:248
+#: includes/cpt/class-cpt-organisations.php:223
 msgid "Search Organisations"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:249
+#: includes/cpt/class-cpt-organisations.php:224
 msgid "No matching Organisation found"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:250
+#: includes/cpt/class-cpt-organisations.php:225
 msgid "No Organisations found in Trash"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:261
+#: includes/cpt/class-cpt-organisations.php:236
 msgid "An organisation post type"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/cpt/class-cpt-organisations.php:324
+#: includes/cpt/class-cpt-organisations.php:299
 #, php-format
 msgid "Organisation updated. <a href=\"%s\">View Organisation</a>"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:331
+#: includes/cpt/class-cpt-organisations.php:306
 msgid "Organisation updated."
 msgstr ""
 
 #. translators: %s: The date and time of the revision.
-#: includes/cpt/class-cpt-organisations.php:340
+#: includes/cpt/class-cpt-organisations.php:315
 #, php-format
 msgid "Organisation restored to revision from %s"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/cpt/class-cpt-organisations.php:351
+#: includes/cpt/class-cpt-organisations.php:326
 #, php-format
 msgid "Organisation published. <a href=\"%s\">View Organisation</a>"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:356
+#: includes/cpt/class-cpt-organisations.php:331
 msgid "Organisation saved."
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/cpt/class-cpt-organisations.php:361
+#: includes/cpt/class-cpt-organisations.php:336
 #, php-format
 msgid "Organisation submitted. <a target=\"_blank\" href=\"%s\">Preview Organisation</a>"
 msgstr ""
 
 #. translators: 1: The date, 2: The permalink.
-#: includes/cpt/class-cpt-organisations.php:368
+#: includes/cpt/class-cpt-organisations.php:343
 #, php-format
 msgid "Organisation scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview Organisation</a>"
 msgstr ""
 
 #. translators: %s: The permalink.
-#: includes/cpt/class-cpt-organisations.php:377
+#: includes/cpt/class-cpt-organisations.php:352
 #, php-format
 msgid "Organisation draft updated. <a target=\"_blank\" href=\"%s\">Preview Organisation</a>"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:404
+#: includes/cpt/class-cpt-organisations.php:379
 msgid "Add the name of the Organisation"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:434
+#: includes/cpt/class-cpt-organisations.php:409
 msgctxt "taxonomy general name"
 msgid "Organisation Types"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:435
+#: includes/cpt/class-cpt-organisations.php:410
 msgctxt "taxonomy singular name"
 msgid "Organisation Type"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:436
+#: includes/cpt/class-cpt-organisations.php:411
 msgid "Search Organisation Types"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:437
+#: includes/cpt/class-cpt-organisations.php:412
 msgid "All Organisation Types"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:438
+#: includes/cpt/class-cpt-organisations.php:413
 msgid "Parent Organisation Type"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:439
+#: includes/cpt/class-cpt-organisations.php:414
 msgid "Parent Organisation Type:"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:440
+#: includes/cpt/class-cpt-organisations.php:415
 msgid "Edit Organisation Type"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:441
+#: includes/cpt/class-cpt-organisations.php:416
 msgid "Update Organisation Type"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:442
+#: includes/cpt/class-cpt-organisations.php:417
 msgid "Add New Organisation Type"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:443
+#: includes/cpt/class-cpt-organisations.php:418
 msgid "New Organisation Type Name"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:444
+#: includes/cpt/class-cpt-organisations.php:419
 msgid "Organisation Types"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:445
+#: includes/cpt/class-cpt-organisations.php:420
 msgid "No Organisation Types found"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:557
-#: includes/cpt/class-cpt-partners.php:388
-msgctxt "taxonomy general name"
-msgid "Partner Types"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:558
-#: includes/cpt/class-cpt-partners.php:389
-msgctxt "taxonomy singular name"
-msgid "Partner Type"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:559
-#: includes/cpt/class-cpt-partners.php:390
-msgid "Search Partner Types"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:560
-#: includes/cpt/class-cpt-partners.php:391
-msgid "All Partner Types"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:561
-#: includes/cpt/class-cpt-partners.php:392
-msgid "Parent Partner Type"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:562
-#: includes/cpt/class-cpt-partners.php:393
-msgid "Parent Partner Type:"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:563
-#: includes/cpt/class-cpt-partners.php:394
-msgid "Edit Partner Type"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:564
-#: includes/cpt/class-cpt-partners.php:395
-msgid "Update Partner Type"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:565
-#: includes/cpt/class-cpt-partners.php:396
-msgid "Add New Partner Type"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:566
-#: includes/cpt/class-cpt-partners.php:397
-msgid "New Partner Type Name"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:567
-#: includes/cpt/class-cpt-partners.php:398
-msgid "Partner Types"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:568
-#: includes/cpt/class-cpt-partners.php:399
-msgid "No Partner Types found"
-msgstr ""
-
-#: includes/cpt/class-cpt-organisations.php:681
+#: includes/cpt/class-cpt-organisations.php:533
 msgctxt "taxonomy general name"
 msgid "Organisation Tags"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:682
+#: includes/cpt/class-cpt-organisations.php:534
 msgctxt "taxonomy singular name"
 msgid "Organisation Tag"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:683
+#: includes/cpt/class-cpt-organisations.php:535
 msgid "Organisation Tags"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:684
+#: includes/cpt/class-cpt-organisations.php:536
 msgid "Search Organisation Tags"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:685
+#: includes/cpt/class-cpt-organisations.php:537
 msgid "All Organisation Tags"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:686
+#: includes/cpt/class-cpt-organisations.php:538
 msgid "Edit Organisation Tag"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:687
+#: includes/cpt/class-cpt-organisations.php:539
 msgid "Update Organisation Tag"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:688
+#: includes/cpt/class-cpt-organisations.php:540
 msgid "Add New Organisation Tag"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:689
+#: includes/cpt/class-cpt-organisations.php:541
 msgid "New Organisation Tag Name"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:690
+#: includes/cpt/class-cpt-organisations.php:542
 msgid "No Organisation Tags found"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:691
+#: includes/cpt/class-cpt-organisations.php:543
 msgid "Popular Organisation Tags"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:692
+#: includes/cpt/class-cpt-organisations.php:544
 msgid "Separate Organisation Tags with commas"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:693
+#: includes/cpt/class-cpt-organisations.php:545
 msgid "Add or remove Organisation Tag"
 msgstr ""
 
-#: includes/cpt/class-cpt-organisations.php:694
+#: includes/cpt/class-cpt-organisations.php:546
 msgid "Choose from the most popular Organisation Tags"
 msgstr ""
 
@@ -710,4 +647,54 @@ msgstr ""
 
 #: includes/cpt/class-cpt-partners.php:358
 msgid "Add the name of the Partner"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:388
+msgctxt "taxonomy general name"
+msgid "Partner Types"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:389
+msgctxt "taxonomy singular name"
+msgid "Partner Type"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:390
+msgid "Search Partner Types"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:391
+msgid "All Partner Types"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:392
+msgid "Parent Partner Type"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:393
+msgid "Parent Partner Type:"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:394
+msgid "Edit Partner Type"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:395
+msgid "Update Partner Type"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:396
+msgid "Add New Partner Type"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:397
+msgid "New Partner Type Name"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:398
+msgid "Partner Types"
+msgstr ""
+
+#: includes/cpt/class-cpt-partners.php:399
+msgid "No Partner Types found"
 msgstr ""

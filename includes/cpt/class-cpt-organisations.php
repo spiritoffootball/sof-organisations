@@ -74,24 +74,6 @@ class SOF_Organisations_CPT_Organisations {
 	public $taxonomy_rest_base = 'organisation-type';
 
 	/**
-	 * Alternative Taxonomy name.
-	 *
-	 * @since 1.0
-	 * @access public
-	 * @var string
-	 */
-	public $taxonomy_alt_name = 'partner-type';
-
-	/**
-	 * Alternative Taxonomy REST base.
-	 *
-	 * @since 1.0
-	 * @access public
-	 * @var string
-	 */
-	public $taxonomy_alt_rest_base = 'partner-type';
-
-	/**
 	 * Free Taxonomy name.
 	 *
 	 * @since 1.0.0
@@ -179,13 +161,6 @@ class SOF_Organisations_CPT_Organisations {
 		add_action( 'init', [ $this, 'taxonomy_create' ] );
 		add_filter( 'wp_terms_checklist_args', [ $this, 'taxonomy_fix_metabox' ], 10, 2 );
 		add_action( 'restrict_manage_posts', [ $this, 'taxonomy_filter_post_type' ] );
-
-		/*
-		// Create alternative taxonomy.
-		add_action( 'init', [ $this, 'taxonomy_alt_create' ] );
-		add_filter( 'wp_terms_checklist_args', [ $this, 'taxonomy_alt_fix_metabox' ], 10, 2 );
-		add_action( 'restrict_manage_posts', [ $this, 'taxonomy_alt_filter_post_type' ] );
-		*/
 
 		// Create free tagging taxonomy.
 		add_action( 'init', [ $this, 'taxonomy_free_create' ] );
@@ -520,129 +495,6 @@ class SOF_Organisations_CPT_Organisations {
 			'orderby'         => 'name',
 			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
 			'selected'        => isset( $_GET[ $this->taxonomy_name ] ) ? wp_unslash( $_GET[ $this->taxonomy_name ] ) : '',
-			'show_count'      => true,
-			'hide_empty'      => true,
-			'value_field'     => 'slug',
-			'hierarchical'    => 1,
-		];
-
-		// Show a dropdown.
-		wp_dropdown_categories( $args );
-
-	}
-
-	// -----------------------------------------------------------------------------------
-
-	/**
-	 * Create our alternative Custom Taxonomy.
-	 *
-	 * @since 1.0
-	 */
-	public function taxonomy_alt_create() {
-
-		// Only register once.
-		static $registered;
-		if ( $registered ) {
-			return;
-		}
-
-		// Arguments.
-		$args = [
-
-			// Same as "category".
-			'hierarchical'      => true,
-
-			// Labels.
-			'labels'            => [
-				'name'              => _x( 'Partner Types', 'taxonomy general name', 'sof-organisations' ),
-				'singular_name'     => _x( 'Partner Type', 'taxonomy singular name', 'sof-organisations' ),
-				'search_items'      => __( 'Search Partner Types', 'sof-organisations' ),
-				'all_items'         => __( 'All Partner Types', 'sof-organisations' ),
-				'parent_item'       => __( 'Parent Partner Type', 'sof-organisations' ),
-				'parent_item_colon' => __( 'Parent Partner Type:', 'sof-organisations' ),
-				'edit_item'         => __( 'Edit Partner Type', 'sof-organisations' ),
-				'update_item'       => __( 'Update Partner Type', 'sof-organisations' ),
-				'add_new_item'      => __( 'Add New Partner Type', 'sof-organisations' ),
-				'new_item_name'     => __( 'New Partner Type Name', 'sof-organisations' ),
-				'menu_name'         => __( 'Partner Types', 'sof-organisations' ),
-				'not_found'         => __( 'No Partner Types found', 'sof-organisations' ),
-			],
-
-			// Rewrite rules.
-			'rewrite'           => [
-				'slug' => 'partner-types',
-			],
-
-			// Show column in wp-admin.
-			'show_admin_column' => true,
-			'show_ui'           => true,
-
-			// REST setup.
-			'show_in_rest'      => true,
-			'rest_base'         => $this->taxonomy_alt_rest_base,
-
-		];
-
-		// Register a taxonomy for this CPT.
-		register_taxonomy( $this->taxonomy_alt_name, $this->post_type_name, $args );
-
-		// Flag done.
-		$registered = true;
-
-	}
-
-	/**
-	 * Fix the alternative Custom Taxonomy metabox.
-	 *
-	 * @see https://core.trac.wordpress.org/ticket/10982
-	 *
-	 * @since 1.0
-	 *
-	 * @param array $args The existing arguments.
-	 * @param int   $post_id The WordPress post ID.
-	 */
-	public function taxonomy_alt_fix_metabox( $args, $post_id ) {
-
-		// If rendering metabox for our taxonomy.
-		if ( isset( $args['taxonomy'] ) && $args['taxonomy'] === $this->taxonomy_alt_name ) {
-
-			// Setting 'checked_ontop' to false seems to fix this.
-			$args['checked_ontop'] = false;
-
-		}
-
-		// --<
-		return $args;
-
-	}
-
-	/**
-	 * Add a filter for the alternative Custom Taxonomy to the Custom Post Type listing.
-	 *
-	 * @since 1.0
-	 */
-	public function taxonomy_alt_filter_post_type() {
-
-		// Access current post type.
-		global $typenow;
-
-		// Bail if not our post type.
-		if ( $typenow !== $this->post_type_name ) {
-			return;
-		}
-
-		// Get tax object.
-		$taxonomy = get_taxonomy( $this->taxonomy_alt_name );
-
-		// Build args.
-		$args = [
-			/* translators: %s: The plural name of the taxonomy terms. */
-			'show_option_all' => sprintf( __( 'Show All %s', 'sof-organisations' ), $taxonomy->label ),
-			'taxonomy'        => $this->taxonomy_alt_name,
-			'name'            => $this->taxonomy_alt_name,
-			'orderby'         => 'name',
-			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
-			'selected'        => isset( $_GET[ $this->taxonomy_alt_name ] ) ? wp_unslash( $_GET[ $this->taxonomy_alt_name ] ) : '',
 			'show_count'      => true,
 			'hide_empty'      => true,
 			'value_field'     => 'slug',
