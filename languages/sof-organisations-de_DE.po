@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-09-09T08:34:27+00:00\n"
-"PO-Revision-Date: 2025-09-09 09:20+0000\n"
+"PO-Revision-Date: 2025-09-09 09:37+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: sof-organisations\n"
 "Language: de_DE\n"
@@ -568,7 +568,7 @@ msgstr ""
 
 #: includes/cpt/class-cpt-hosts.php:390
 msgid "Search Ball Host Types"
-msgstr "Kategorien durchsuchen"
+msgstr "Kategorien suchen"
 
 #: includes/cpt/class-cpt-hosts.php:202
 msgid "Search Ball Hosts"
@@ -580,7 +580,7 @@ msgstr "Schlagwörter durchsuchen"
 
 #: includes/cpt/class-cpt-organisations.php:436
 msgid "Search Organisation Types"
-msgstr "Kategorien durchsuchen"
+msgstr "Kategorien suchen"
 
 #: includes/cpt/class-cpt-organisations.php:248
 msgid "Search Organisations"
@@ -589,7 +589,7 @@ msgstr "Organisationen durchsuchen"
 #: includes/cpt/class-cpt-organisations.php:559
 #: includes/cpt/class-cpt-partners.php:390
 msgid "Search Partner Types"
-msgstr "Kategorien durchsuchen"
+msgstr "Kategorien suchen"
 
 #: includes/cpt/class-cpt-partners.php:202
 msgid "Search Partners"
