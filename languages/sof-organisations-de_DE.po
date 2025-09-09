@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2025-09-09T08:34:27+00:00\n"
-"PO-Revision-Date: 2025-09-09 10:35+0000\n"
+"PO-Revision-Date: 2025-09-09 10:43+0000\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Domain: sof-organisations\n"
 "Language: de_DE\n"
@@ -46,7 +46,7 @@ msgstr "Kategorie hinzufügen"
 
 #: includes/cpt/class-cpt-organisations.php:218
 msgid "Add New Organisation"
-msgstr "Neue Organisation hinzufügen"
+msgstr "Organisation hinzufügen"
 
 #: includes/cpt/class-cpt-organisations.php:540
 msgid "Add New Organisation Tag"
@@ -58,7 +58,7 @@ msgstr "Kategorie hinzufügen"
 
 #: includes/cpt/class-cpt-partners.php:197
 msgid "Add New Partner"
-msgstr "Neuen Partner hinzufügen"
+msgstr "Partner hinzufügen"
 
 #: includes/cpt/class-cpt-partners.php:396
 msgid "Add New Partner Type"
